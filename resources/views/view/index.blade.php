@@ -214,12 +214,13 @@
                 </div>
 
                 <!-- Single Blog Post -->
+                @foreach($topnewslist as $key => $topnews)
                 <div class="single-blog-post d-flex">
                     <div class="post-thumbnail">
-                        <img src="img/bg-img/4.jpg" alt="">
+                        <img src="{{ asset('images/'.$topnews->image) }}" alt="">
                     </div>
                     <div class="post-content">
-                        <a href="single-post.html" class="post-title">Global Travel And Vacations Luxury Travel</a>
+                        <a href="single-post.html" class="post-title">{{ $topnews->title }}</a>
                         <div class="post-meta d-flex justify-content-between">
                             <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
                             <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
@@ -227,66 +228,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/5.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Cruising Destination Ideas</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/6.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">The Luxury Of Traveling With</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/7.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Choose The Perfect Accommodations</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/8.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
             <!-- Sidebar Widget -->
@@ -392,58 +334,15 @@
 
                 <div class="trending-post-slides owl-carousel">
                     <!-- Single Trending Post -->
+                    @foreach($newscategory_one as $key => $topnews)
                     <div class="single-trending-post">
-                        <img src="img/bg-img/19.jpg" alt="">
+                        <img src="{{ asset('images/'.$topnews->image) }}" alt="">
                         <div class="post-content">
-                            <a href="#" class="post-cata">Video</a>
-                            <a href="video-post.html" class="post-title">Big Savings On Gas While You Travel</a>
+                            <a href="#" class="post-cata">{{ @$topnews->category->name }}</a>
+                            <a href="video-post.html" class="post-title">{{ $topnews->title }}</a>
                         </div>
                     </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="img/bg-img/20.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">TV Show</a>
-                            <a href="video-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="img/bg-img/21.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">Sports</a>
-                            <a href="video-post.html" class="post-title">The Health Benefits Of Sunglasses</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="img/bg-img/19.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">Video</a>
-                            <a href="video-post.html" class="post-title">Big Savings On Gas While You Travel</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="img/bg-img/20.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">TV Show</a>
-                            <a href="video-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="img/bg-img/21.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">Sports</a>
-                            <a href="video-post.html" class="post-title">The Health Benefits Of Sunglasses</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
@@ -1205,9 +1104,14 @@
                 <div class="row">
                     <!-- Copywrite Text -->
                     <div class="col-12 col-sm-6">
-                        <p class="copywrite-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        <p class="copywrite-text">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
                     </div>
                     <div class="col-12 col-sm-6">
                         <nav class="footer-nav">
