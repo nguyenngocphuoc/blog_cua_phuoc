@@ -17,7 +17,7 @@ class FrontController extends Controller
         $newscategory_two   = News::latest()->whereHas('category')->where('category_id',7)->where('status',1)->take(3)->get();
         $newscategory_three = News::latest()->whereHas('category')->where('category_id',3)->where('status',1)->take(10)->get();
 
-        return view('frontend.index',compact(
+        return view('view.index',compact(
                 'topnewslist',
                 'newscategory_one',
                 'newscategory_two',
