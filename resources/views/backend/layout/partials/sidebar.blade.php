@@ -36,7 +36,13 @@
             <li>
                 <a href="{{ route('admin.news.index') }}">
                     <i class="fa fa-th"></i>
-                    <span>Bài đăng</span>
+                    <span>Tin Tức</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('admin.reworks.index') }}">
+                    <i class="fa fa-th"></i>
+                    <span>Tuyển Dụng</span>
                 </a>
             </li>
 

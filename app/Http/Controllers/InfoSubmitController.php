@@ -11,13 +11,13 @@ class InfoSubmitController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     public function register()
     {
         $arrCategory = array("1" => "Du học Hàn Quốc", "2" => "Thực tập sinh Hàn Quốc", "3" => "Kỹ sư Hàn Quốc", "4" => "Kỹ năng đặc định");
-        return view('authentication.register',compact('arrCategory'));
+        return view('view.contact',compact('arrCategory'));
     }
 
     public function registration(Request $request)

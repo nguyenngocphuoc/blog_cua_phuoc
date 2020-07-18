@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\News;
+use App\ReWork;
 use App\Category;
 use Illuminate\Http\Request;
 
-class NewsController extends Controller
+class ReWorkController extends Controller
 {
 
     public function index()
     {
-        $newslist = News::with('category')->latest()->get();
+        $listReWorks = ReWork::with('category')->latest()->get();
 
-        return view('backend.news.index', compact('newslist'));
+        return view('backend.reworks.index', compact('listReWorks'));
     }
 
 
@@ -21,13 +21,14 @@ class NewsController extends Controller
     {
         $categories = Category::latest()->select('id','name')->where('status',1)->get();
 
-        return view('backend.news.create', compact('categories'));
+        return view('backend.reworks.create', compact('categories'));
     }
+
 
     public function store(Request $request)
     {
         $request->validate([
-            'title'         => 'required|unique:news|max:255',
+            'title'         => 'required|unique:reworks|max:255',
             'details'       => 'required',
             'category_id'   => 'required',
             'image'         => 'required|image|mimes:jpg,png,jpeg'
@@ -46,40 +47,45 @@ class NewsController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            $imageName = 'news-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
+            $imageName = 'reworks-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
             $request->image->move(public_path('images'), $imageName);
         }
 
-        News::create([
+        ReWork::create([
             'title'         => $request->title,
             'slug'          => str_slug($request->title),
             'details'       => $request->details,
             'category_id'   => $request->category_id,
             'image'         => $imageName,
             'status'        => $status,
-            'featured'      => $featured
+            'featured'      => $featured,
+            'video_id'      => $request->video_id,
+            'work_address'  => $request->work_address,
+            'deadline_for_sub'  => $request->deadline_for_sub,
+            'salary'        => $request->salary,
+            'emp_total'        => $request->emp_total
         ]);
 
-        return redirect()->route('admin.news.index')->with(['message' => 'Tạo thành công!']);
+        return redirect()->route('admin.reworks.index')->with(['message' => 'Tạo thành công!']);
     }
 
 
-    public function show(News $news)
+    public function show(ReWork $reworks)
     {
         //
     }
 
 
-    public function edit(News $news)
+    public function edit(ReWork $reworks)
     {
         $categories = Category::latest()->select('id','name')->where('status',1)->get();
-        $news       = News::findOrFail($news->id);
+        $reworks    = ReWork::findOrFail($reworks->id);
 
-        return view('backend.news.edit', compact('categories','news'));
+        return view('backend.reworks.edit', compact('categories','reworks'));
     }
 
-
-    public function update(Request $request, News $news)
+ 
+    public function update(Request $request, ReWork $reworks)
     {
         $request->validate([
             'title'         => 'required|max:255',
@@ -100,44 +106,49 @@ class NewsController extends Controller
             $featured = false;
         }
 
-        $news = News::findOrFail($news->id);
+        $reworks = ReWork::findOrFail($reworks->id);
 
         if ($request->hasFile('image')) {
 
-            if(file_exists(public_path('images/') . $news->image)){
-                unlink(public_path('images/') . $news->image);
+            if(file_exists(public_path('images/') . $reworks->image)){
+                unlink(public_path('images/') . $reworks->image);
             }
 
-            $imageName = 'news-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
+            $imageName = 'reworks-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
             $request->image->move(public_path('images'), $imageName);
 
         }else{
-            $imageName = $news->image;
+            $imageName = $reworks->image;
         }
 
-        $news->update([
+        $reworks->update([
             'title'         => $request->title,
             'slug'          => str_slug($request->title),
             'details'       => $request->details,
             'category_id'   => $request->category_id,
             'image'         => $imageName,
             'status'        => $status,
-            'featured'      => $featured
+            'featured'      => $featured,
+            'video_id'      => $request->video_id,
+            'work_address'  => $request->work_address,
+            'deadline_for_sub'  => $request->deadline_for_sub,
+            'salary'        => $request->salary,
+            'emp_total'        => $request->emp_total
         ]);
 
-        return redirect()->route('admin.news.index')->with(['message' => 'Chỉnh sửa thành công!']);
+        return redirect()->route('admin.reworks.index')->with(['message' => 'Chỉnh sửa thành công!']);
     }
 
-
-    public function destroy(News $news)
+ 
+    public function destroy(ReWork $reworks)
     {
-        $news = News::findOrFail($news->id);
+        $reworks = ReWork::findOrFail($reworks->id);
 
-        if(file_exists(public_path('images/') . $news->image)){
-            unlink(public_path('images/') . $news->image);
+        if(file_exists(public_path('images/') . $reworks->image)){
+            unlink(public_path('images/') . $reworks->image);
         }
 
-        $news->delete();
+        $reworks->delete();
 
         return back()->with(['message' => 'Xóa thành công!']);
     }
