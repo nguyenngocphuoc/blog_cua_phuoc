@@ -20,6 +20,9 @@
 </head>
 
 <body>
+    @if ( session()->has('messageSuccess') )
+        <div class="alert alert-success alert-dismissable">{{ session()->get('messageSuccess') }}</div>
+    @endif
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="spinner">
