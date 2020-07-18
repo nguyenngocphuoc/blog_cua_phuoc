@@ -41,7 +41,6 @@ class FrontController extends Controller
     public function pageNews($slug)
     {
         $newssingle = News::with('category')->where('slug',$slug)->first();
-
         $newssessionkey = 'news-'.$newssingle->id;
         if(!session()->has($newssessionkey)){
             $newssingle->increment('view_count');
@@ -49,7 +48,7 @@ class FrontController extends Controller
         }
         return view('frontend.pages.single',compact('newssingle'));
     }
-
+  
     public function pageReworks($slug)
     {
         $newssingle = ReWork::with('category')->where('slug',$slug)->first();

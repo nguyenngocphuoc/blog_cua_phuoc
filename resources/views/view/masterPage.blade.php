@@ -20,9 +20,11 @@
 </head>
 
 <body>
-    @if ( session()->has('messageSuccess') )
+    <div id="messageDivId">
+        @if ( session()->has('messageSuccess') )
         <div class="alert alert-success alert-dismissable">{{ session()->get('messageSuccess') }}</div>
-    @endif
+        @endif
+    </div>
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="spinner">
@@ -71,7 +73,7 @@
                                     <li><a href="#">HỌC TẬP & VIỆC LÀM</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                            <a><b>THÔNG TIN</b></a>
+                                                <a><b>THÔNG TIN</b></a>
                                                 <li><a href="archive.html">Cơ hội việc làm</a></li>
                                                 <li><a href="index.html">Thông tin chương trình</a></li>
                                                 <li><a href="archive.html">Top các trường ĐH Hàn Quốc</a></li>
@@ -273,20 +275,30 @@
     <!-- Active js -->
     <script src="{{ asset('js/active.js')}}"></script>
     <script>
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('realtime').innerHTML = h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-    }
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
-</script>
+        setInterval(closeMessage, 5000);
+
+        function closeMessage() {
+            $("#messageDivId").remove()
+        }
+
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('realtime').innerHTML = h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }; // add zero in front of numbers < 10
+            return i;
+        }
+
+    </script>
 </body>
 </html>
