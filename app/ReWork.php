@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReWork extends Model
 {
+    protected $table = "reworks";
+
     protected $fillable = ['title', 'slug', 'details', 'image', 'category_id', 'status'
     , 'view_count', 'work_address', 'deadline_for_sub', 'salary', 'emp_total'];
 
