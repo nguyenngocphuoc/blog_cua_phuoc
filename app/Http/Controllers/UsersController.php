@@ -9,7 +9,8 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('name','desc')->where('role_id','!=',1)->get();
+        // $users = User::orderBy('name','desc')->where('role_id','!=',1)->get();
+         $users = User::orderBy('name','desc')->get();
 
         return view('backend.users.index', compact('users'));
     }
@@ -20,7 +21,7 @@ class UsersController extends Controller
     }
 
     public function store(Request $request)
-    {   
+    {
         $request->validate([
           'name'      => 'required|string|max:190',
           'email'     => 'required|string|email|max:190|unique:users',
@@ -75,7 +76,7 @@ class UsersController extends Controller
         }else{
             $status = false;
         }
-        
+
         $user = User::findOrFail($id);
 
         if ($request->hasFile('photo')) {

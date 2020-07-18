@@ -24,7 +24,6 @@ class NewsController extends Controller
         return view('backend.news.create', compact('categories'));
     }
 
-
     public function store(Request $request)
     {
         $request->validate([
@@ -79,7 +78,7 @@ class NewsController extends Controller
         return view('backend.news.edit', compact('categories','news'));
     }
 
- 
+
     public function update(Request $request, News $news)
     {
         $request->validate([
@@ -129,7 +128,7 @@ class NewsController extends Controller
         return redirect()->route('admin.news.index')->with(['message' => 'News updated successfully!']);
     }
 
- 
+
     public function destroy(News $news)
     {
         $news = News::findOrFail($news->id);
