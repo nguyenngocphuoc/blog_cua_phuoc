@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\ReWork;
 use App\Category;
 use App\Advertisement;
 use Illuminate\Http\Request;
@@ -45,8 +46,19 @@ class FrontController extends Controller
             $newssingle->increment('view_count');
             session()->put($newssessionkey,1);
         }
+        return view('frontend.pages.single',compact('newssingle'));
+    }
+  
+    public function pageReworks($slug)
+    {
+        $newssingle = ReWork::with('category')->where('slug',$slug)->first();
 
-        return view('view.singlepost',compact('newssingle'));
+        $newssessionkey = 'news-'.$newssingle->id;
+        if(!session()->has($newssessionkey)){
+            $newssingle->increment('view_count');
+            session()->put($newssessionkey,1);
+        }
+        return view('frontend.pages.single',compact('newssingle'));
     }
 
     public function pageSearch()

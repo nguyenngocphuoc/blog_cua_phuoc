@@ -3,6 +3,7 @@
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/page/category/{slug}', 'FrontController@pageCategory')->name('page.category');
 Route::get('/page/news/{slug}', 'FrontController@pageNews')->name('page.news');
+Route::get('/page/reworks/{slug}', 'FrontController@pageReworks')->name('page.reworks');
 Route::get('/page', 'FrontController@pageArchive')->name('page');
 Route::get('/page/search', 'FrontController@pageSearch')->name('page.search');
 
@@ -45,6 +46,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'r
     Route::resource('group-category','GroupCategoryController');
     Route::resource('category','CategoryController');
     Route::resource('news','NewsController');
+    Route::resource('reworks','ReWorkController');
+
 });
 
 // USER, EDITOR AND ADMIN
