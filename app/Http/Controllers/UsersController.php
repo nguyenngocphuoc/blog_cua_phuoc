@@ -9,7 +9,8 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('name','desc')->where('role_id','!=',1)->get();
+        // $users = User::orderBy('name','desc')->where('role_id','!=',1)->get();
+         $users = User::orderBy('name','desc')->get();
 
         return view('backend.users.index', compact('users'));
     }
