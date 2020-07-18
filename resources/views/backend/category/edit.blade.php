@@ -13,11 +13,11 @@
             Chỉnh sửa thể loại
             <small><a href="{{ route('admin.category.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i class="fa fa-plus"></i> Quay về</a></small>
         </h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="#">Forms</a></li>
             <li class="active">General Elements</li>
-        </ol>
+        </ol> -->
     </section>
 
     <section class="content">
@@ -28,7 +28,7 @@
                 <div class="box box-primary">
 
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit Category</h3>
+                        <h3 class="box-title">Chi tiết chỉnh sửa</h3>
                     </div>
 
                     <form action="{{ route('admin.category.update',$category->id) }}" method="POST" enctype="multipart/form-data" role="form">
@@ -37,17 +37,17 @@
 
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="categoryname">Category Name</label>
+                                <label for="categoryname">Tên thể loại</label>
                                 <input type="text" name="name" class="form-control" value="{{ $category->name }}" id="categoryname">
                             </div>
                             <div class="form-group">
-                                <label for="categoryimage">Category Image</label>
+                                <label for="categoryimage">Hình ảnh của thể loại</label>
                                 <input type="file" name="image" id="categoryimage">
-                                <p class="help-block">(Image must be in .png or .jpg format)</p>
+                                <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="status" {{ $category->status ? 'checked' : '' }}> Active
+                                    <input type="checkbox" name="status" {{ $category->status ? 'checked' : '' }}> Có hiệu lực
                                 </label>
                             </div>
                         </div>
@@ -87,4 +87,6 @@
             });
         });
     </script>
+@endpusht>
 @endpush
+
