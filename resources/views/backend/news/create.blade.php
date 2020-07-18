@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label>Categories</label>
                                 <select name="category_id" class="form-control select2" style="width: 100%;">
-                                    @foreach($categories as $category)
+                                    @foreach($  as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>

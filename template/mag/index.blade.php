@@ -147,10 +147,6 @@
                     <div class="col-12">
                         <!-- Post Contetnt -->
                         <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
                             <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">Party Jokes Startling But Unnecessary</a>
                             <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
                         </div>
@@ -166,10 +162,6 @@
                     <div class="col-12">
                         <!-- Post Contetnt -->
                         <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
                             <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">Party Jokes Startling But Unnecessary</a>
                             <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
                         </div>
@@ -185,10 +177,6 @@
                     <div class="col-12">
                         <!-- Post Contetnt -->
                         <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
                             <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">Party Jokes Startling But Unnecessary</a>
                             <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
                         </div>
@@ -466,10 +454,6 @@
                                 </div>
                                 <!-- Post Contetnt -->
                                 <div class="post-content">
-                                    <div class="post-meta">
-                                        <a href="#">MAY 8, 2018</a>
-                                        <a href="archive.html">lifestyle</a>
-                                    </div>
                                     <a href="video-post.html" class="post-title">A Closer Look At Our Front Porch Items From Lowe’s</a>
                                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
                                 </div>
@@ -791,10 +775,6 @@
                         </div>
                         <!-- Post Contetnt -->
                         <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
                             <a href="video-post.html" class="post-title">A Closer Look At Our Front Porch Items From Lowe’s</a>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
                         </div>
@@ -829,10 +809,6 @@
                         </div>
                         <!-- Post Contetnt -->
                         <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
                             <a href="video-post.html" class="post-title">A Closer Look At Our Front Porch Items From Lowe’s</a>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
                         </div>
@@ -867,10 +843,6 @@
                         </div>
                         <!-- Post Contetnt -->
                         <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
                             <a href="video-post.html" class="post-title">A Closer Look At Our Front Porch Items From Lowe’s</a>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
                         </div>
