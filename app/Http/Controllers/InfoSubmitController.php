@@ -40,8 +40,10 @@ class InfoSubmitController extends Controller
             'phone'         => $request->phone,
             'address'       => $request->address
         ]);
-
-        return redirect()->route('dashboard');
+        // return view('authentication.register',compact('arrCategory'));
+        // return Redirect::back()->withErrors(['msg', 'The Message']);
+        return redirect()->route('home')->with('messageSuccess', 'Bạn đã đăng ký tư vấn thành công. Chúng tôi sẽ gọi điện lại cho bạn trong thời gian sớm nhất');
+        // return redirect()->route('home');
     }
 
 

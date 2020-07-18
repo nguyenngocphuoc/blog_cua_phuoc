@@ -29,7 +29,12 @@ class CategoryController extends Controller
             'image'  => 'required|image|mimes:jpg,png,jpeg'
         ]);
 
-        if(isset($request->status)){
+        // if(isset($request->status)){
+        //     $status = true;
+        // }else{
+        //     $status = false;
+        // }
+        if($request->status == 'on'){
             $status = true;
         }else{
             $status = false;
@@ -56,7 +61,7 @@ class CategoryController extends Controller
         //
     }
 
- 
+
     public function edit(Category $category)
     {
         $category = Category::findOrFail($category->id);
