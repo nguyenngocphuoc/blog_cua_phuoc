@@ -10,16 +10,16 @@
 
     <section class="content-header">
         <h1>
-            Category Tables
+            Danh sách các thể loại
             <small>
-                <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> CREATE</a>
+                <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> Tạo mới</a>
             </small>
         </h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="#">Tables</a></li>
             <li class="active">Data tables</li>
-        </ol>
+        </ol> -->
       </section>
 
     <section class="content">
@@ -28,7 +28,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Hover Data Table</h3>
+                        <h3 class="box-title">Dữ liệu</h3>
                     </div>
 
                     <div class="box-body">
@@ -36,11 +36,11 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
+                                    <th>Ảnh</th>
+                                    <th>Tên</th>
                                     <th>Slug</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Trạng thái</th>
+                                    <th>Hành động</th>
                                 </tr>
                             </thead>
 
@@ -53,17 +53,19 @@
                                     </td>
                                     <td>{{ $category->name }}</td>
                                     <td>{{ $category->slug }}</td>
-                                    <td>{{ $category->status ? 'Active' : 'Inactive' }}</td>
+                                    <td>{{ $category->status ? 'Có hiệu lực' : 'Không' }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <a href="{{ route('admin.category.edit',$category->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
-                                            <a href="javascript:void(0)" class="btn btn-danger btn-flat"
-                                                onclick="event.preventDefault();
-                                                        document.getElementById('category-delete-form-{{$category->id}}').submit();">
+                                            <a href="javascript:void(0)" class="btn btn-danger btn-flat" id="btn_delete"
+                                                onclick="if (confirm('Bạn có muốn xóa thể loại {{$category->name}} không?')) {
+                                                           event.preventDefault();
+                                                            document.getElementById('category-delete-form-{{$category->id}}').submit();
+                                                        }">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                             <form id="category-delete-form-{{$category->id}}" action="{{ route('admin.category.destroy',$category->id) }}" method="POST" style="display: none;">
-                                                @csrf 
+                                                @csrf
                                                 @method('DELETE')
                                             </form>
                                         </div>
@@ -75,11 +77,11 @@
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
+                                    <th>Ảnh</th>
+                                    <th>Tên</th>
                                     <th>Slug</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Trạng thái</th>
+                                    <th>Hành động</th>
                                 </tr>
                             </tfoot>
                         </table>

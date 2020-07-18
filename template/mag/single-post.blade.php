@@ -181,10 +181,6 @@
                             <img src="img/bg-img/50.jpg" alt="">
                         </div>
                         <div class="blog-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
                             <h4 class="post-title">From Wetlands To Canals And Dams Amsterdam Is Alive</h4>
                             <!-- Post Meta -->
                             <div class="post-meta-2">

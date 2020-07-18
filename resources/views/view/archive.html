@@ -186,10 +186,6 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <div class="post-meta">
-                                    <a href="#">MAY 8, 2018</a>
-                                    <a href="archive.html">lifestyle</a>
-                                </div>
                                 <a href="video-post.html" class="post-title">Global Travel And Vacations Luxury Travel On A Tight Budget</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta-2">
@@ -210,10 +206,6 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <div class="post-meta">
-                                    <a href="#">MAY 8, 2018</a>
-                                    <a href="archive.html">lifestyle</a>
-                                </div>
                                 <a href="video-post.html" class="post-title">The Luxury Of Traveling With Yacht Charter Companies</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta-2">
@@ -234,10 +226,6 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <div class="post-meta">
-                                    <a href="#">MAY 8, 2018</a>
-                                    <a href="archive.html">lifestyle</a>
-                                </div>
                                 <a href="video-post.html" class="post-title">Will The Democrats Be Able To Reverse The Online Gambling Ban</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta-2">
@@ -258,10 +246,6 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <div class="post-meta">
-                                    <a href="#">MAY 8, 2018</a>
-                                    <a href="archive.html">lifestyle</a>
-                                </div>
                                 <a href="video-post.html" class="post-title">Family Safari Vacation To The Home Of The Gods</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta-2">
@@ -282,10 +266,6 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <div class="post-meta">
-                                    <a href="#">MAY 8, 2018</a>
-                                    <a href="archive.html">lifestyle</a>
-                                </div>
                                 <a href="video-post.html" class="post-title">Addiction When Gambling Becomes A Problem</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta-2">
@@ -306,10 +286,6 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <div class="post-meta">
-                                    <a href="#">MAY 8, 2018</a>
-                                    <a href="archive.html">lifestyle</a>
-                                </div>
                                 <a href="video-post.html" class="post-title">Take A Romantic Break In A Boutique Hotel</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta-2">
@@ -330,10 +306,6 @@
 
                             <!-- Post Contetnt -->
                             <div class="post-content">
-                                <div class="post-meta">
-                                    <a href="#">MAY 8, 2018</a>
-                                    <a href="archive.html">lifestyle</a>
-                                </div>
                                 <a href="video-post.html" class="post-title">Global Travel And Vacations Luxury Travel On A Tight Budget</a>
                                 <!-- Post Meta -->
                                 <div class="post-meta-2">

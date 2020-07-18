@@ -59,7 +59,6 @@ class AppServiceProvider extends ServiceProvider
 
                 $view->with( compact(
                     'newscategory_two',
-
                     'newstabspopular',
                     'newstabsrecent',
                     'newsinRandomOrder',

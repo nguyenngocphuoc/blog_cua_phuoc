@@ -6,13 +6,14 @@ Route::get('/page/news/{slug}', 'FrontController@pageNews')->name('page.news');
 Route::get('/page', 'FrontController@pageArchive')->name('page');
 Route::get('/page/search', 'FrontController@pageSearch')->name('page.search');
 
-// AUTHENTICATION 
+// AUTHENTICATION
 Route::get('/login', 'LoginController@login')->name('login');
 Route::post('/login', 'LoginController@authenticate')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
 
-Route::get('/register', 'RegisterController@register')->name('register');
-Route::post('/register', 'RegisterController@registration')->name('register');
+Route::get('/register', 'InfoSubmitController@register')->name('register');
+// Route::post('/register', 'RegisterController@registration')->name('register');
+Route::post('/register', 'InfoSubmitController@registration')->name('register');
 
 // SOCIAL LOGIN
 Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
@@ -35,12 +36,12 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => ['auth','roles'],
     Route::resource('menus','MenuController');
     Route::post('menuitems-json','MenuController@getMenuItems')->name('menuitems.json');
     Route::post('menuitemsdetails-json','MenuController@getMenuItemsDetails')->name('menuitemsdetails.json');
-    
+
 });
 
 // BOTH EDITOR AND ADMIN
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'roles'=>['editor','admin']], function(){
-    
+
     Route::resource('category','CategoryController');
     Route::resource('news','NewsController');
 });

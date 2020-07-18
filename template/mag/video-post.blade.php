@@ -196,8 +196,7 @@
                     <div class="post-details-content bg-white mb-30 p-30 box-shadow">
                         <div class="blog-content">
                             <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                                <a href="archive.html">lifestyle</a>
+                                z
                             </div>
                             <h4 class="post-title">From Wetlands To Canals And Dams Amsterdam Is Alive</h4>
                             <!-- Post Meta -->
