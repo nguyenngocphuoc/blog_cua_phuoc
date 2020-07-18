@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.news.index') }}">
+                <a href="{{ route('admin.reworks.index') }}">
                     <i class="fa fa-th"></i>
                     <span>Tuyển Dụng</span>
                 </a>

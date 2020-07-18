@@ -11,7 +11,7 @@
 
     <section class="content-header">
         <h1>
-            CHỈNH SỬA BÀI VIẾT
+            CẬP NHẬT CÔNG VIỆC 
             <small><a href="{{ route('admin.news.index') }}" class="btn btn-block btn-xs btn-warning btn-flat">Back</a></small>
         </h1>
         <ol class="breadcrumb">

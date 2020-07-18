@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'News')
+@section('title', 'ReWork')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('backend/components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
@@ -10,8 +10,8 @@
 
     <section class="content-header">
         <h1>
-            QUẢN LÝ BÀI ĐĂNG
-            <small><a href="{{ route('admin.news.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> Thêm Mới</a></small>
+            QUẢN LÝ CÔNG VIỆC
+            <small><a href="{{ route('admin.reworks.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> Thêm Mới</a></small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#" style="margin-right: 30px; font-size: 15px;"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
@@ -39,29 +39,29 @@
                             </thead>
 
                             <tbody>
-                                @foreach($newslist as $news)
+                                @foreach($listReWorks as $reworks)
                                 <tr>
-                                    <td>{{ $news->id }}</td>
+                                    <td>{{ $reworks->id }}</td>
                                     <td>
-                                        <img src="{{ asset('images/'.$news->image) }}" alt="{{ $news->title }}" width="120px">
+                                        <img src="{{ asset('images/'.$reworks->image) }}" alt="{{ $reworks->title }}" width="120px">
                                     </td>
-                                    <td>{{ $news->title }}</td>
-                                    <td>{{ $news->slug }}</td>
-                                    <td>{{ str_limit(strip_tags($news->details),300) }}</td>
-                                    <td>{{ @$news->category->name }}</td>
-                                    <td>{{ $news->status ? 'Published' : 'Unpublished' }}</td>
-                                    <td>{{ $news->view_count }}</td>
+                                    <td>{{ $reworks->title }}</td>
+                                    <td>{{ $reworks->slug }}</td>
+                                    <td>{{ str_limit(strip_tags($reworks->details),300) }}</td>
+                                    <td>{{ @$reworks->category->name }}</td>
+                                    <td>{{ $reworks->status ? 'Published' : 'Unpublished' }}</td>
+                                    <td>{{ $reworks->view_count }}</td>
                                     <td>
                                         <div class="btn-group-vertical">
                                             <div class= "form-inline"> 
                                                 <a href="" class="btn btn-primary btn-flat"><i class="fa fa-eye"></i></a>
-                                                <a href="{{ route('admin.news.edit',$news->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
+                                                <a href="{{ route('admin.reworks.edit',$reworks->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
                                                 <a href="javascript:void(0)" class="btn btn-danger btn-flat"
                                                     onclick="event.preventDefault();
-                                                        document.getElementById('news-delete-form-{{$news->id}}').submit();">
+                                                        document.getElementById('reworks-delete-form-{{$reworks->id}}').submit();">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
-                                                <form id="news-delete-form-{{$news->id}}" action="{{ route('admin.news.destroy',$news->id) }}" method="POST" style="display: none;">
+                                                <form id="reworks-delete-form-{{$reworks->id}}" action="{{ route('admin.reworks.destroy',$reworks->id) }}" method="POST" style="display: none;">
                                                     @csrf 
                                                     @method('DELETE')
                                                 </form>

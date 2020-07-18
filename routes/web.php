@@ -3,6 +3,7 @@
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/page/category/{slug}', 'FrontController@pageCategory')->name('page.category');
 Route::get('/page/news/{slug}', 'FrontController@pageNews')->name('page.news');
+Route::get('/page/reworks/{slug}', 'FrontController@pageReworks')->name('page.reworks');
 Route::get('/page', 'FrontController@pageArchive')->name('page');
 Route::get('/page/search', 'FrontController@pageSearch')->name('page.search');
 
@@ -11,9 +12,9 @@ Route::get('/login', 'LoginController@login')->name('login');
 Route::post('/login', 'LoginController@authenticate')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
 
-Route::get('/register', 'InfoSubmitController@register')->name('register');
+Route::get('/contact', 'InfoSubmitController@register')->name('contact');
 // Route::post('/register', 'RegisterController@registration')->name('register');
-Route::post('/register', 'InfoSubmitController@registration')->name('register');
+Route::post('/contact', 'InfoSubmitController@registration')->name('contact');
 
 // SOCIAL LOGIN
 Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
@@ -45,6 +46,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'r
     Route::resource('group-category','GroupCategoryController');
     Route::resource('category','CategoryController');
     Route::resource('news','NewsController');
+    Route::resource('reworks','ReWorkController');
+
 });
 
 // USER, EDITOR AND ADMIN
