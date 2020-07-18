@@ -10,13 +10,11 @@
 
     <section class="content-header">
         <h1>
-            News List
-            <small><a href="{{ route('admin.news.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> CREATE</a></small>
+            QUẢN LÝ BÀI ĐĂNG
+            <small><a href="{{ route('admin.news.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> Thêm Mới</a></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li><a href="#" style="margin-right: 30px; font-size: 15px;"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
         </ol>
       </section>
 
@@ -25,24 +23,18 @@
 
             <div class="col-xs-12">
                 <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Hover Data Table</h3>
-                    </div>
-
                     <div class="box-body">
                         <table id="category-table" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Title</th>
+                                    <th>Hình ảnh bài viết</th>
+                                    <th>Tiêu đề</th>
                                     <th>Slug</th>
-                                    <th>Details</th>
-                                    <th>Category</th>
+                                    <th>Nội dung chi tiết</th>
+                                    <th>Thể loại</th>
                                     <th>Status</th>
-                                    <th>Is Featured</th>
-                                    <th>View</th>
-                                    <th>Action</th>
+                                    <th>Lượt xem</th>
                                 </tr>
                             </thead>
 
@@ -58,48 +50,32 @@
                                     <td>{{ str_limit(strip_tags($news->details),300) }}</td>
                                     <td>{{ @$news->category->name }}</td>
                                     <td>{{ $news->status ? 'Published' : 'Unpublished' }}</td>
-                                    <td>{{ $news->featured ? 'Featured' : '' }}</td>
                                     <td>{{ $news->view_count }}</td>
                                     <td>
                                         <div class="btn-group-vertical">
-                                            <a href="" class="btn btn-primary btn-flat"><i class="fa fa-eye"></i></a>
-                                            <a href="{{ route('admin.news.edit',$news->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
-                                            <a href="javascript:void(0)" class="btn btn-danger btn-flat"
-                                                onclick="event.preventDefault();
-                                                    document.getElementById('news-delete-form-{{$news->id}}').submit();">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                            <form id="news-delete-form-{{$news->id}}" action="{{ route('admin.news.destroy',$news->id) }}" method="POST" style="display: none;">
-                                                @csrf 
-                                                @method('DELETE')
-                                            </form>
+                                            <div class= "form-inline"> 
+                                                <a href="" class="btn btn-primary btn-flat"><i class="fa fa-eye"></i></a>
+                                                <a href="{{ route('admin.news.edit',$news->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
+                                                <a href="javascript:void(0)" class="btn btn-danger btn-flat"
+                                                    onclick="event.preventDefault();
+                                                        document.getElementById('news-delete-form-{{$news->id}}').submit();">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                                <form id="news-delete-form-{{$news->id}}" action="{{ route('admin.news.destroy',$news->id) }}" method="POST" style="display: none;">
+                                                    @csrf 
+                                                    @method('DELETE')
+                                                </form>
+                                            </div>
+                                            
                                         </div>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
-
-                            <tfoot>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Title</th>
-                                    <th>Slug</th>
-                                    <th>Details</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Is Featured</th>
-                                    <th>View</th>
-                                    <th>Action</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </section>
 

@@ -89,7 +89,7 @@
                                                 <li><a href="video-post.html">Thẩm mỹ & Sắc đẹp</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <a><b>VIỆC LÀM</b></a>
+                                                <a><b>TIN TỨC VIỆC LÀM</b></a>
                                                 <li><a href="index.html">Kỹ sư </a></li>
                                                 <li><a href="login.html">Công xưởng</a></li>
                                                 <li><a href="archive.html">Ngành công nghệ thông tin</a></li>
@@ -183,7 +183,7 @@
             <div class="trending-now-posts mb-30">
                 <!-- Section Title -->
                 <div class="section-heading">
-                    <h5>TIN CHƯA ĐỦ NÓNG</h5>
+                    <h5>BÀI ĐĂNG GẦN ĐÂY</h5>
                 </div>
 
                 <div class="trending-post-slides owl-carousel">
