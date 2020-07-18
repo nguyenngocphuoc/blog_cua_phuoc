@@ -27,7 +27,7 @@ class InfoSubmitController extends Controller
             'name'           => 'required|string|max:255',
             'email'          => 'required|string|email|max:255',
             'date_of_birth'  => 'max:10',
-            'category_id'    => 'required|string|min:1|max:2',
+            'orders'         => 'required|string|min:1',
             'phone'          => 'required|string|min:1|max:15',
             'address'        => 'max:255',
         ]);
@@ -36,7 +36,7 @@ class InfoSubmitController extends Controller
             'name'          => $request->name,
             'email'         => $request->email,
             'date_of_birth' => $request->date_of_birth,
-            'category_id'   => $request->category_id,
+            'orders'        => $request->orders,
             'phone'         => $request->phone,
             'address'       => $request->address
         ]);
