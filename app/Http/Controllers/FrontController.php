@@ -40,14 +40,13 @@ class FrontController extends Controller
     public function pageNews($slug)
     {
         $newssingle = News::with('category')->where('slug',$slug)->first();
-
         $newssessionkey = 'news-'.$newssingle->id;
         if(!session()->has($newssessionkey)){
             $newssingle->increment('view_count');
             session()->put($newssessionkey,1);
         }
 
-        return view('frontend.pages.single',compact('newssingle'));
+        return view('view.singlepost',compact('newssingle'));
     }
 
     public function pageSearch()
