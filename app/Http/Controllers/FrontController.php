@@ -46,7 +46,7 @@ class FrontController extends Controller
             $newssingle->increment('view_count');
             session()->put($newssessionkey,1);
         }
-        return view('frontend.pages.single',compact('newssingle'));
+        return view('view.singlepost',compact('newssingle'));
     }
   
     public function pageReworks($slug)
