@@ -8,8 +8,8 @@ class GroupCategory extends Model
 {
     protected $fillable = ['name', 'slug', 'image', 'status'];
 
-    
-    public function newslist()
+
+    public function categorylist()
     {
         return $this->hasMany('App\Category');
     }

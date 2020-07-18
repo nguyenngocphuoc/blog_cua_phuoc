@@ -48,6 +48,12 @@
 
             <li class="header">LABELS</li>
             <li>
+                <a href="{{ route('admin.info-submit.index') }}">
+                    <i class="fa fa-users"></i>
+                    <span>Liên hệ ứng viên</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('admin.users.index') }}">
                     <i class="fa fa-users"></i>
                     <span>Tài khoản</span>
@@ -62,10 +68,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('admin.settings.index') }}"><i class="fa fa-circle-o"></i> Genarel Setting</a></li>
+                    <li><a href="{{ route('admin.settings.index') }}"><i class="fa fa-circle-o"></i> Genarel Setting</a>
+                    </li>
                     <li><a href="{{ route('admin.menus.index') }}"><i class="fa fa-circle-o"></i> Menu Setting</a></li>
-                    <li><a href="{{ route('admin.advertisements.index') }}"><i class="fa fa-circle-o"></i> Advertisement Setting</a></li>
-                    <li><a href="{{ route('admin.settings.breakingnews') }}"><i class="fa fa-circle-o"></i> Breaking News Setting</a></li>
+                    <li><a href="{{ route('admin.advertisements.index') }}"><i class="fa fa-circle-o"></i> Advertisement
+                            Setting</a></li>
+                    <li><a href="{{ route('admin.settings.breakingnews') }}"><i class="fa fa-circle-o"></i> Breaking
+                            News Setting</a></li>
                 </ul>
             </li>
 

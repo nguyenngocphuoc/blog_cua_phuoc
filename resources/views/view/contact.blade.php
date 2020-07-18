@@ -1,6 +1,11 @@
 @extends('view.masterPage')
 @section('content')
 <section class="contact-area">
+    <style>
+        em {
+            color: red;
+        }
+    </style>
     <div class="container">
 
         <!-- ##### Breadcrumb Area Start ##### -->
@@ -24,7 +29,8 @@
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="../"><i class="fa fa-home" aria-hidden="true"></i>Trang Chủ</a></li>
+                                <li class="breadcrumb-item"><a href="../"><i class="fa fa-home"
+                                            aria-hidden="true"></i>Trang Chủ</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
                             </ol>
                         </nav>
@@ -49,7 +55,8 @@
                         <form action="{{ route('contact') }}" method="post">
                             @csrf
                             <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <input type="text" name="name" class="form-control" placeholder="Họ và tên" value="{{ old('name') }}">
+                                <input type="text" name="name" class="form-control" placeholder="Họ và tên"
+                                    value="{{ old('name') }}">
                                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                 @if ($errors->has('name'))
                                 <span class="help-block">
@@ -58,7 +65,8 @@
                                 @endif
                             </div>
                             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                                <input type="email" name="email" class="form-control" placeholder="Email"
+                                    value="{{ old('email') }}">
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                                 @if ($errors->has('email'))
                                 <span class="help-block">
@@ -67,7 +75,8 @@
                                 @endif
                             </div>
                             <div class="form-group {{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
-                                <input style="padding-right: 5px;" type="date" name="date_of_birth" class="form-control" placeholder="Ngày sinh" value="{{ old('date_of_birth') }}">
+                                <input style="padding-right: 5px;" type="date" name="date_of_birth" class="form-control"
+                                    placeholder="Ngày sinh" value="{{ old('date_of_birth') }}">
                                 @if ($errors->has('date_of_birth'))
                                 <span class="help-block">
                                     <em>{{ $errors->first('date_of_birth') }}</em>
@@ -76,13 +85,14 @@
                             </div>
                             <div style="margin: 5px;">Đăng ký tư vấn chương trình</div>
                             <div class="form-group has-feedback{{ $errors->has('orders') ? ' has-error' : '' }}">
-                                <select id="orders" name="orders" class="form-control has-feedback{{ $errors->has('orders') ? ' has-error' : '' }}">
+                                <select id="orders" name="orders"
+                                    class="form-control has-feedback{{ $errors->has('orders') ? ' has-error' : '' }}">
                                     @foreach($arrCategory as $key => $topnews)
-                                    @if (old('orders') == $topnews)
-                                    <option selected value="{{$topnews}}">{{$topnews}}</option>
+                                    @if (old('orders') == $topnews->id)
+                                    <option selected value="{{$topnews->id}}">{{$topnews->name}}</option>
                                     @endif
-                                    @if (old('orders')!= $topnews)
-                                    <option value="{{$topnews}}">{{$topnews}}</option>
+                                    @if (old('orders')!= $topnews->id)
+                                    <option value="{{$topnews->id}}">{{$topnews->name}}</option>
                                     @endif
                                     @endforeach
                                 </select>
@@ -93,7 +103,8 @@
                                 @endif
                             </div>
                             <div class="form-group has-feedback{{ $errors->has('address') ? ' has-error' : '' }}">
-                                <input type="address" name="address" class="form-control" placeholder="Địa chỉ" value="{{ old('address') }}">
+                                <input type="address" name="address" class="form-control" placeholder="Địa chỉ"
+                                    value="{{ old('address') }}">
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                                 @if ($errors->has('address'))
                                 <span class="help-block">
@@ -102,7 +113,8 @@
                                 @endif
                             </div>
                             <div class="form-group has-feedback{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <input type="phone" name="phone" class="form-control" placeholder="Số điện thoại" value="{{ old('phone') }}">
+                                <input type="phone" name="phone" class="form-control" placeholder="Số điện thoại"
+                                    value="{{ old('phone') }}">
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                                 @if ($errors->has('phone'))
                                 <span class="help-block">
@@ -176,13 +188,20 @@
 
                         <!-- Catagory Widget -->
                         <ul class="catagory-widgets">
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life Style</span> <span>35</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Travel</span> <span>30</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Foods</span> <span>13</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Game</span> <span>06</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sports</span> <span>28</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Football</span> <span>08</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> TV Show</span> <span>13</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life
+                                        Style</span> <span>35</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Travel</span> <span>30</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Foods</span> <span>13</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Game</span> <span>06</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Sports</span> <span>28</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Football</span> <span>08</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> TV
+                                        Show</span> <span>13</span></a></li>
                         </ul>
                     </div>
 
@@ -199,7 +218,8 @@
                         </div>
 
                         <div class="newsletter-form">
-                            <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
+                            <p>Subscribe our newsletter gor get notification about new updates, information discount,
+                                etc.</p>
                             <form action="#" method="get">
                                 <input type="search" name="widget-search" placeholder="Enter your email">
                                 <button type="submit" class="btn mag-btn w-100">Subscribe</button>

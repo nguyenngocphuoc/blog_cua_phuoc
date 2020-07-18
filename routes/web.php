@@ -47,6 +47,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'r
     Route::resource('category','CategoryController');
     Route::resource('news','NewsController');
     Route::resource('reworks','ReWorkController');
+    Route::resource('info-submit','InfoSubmitController');
 
 });
 
