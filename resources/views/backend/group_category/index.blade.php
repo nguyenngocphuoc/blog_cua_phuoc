@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'Category')
+@section('title', 'Group Category')
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('backend/components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
@@ -10,9 +10,9 @@
 
 <section class="content-header">
     <h1>
-        Danh sách các thể loại
+        Danh sách các nhóm thể loại
         <small>
-            <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> Tạo mới</a>
+            <a href="{{ route('admin.group-category.create') }}" class="btn btn-block btn-xs btn-success btn-flat"><i class="fa fa-plus"></i> Tạo mới</a>
         </small>
     </h1>
     <!-- <ol class="breadcrumb">
@@ -32,41 +32,38 @@
                 </div>
 
                 <div class="box-body">
-                    <table id="category-table" class="table table-bordered table-hover">
+                    <table id="group-category-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Ảnh</th>
                                 <th>Tên</th>
                                 <th>Slug</th>
-                                <th>Nhóm thể loại</th>
                                 <th>Trạng thái</th>
                                 <th>Hành động</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach($categories as $category)
+                            @foreach($group_categorys as $group_category)
                             <tr>
-                                <td>{{ $category->id }}</td>
+                                <td>{{ $group_category->id }}</td>
                                 <td>
-                                    <img src="{{ asset('images/'.$category->image) }}" alt="{{ $category->name }}" width="40px">
+                                    <img src="{{ asset('images/'.$group_category->image) }}" alt="{{ $group_category->name }}" width="40px">
                                 </td>
-                                <td>{{ $category->name }}</td>
-                                <td>{{ $category->slug }}</td>
-                                <td>{{ @$category->groupCategory->name }}</td>
-                                <td>{{ $category->slug }}</td>
-                                <td>{{ $category->status ? 'Có hiệu lực' : 'Không' }}</td>
+                                <td>{{ $group_category->name }}</td>
+                                <td>{{ $group_category->slug }}</td>
+                                <td>{{ $group_category->status ? 'Có hiệu lực' : 'Không' }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.category.edit',$category->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
-                                        <a href="javascript:void(0)" class="btn btn-danger btn-flat" id="btn_delete" onclick="if (confirm('Bạn có muốn xóa thể loại {{$category->name}} không?')) {
+                                        <a href="{{ route('admin.group-category.edit',$group_category->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:void(0)" class="btn btn-danger btn-flat" id="btn_delete" onclick="if (confirm('Bạn có muốn xóa nhóm thể loại {{$group_category->name}} không?')) {
                                                            event.preventDefault();
-                                                            document.getElementById('category-delete-form-{{$category->id}}').submit();
+                                                            document.getElementById('group-category-delete-form-{{$group_category->id}}').submit();
                                                         }">
                                             <i class="fa fa-trash"></i>
                                         </a>
-                                        <form id="category-delete-form-{{$category->id}}" action="{{ route('admin.category.destroy',$category->id) }}" method="POST" style="display: none;">
+                                        <form id="group-category-delete-form-{{$group_category->id}}" action="{{ route('admin.group-category.destroy',$group_category->id) }}" method="POST" style="display: none;">
                                             @csrf
                                             @method('DELETE')
                                         </form>
@@ -82,7 +79,6 @@
                                 <th>Ảnh</th>
                                 <th>Tên</th>
                                 <th>Slug</th>
-                                <th>Nhóm thể loại</th>
                                 <th>Trạng thái</th>
                                 <th>Hành động</th>
                             </tr>
@@ -104,7 +100,7 @@
 <script src="{{ asset('backend/components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <script>
     $(function() {
-        $('#category-table').DataTable();
+        $('#group-category-table').DataTable();
     })
 
 </script>

@@ -42,6 +42,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => ['auth','roles'],
 // BOTH EDITOR AND ADMIN
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'roles'=>['editor','admin']], function(){
 
+    Route::resource('group-category','GroupCategoryController');
     Route::resource('category','CategoryController');
     Route::resource('news','NewsController');
 });

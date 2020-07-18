@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\GroupCategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -10,23 +11,25 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = Category::latest()->get();
-
-        return view('backend.category.index', compact('categories'));
+        $categories = Category::with('groupCategory')->latest()->get();
+        $arrGroupCategory = GroupCategory::latest()->get();
+        return view('backend.category.index', compact('categories', 'arrGroupCategory'));
     }
 
 
     public function create()
     {
-        return view('backend.category.create');
+        $arrGroupCategory = GroupCategory::get();
+        return view('backend.category.create', compact('arrGroupCategory'));
     }
 
 
     public function store(Request $request)
     {
         $request->validate([
-            'name'   => 'required|unique:categories|max:255',
-            'image'  => 'required|image|mimes:jpg,png,jpeg'
+            'name'                 => 'required|unique:categories|max:255',
+            'image'                => 'required|image|mimes:jpg,png,jpeg',
+            'group_categories_id'  => 'required|max:2'
         ]);
 
         // if(isset($request->status)){
@@ -49,7 +52,8 @@ class CategoryController extends Controller
             'name'   => $request->name,
             'slug'   => str_slug($request->name),
             'image'  => $imageName,
-            'status' => $status
+            'status' => $status,
+            'group_categories_id' => $request->group_categories_id,
         ]);
 
         return redirect()->route('admin.category.index')->with(['message' => 'Category created successfully!']);

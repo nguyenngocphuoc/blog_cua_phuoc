@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'Create Category')
+@section('title', 'Create Group Category')
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('backend/plugins/iCheck/square/blue.css') }}">
@@ -11,7 +11,7 @@
 <section class="content-header">
     <h1>
         Tạo mới thể loại
-        <small><a href="{{ route('admin.category.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i class="fa fa-plus"></i> Quay về</a></small>
+        <small><a href="{{ route('admin.group-category.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i class="fa fa-plus"></i> Quay về</a></small>
     </h1>
     <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -23,7 +23,7 @@
 <section class="content">
     <div class="row">
 
-        <form action="{{ route('admin.category.store') }}" method="POST" enctype="multipart/form-data" role="form">
+        <form action="{{ route('admin.group-category.store') }}" method="POST" enctype="multipart/form-data" role="form">
             @csrf
 
             <div class="col-md-6">
@@ -34,21 +34,8 @@
 
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="categoryname">Tên thể loại</label>
-                            <input type="text" name="name" class="form-control" id="categoryname" value="{{ old('name') }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="categoryname">Nhóm thể loại</label>
-                            <select id="group_categories_id" name="group_categories_id" class="form-control has-feedback{{ $errors->has('group_categories_id') ? ' has-error' : '' }}">
-                                @foreach($arrGroupCategory as $key => $topnews)
-                                @if (old('group_categories_id') == $topnews->id)
-                                <option selected value="{{$topnews->id}}">{{$topnews->name}}</option>
-                                @endif
-                                @if (old('group_categories_id')!= $topnews->id)
-                                <option value="{{$topnews->id}}">{{$topnews->name}}</option>
-                                @endif
-                                @endforeach
-                            </select>
+                            <label for="groupcategoryname">Tên thể loại</label>
+                            <input type="text" name="name" class="form-control" id="groupcategoryname" value="{{ old('name') }}">
                         </div>
                     </div>
                 </div>
@@ -60,7 +47,7 @@
                     </div>
                     <div class="box-body">
                         <div class="form-group">
-                            <input type="file" name="image" id="categoryimage" value="{{ old('image') }}">
+                            <input type="file" name="image" id="groupcategoryimage" value="{{ old('image') }}">
                             <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
                         </div>
                         <div class="checkbox">

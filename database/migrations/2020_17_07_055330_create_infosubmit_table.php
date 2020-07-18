@@ -32,6 +32,6 @@ class CreateInfoSubmitTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('info_submit');
+        Schema::dropIfExists('info_submits');
     }
 }
