@@ -68,7 +68,7 @@
                                             <li><a href="">Góc Hàn Quốc</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">HỌC TẬP & VIỆC LÀM</a>
+                                    <li><a href="#">DU HỌC & LÀM VIỆC</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                             <a><b>THÔNG TIN</b></a>
@@ -841,8 +841,6 @@
             </div>
         </div>
     </footer>
-    <!-- ##### Footer Area End ##### -->
-
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="{{ asset('js/jquery/jquery-2.2.4.min.js')}}"></script>
@@ -854,21 +852,5 @@
     <script src="{{ asset('js/plugins/plugins.js')}}"></script>
     <!-- Active js -->
     <script src="{{ asset('js/active.js')}}"></script>
-    <script>
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('realtime').innerHTML = h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-    }
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
-</script>
 </body>
 </html>

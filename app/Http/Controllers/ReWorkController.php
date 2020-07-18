@@ -13,7 +13,7 @@ class NewsController extends Controller
     {
         $newslist = News::with('category')->latest()->get();
 
-        return view('backend.news.index', compact('newslist'));
+        return view('backend.news.inphp artisan make:migration create_table_posts_table --create=posts.dex', compact('newslist'));
     }
 
 
