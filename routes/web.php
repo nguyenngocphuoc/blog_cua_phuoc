@@ -11,9 +11,9 @@ Route::get('/login', 'LoginController@login')->name('login');
 Route::post('/login', 'LoginController@authenticate')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
 
-Route::get('/register', 'InfoSubmitController@register')->name('register');
+Route::get('/contact', 'InfoSubmitController@register')->name('contact');
 // Route::post('/register', 'RegisterController@registration')->name('register');
-Route::post('/register', 'InfoSubmitController@registration')->name('register');
+Route::post('/contact', 'InfoSubmitController@registration')->name('contact');
 
 // SOCIAL LOGIN
 Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
