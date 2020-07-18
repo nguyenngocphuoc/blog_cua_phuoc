@@ -12,7 +12,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    
+
     public function login()
     {
         $setting = Setting::first();
@@ -30,7 +30,7 @@ class LoginController extends Controller
 
             return redirect()->intended('dashboard');
         }
-        
+
         return redirect()->route('login')->with('errorcredentials','Credentials do not match or Account not active!');
     }
 
