@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -128,8 +127,11 @@
                         <div class="top-meta-data d-flex align-items-center">
                             <!-- Top Search Area -->
                             <div class="top-search-area">
-                                <form action="index.html" method="post">
-                                    <input type="search" name="top-search" id="topSearch" placeholder="Tìm Kiếm...">
+                                <form action="{{ route('page.search') }}" method="POST" enctype="multipart/form-data"
+                                    role="form">
+                                    @csrf
+                                    @method('POST')
+                                    <input type="search" name="resultSearch" id="topSearch" placeholder="Tìm Kiếm...">
                                     <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
                             </div>
