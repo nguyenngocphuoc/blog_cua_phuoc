@@ -55,7 +55,7 @@
                                 <td>{{ $info->email }}</td>
                                 <td>{{ $info->address }}</td>
                                 <td>{{ $info->date_of_birth }}</td>
-                                <td>{{ $info->groupCategory->name }}</td>
+                                <td>{{ $info->orders }}</td>
                                 <td>{{ $info->created_at }}</td>
                                 <td>
                                     <div class="btn-group">
