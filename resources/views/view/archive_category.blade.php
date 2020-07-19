@@ -41,11 +41,11 @@
                         @foreach($listRework as $key => $rework)
                             <div class="single-catagory-post d-flex flex-wrap">
                                 <div class="post-thumbnail bg-img" style="background-image: url('{{url('images/'.$rework->image)}}')">
-                                    <a href="video-post.html"><i class="fa fa-play"></i></a>
+                                    <a href="{{url('page/rework/'.$rework->slug)}}"><i class="fa fa-play"></i></a>
                                 </div>
 
                                 <div class="post-content">
-                                    <a href="video-post.html" class="post-title">{{$rework->title}}</a>
+                                    <a href="{{url('page/rework/'.$rework->slug)}}" class="post-title">{{$rework->title}}</a>
                                     <div class="post-meta-2">
                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                         <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
