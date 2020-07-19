@@ -12,17 +12,17 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $newestlist = News::latest()->whereHas('category')->where('status',1)->take(5)->get();
+        $newestlist = News::latest()->whereHas('category')->where('status',1)->take(10)->get();
 
-        $topnewslist   = News::orderBy("view_count")->take(9)->get();
-        $newscategory_two   = News::latest()->whereHas('category')->where('category_id',7)->where('status',1)->take(3)->get();
-        $newscategory_three = News::latest()->whereHas('category')->where('category_id',3)->where('status',1)->take(10)->get();
+        $topnewslist   = News::orderBy("view_count")->take(10)->get();
+        $reworks   = ReWork::latest()->take(10)->get();
+        $reworks2 = ReWork::latest()->take(10)->get();
 
         return view('view.index',compact(
                 'topnewslist',
                 'newestlist',
-                'newscategory_two',
-                'newscategory_three'
+                'reworks',
+                'reworks2'
             )
         );
     }
@@ -53,12 +53,12 @@ class FrontController extends Controller
     {
         $newssingle = ReWork::with('category')->where('slug',$slug)->first();
 
-        $newssessionkey = 'news-'.$newssingle->id;
+        $newssessionkey = 'Reworks-'.$newssingle->id;
         if(!session()->has($newssessionkey)){
             $newssingle->increment('view_count');
             session()->put($newssessionkey,1);
         }
-        return view('frontend.pages.single',compact('newssingle'));
+        return view('view.singlepostrework',compact('newssingle'));
     }
 
     public function pageSearch()
