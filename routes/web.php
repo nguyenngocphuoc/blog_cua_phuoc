@@ -5,7 +5,7 @@ Route::get('/page/category/{slug}', 'FrontController@pageCategory')->name('page.
 Route::get('/page/news/{slug}', 'FrontController@pageNews')->name('page.news');
 Route::get('/page/reworks/{slug}', 'FrontController@pageReworks')->name('page.reworks');
 Route::get('/page', 'FrontController@pageArchive')->name('page');
-Route::get('/page/search', 'FrontController@pageSearch')->name('page.search');
+Route::post('/page/search', 'ReWorkController@postSearch')->name('page.search');
 
 // AUTHENTICATION
 Route::get('/login', 'LoginController@login')->name('login');

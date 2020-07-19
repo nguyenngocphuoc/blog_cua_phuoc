@@ -144,4 +144,12 @@ class ReWorkController extends Controller
         $reworks->delete();
         return back()->with(['message' => 'Xóa thành công!']);
     }
+
+    public function postSearch(Request $request)
+    {
+        $reworks = ReWork::select('*')->where('title', 'like', '%' .$request->resultSearch. '%')
+                ->orWhere('slug', 'like', '%'.$request->resultSearch.'%')
+                ->orWhere('details', 'like', '%'.$request->resultSearch.'%')->get();
+        return view('view.archive', compact('reworks'));
+    }
 }
