@@ -34,17 +34,17 @@ class ReWorkController extends Controller
             'image'         => 'required|image|mimes:jpg,png,jpeg'
         ]);
 
-        if(isset($request->status)){
-            $status = true;
-        }else{
-            $status = false;
-        }
+        // if(isset($request->status)){
+        //     $status = true;
+        // }else{
+        //     $status = false;
+        // }
 
-        if(isset($request->featured)){
-            $featured = true;
-        }else{
-            $featured = false;
-        }
+        // if(isset($request->featured)){
+        //     $featured = true;
+        // }else{
+        //     $featured = false;
+        // }
 
         if ($request->hasFile('image')) {
             $imageName = 'reworks-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
@@ -56,8 +56,8 @@ class ReWorkController extends Controller
             'slug'          => str_slug($request->title),
             'details'       => $request->details,
             'category_id'   => $request->category_id,
+            'status'        => 1,
             'image'         => $imageName,
-            'status'        => $status,
             'work_address'  => $request->work_address,
             'deadline_for_sub'  => $request->deadline_for_sub,
             'salary'        => $request->salary,
@@ -74,16 +74,16 @@ class ReWorkController extends Controller
     }
 
 
-    public function edit(ReWork $reworks)
+    public function edit($id)
     {
-        $categories = Category::latest()->select('id','name')->where('status',1)->get();
-        $reworks    = ReWork::findOrFail($reworks->id);
-
+        $categories = Category::latest()->select('id','name')->get();
+        // $reworks    = ReWork::findOrFail($reworks->id);
+        $reworks    = ReWork::where("id",$id)->first();
         return view('backend.reworks.edit', compact('categories','reworks'));
     }
 
  
-    public function update(Request $request, ReWork $reworks)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'title'         => 'required|max:255',
@@ -103,9 +103,7 @@ class ReWorkController extends Controller
         }else{
             $featured = false;
         }
-
-        $reworks = ReWork::findOrFail($reworks->id);
-
+        $reworks = ReWork::findOrFail($id);
         if ($request->hasFile('image')) {
 
             if(file_exists(public_path('images/') . $reworks->image)){
@@ -124,8 +122,8 @@ class ReWorkController extends Controller
             'slug'          => str_slug($request->title),
             'details'       => $request->details,
             'category_id'   => $request->category_id,
+            'status'        => 1,
             'image'         => $imageName,
-            'status'        => $status,
             'work_address'  => $request->work_address,
             'deadline_for_sub'  => $request->deadline_for_sub,
             'salary'        => $request->salary,
@@ -136,16 +134,14 @@ class ReWorkController extends Controller
     }
 
  
-    public function destroy(ReWork $reworks)
+    public function destroy($id)
     {
-        $reworks = ReWork::findOrFail($reworks->id);
+        $reworks = ReWork::findOrFail($id);
 
         if(file_exists(public_path('images/') . $reworks->image)){
             unlink(public_path('images/') . $reworks->image);
         }
-
         $reworks->delete();
-
         return back()->with(['message' => 'Xóa thành công!']);
     }
 }
