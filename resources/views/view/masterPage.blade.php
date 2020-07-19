@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -42,7 +43,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="/" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -61,7 +62,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Trang chủ</a></li>
+                                    <li class="active"><a href="/">Trang chủ</a></li>
                                     <li><a href="#">GIỚI THIỆU</a>
                                         <ul class="dropdown">
                                             <li><a href="index.html">Về chúng tôi</a></li>
@@ -69,22 +70,24 @@
                                             <li><a href="">Góc Hàn Quốc</a></li>
                                         </ul>
                                     </li>
-                                    
+
                                     <li><a href="#">HỌC TẬP & VIỆC LÀM</a>
                                         <div class="megamenu">
                                             <!-- {{$arrGroupCategory = \App\GroupCategory::latest()->get()}} -->
                                             @foreach($arrGroupCategory as $key => $group)
-                                                <ul class="single-mega cn-col-4">
-                                                    <a><b>{{$group->name}}</b></a>
-                                                    <!-- {{$categorys = \App\Category::where("group_categories_id",$group->id)->get()}} -->
-                                                    @foreach($categorys as $key => $category)
-                                                        <li><a href="{{ url('/page/category/'.$category->slug) }}">{{$category->name}}</a></li>
-                                                    @endforeach
-                                                    <!-- <li><a href="archive.html">Cơ hội việc làm</a></li>
+                                            <ul class="single-mega cn-col-4">
+                                                <a><b>{{$group->name}}</b></a>
+                                                <!-- {{$categorys = \App\Category::where("group_categories_id",$group->id)->get()}} -->
+                                                @foreach($categorys as $key => $category)
+                                                <li><a
+                                                        href="{{ url('/page/category/'.$category->slug) }}">{{$category->name}}</a>
+                                                </li>
+                                                @endforeach
+                                                <!-- <li><a href="archive.html">Cơ hội việc làm</a></li>
                                                     <li><a href="index.html">Thông tin chương trình</a></li>
                                                     <li><a href="archive.html">Top các trường ĐH Hàn Quốc</a></li>
                                                     <li><a href="archive.html">Các trường đào tạo ngôn ngữ Hàn</a></li> -->
-                                                </ul>
+                                            </ul>
                                             @endforeach
                                             <!-- <ul class="single-mega cn-col-4">
                                                 <a><b>THÔNG TIN</b></a>
@@ -132,7 +135,8 @@
                                     @csrf
                                     @method('POST')
                                     <input type="search" name="resultSearch" id="topSearch" placeholder="Tìm Kiếm...">
-                                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <button type="submit" class="btn"><i class="fa fa-search"
+                                            aria-hidden="true"></i></button>
                                 </form>
                             </div>
                             <!-- Login -->
@@ -156,7 +160,8 @@
                     <div class="footer-widget">
                         <!-- Logo -->
                         <a href="url('/')" class="foo-logo"><img src="img/core-img/logo2.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
                         <div class="footer-social-info">
                             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
@@ -173,16 +178,26 @@
                         <h6 class="widget-title">Categories</h6>
                         <nav class="footer-widget-nav">
                             <ul>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life Style</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Tech</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Travel</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Music</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Foods</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Fashion</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Game</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Football</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sports</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> TV Show</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life
+                                        Style</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Tech</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Travel</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Music</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Foods</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Fashion</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Game</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Football</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sports</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> TV Show</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -198,7 +213,8 @@
                                 <img src="img/bg-img/12.jpg" alt="">
                             </div>
                             <div class="post-content">
-                                <a href="single-post.html" class="post-title">Take A Romantic Break In A Boutique Hotel</a>
+                                <a href="single-post.html" class="post-title">Take A Romantic Break In A Boutique
+                                    Hotel</a>
                                 <div class="post-meta d-flex justify-content-between">
                                     <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
                                     <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
@@ -260,7 +276,8 @@
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
 
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
@@ -318,4 +335,5 @@
 
     </script>
 </body>
+
 </html>

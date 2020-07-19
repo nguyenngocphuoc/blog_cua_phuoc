@@ -86,10 +86,6 @@ class NewsController extends Controller
             'details'       => 'required',
             'category_id'   => 'required',
             'image'         => 'image|mimes:jpg,png,jpeg',
-            'work_address'  => 'required',
-            'deadline_for_sub'  => 'required',
-            'salary'  => 'required',
-            'emp_total'  => 'required',
         ]);
 
         if(isset($request->status)){

@@ -2,7 +2,8 @@
 @section('content')
 
 <!-- ##### Breadcrumb Area Start ##### -->
-<section class="breadcrumb-area bg-img bg-overlay" style="background-image: url('{{ asset('images/'.$newssingle->image) }}');">
+<section class="breadcrumb-area bg-img bg-overlay"
+    style="background-image: url('{{ asset('images/'.$newssingle->image) }}');">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -22,7 +23,8 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>
+                                Home</a></li>
                         <li class="breadcrumb-item"><a href="{{url('/')}}">Tuyển Dụng</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Chi Tiết</li>
                     </ol>
@@ -68,41 +70,49 @@
                                     <div>&nbsp;</div>
                                 </div>
                             </div>
-                        
-                                <div class="col-sm-6 info-item">
-                                    <div class="icon"><img alt="" src="http://nhatban.kaizenvn.net/Images/icon03.png"></div>
-                                    <div class="info-content">
-                                        <div class="title">MỨC LƯƠNG CƠ BẢN</div>
-                                        <div class="content">{{ $newssingle->salary }}<br>
-                                        </div>
+
+                            <div class="col-sm-6 info-item">
+                                <div class="icon"><img alt="" src="http://nhatban.kaizenvn.net/Images/icon03.png"></div>
+                                <div class="info-content">
+                                    <div class="title">MỨC LƯƠNG CƠ BẢN</div>
+                                    <div class="content">{{ $newssingle->salary }}<br>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 info-item">
-                                    <div class="icon"><img alt="" src="http://nhatban.kaizenvn.net/Images/icon04.png"></div>
-                                    <div class="info-content">
-                                        <div class="title">SỐ LƯỢNG TUYỂN DỤNG</div>
-                                        <div class="content">{{ $newssingle->emp_total }}</div>
-                                    </div>
+                            </div>
+                            <div class="col-sm-6 info-item">
+                                <div class="icon"><img alt="" src="http://nhatban.kaizenvn.net/Images/icon04.png"></div>
+                                <div class="info-content">
+                                    <div class="title">SỐ LƯỢNG TUYỂN DỤNG</div>
+                                    <div class="content">{{ $newssingle->emp_total }}</div>
                                 </div>
-                            
+                            </div>
+
                         </div>
-                        <br/>
+                        <br />
+                        <div>
+                            <h1 class="post-title h4">Chi tiết</h1>
+                        </div>
+                        <br />
                         {!! $newssingle->details !!}
                         <!-- Like Dislike Share -->
                         <div class="like-dislike-share my-5">
                             <h4 class="share">240<span>Share</span></h4>
-                            <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Share on
+                                Facebook</a>
+                            <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Share on
+                                Twitter</a>
                         </div>
 
                         <!-- Post Author -->
                         <div class="post-author d-flex align-items-center">
                             <div class="post-author-thumb">
-                                <img src="https://image.thanhnien.vn/660/uploaded/ngocthanh/2020_07_13/ngoctrinhmuonsinhcon1_swej.jpg" alt="">
+                                <img src="https://image.thanhnien.vn/660/uploaded/ngocthanh/2020_07_13/ngoctrinhmuonsinhcon1_swej.jpg"
+                                    alt="">
                             </div>
                             <div class="post-author-desc pl-4">
                                 <a href="#" class="author-name">Alan Shaerer</a>
-                                <p>Duis tincidunt turpis sodales, tincidunt nisi et, auctor nisi. Curabitur vulputate sapien eu metus ultricies fermentum nec vel augue. Maecenas eget lacinia est.</p>
+                                <p>Duis tincidunt turpis sodales, tincidunt nisi et, auctor nisi. Curabitur vulputate
+                                    sapien eu metus ultricies fermentum nec vel augue. Maecenas eget lacinia est.</p>
                             </div>
                         </div>
                     </div>
@@ -123,7 +133,8 @@
                                     <img src="img/bg-img/29.jpg" alt="">
                                 </div>
                                 <div class="post-content">
-                                    <a href="single-post.html" class="post-title">Dentists Are Smiling Over Painless Veneer</a>
+                                    <a href="single-post.html" class="post-title">Dentists Are Smiling Over Painless
+                                        Veneer</a>
                                     <div class="post-meta d-flex">
                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                         <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
@@ -142,7 +153,8 @@
                                     <span class="video-duration">09:27</span>
                                 </div>
                                 <div class="post-content">
-                                    <a href="single-post.html" class="post-title">Will The Democrats Be Able To Reverse</a>
+                                    <a href="single-post.html" class="post-title">Will The Democrats Be Able To
+                                        Reverse</a>
                                     <div class="post-meta d-flex">
                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                         <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
@@ -159,7 +171,8 @@
                                     <img src="img/bg-img/28.jpg" alt="">
                                 </div>
                                 <div class="post-content">
-                                    <a href="single-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
+                                    <a href="single-post.html" class="post-title">A Guide To Rocky Mountain
+                                        Vacations</a>
                                     <div class="post-meta d-flex">
                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                         <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
@@ -186,13 +199,20 @@
 
                         <!-- Catagory Widget -->
                         <ul class="catagory-widgets">
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life Style</span> <span>35</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Travel</span> <span>30</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Foods</span> <span>13</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Game</span> <span>06</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sports</span> <span>28</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Football</span> <span>08</span></a></li>
-                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> TV Show</span> <span>13</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life
+                                        Style</span> <span>35</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Travel</span> <span>30</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Foods</span> <span>13</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Game</span> <span>06</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Sports</span> <span>28</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        Football</span> <span>08</span></a></li>
+                            <li><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i> TV
+                                        Show</span> <span>13</span></a></li>
                         </ul>
                     </div>
 
@@ -215,7 +235,8 @@
                             </div>
                             <div class="youtube-channel-content">
                                 <a href="single-post.html" class="channel-title">TV Show</a>
-                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Subscribe</a>
+                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
+                                        aria-hidden="true"></i> Subscribe</a>
                             </div>
                         </div>
 
@@ -226,7 +247,8 @@
                             </div>
                             <div class="youtube-channel-content">
                                 <a href="single-post.html" class="channel-title">Game Channel</a>
-                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Subscribe</a>
+                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
+                                        aria-hidden="true"></i> Subscribe</a>
                             </div>
                         </div>
 
@@ -237,7 +259,8 @@
                             </div>
                             <div class="youtube-channel-content">
                                 <a href="single-post.html" class="channel-title">Sport Channel</a>
-                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Subscribe</a>
+                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
+                                        aria-hidden="true"></i> Subscribe</a>
                             </div>
                         </div>
 
@@ -248,7 +271,8 @@
                             </div>
                             <div class="youtube-channel-content">
                                 <a href="single-post.html" class="channel-title">Travel Channel</a>
-                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Subscribe</a>
+                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
+                                        aria-hidden="true"></i> Subscribe</a>
                             </div>
                         </div>
 
@@ -259,7 +283,8 @@
                             </div>
                             <div class="youtube-channel-content">
                                 <a href="single-post.html" class="channel-title">LifeStyle Channel</a>
-                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Subscribe</a>
+                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o"
+                                        aria-hidden="true"></i> Subscribe</a>
                             </div>
                         </div>
 
@@ -273,7 +298,8 @@
                         </div>
 
                         <div class="newsletter-form">
-                            <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
+                            <p>Subscribe our newsletter gor get notification about new updates, information discount,
+                                etc.</p>
                             <form action="#" method="get">
                                 <input type="search" name="widget-search" placeholder="Enter your email">
                                 <button type="submit" class="btn mag-btn w-100">Subscribe</button>

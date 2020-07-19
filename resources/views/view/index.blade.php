@@ -2,14 +2,16 @@
 @section('content')
 <div class="hero-area owl-carousel">
     <!-- Single Blog Post -->
-    <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(img/bg-img/1.jpg);">
+    <div class="hero-blog-post bg-img" style="background-image: url(img/bg-img/1.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <!-- Post Contetnt -->
                     <div class="post-content text-center">
-                        <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">Góc Nhìn Hàn Quốc</a>
-                        <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
+                        <a href="#" class="post-title" data-animation="fadeInUp" data-delay="300ms">Góc Nhìn Hàn
+                            Quốc</a>
+                        {{-- <a href="#" class="video-play" data-animation="bounceIn" data-delay="500ms"><i
+                                class="fa fa-play"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -17,14 +19,16 @@
     </div>
 
     <!-- Single Blog Post -->
-    <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(img/bg-img/2.jpg);">
+    <div class="hero-blog-post bg-img" style="background-image: url(img/bg-img/2.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <!-- Post Contetnt -->
                     <div class="post-content text-center">
-                        <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">Party Jokes Startling But Unnecessary</a>
-                        <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
+                        <a href="#" class="post-title" data-animation="fadeInUp" data-delay="300ms">Bắt đầu cuộc hành
+                            trình</a>
+                        {{-- <a href="#" class="video-play" data-animation="bounceIn" data-delay="500ms"><i
+                                class="fa fa-play"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -32,15 +36,17 @@
     </div>
 
     <!-- Single Blog Post -->
-    <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(img/bg-img/3.jpg);">
+    <div class="hero-blog-post bg-img" style="background-image: url(img/bg-img/3.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <!-- Post Contetnt -->
                     <div class="post-content text-center">
                         <div class="post-meta" data-animation="fadeInUp" data-delay="100ms"></div>
-                        <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">Party Jokes Startling But Unnecessary</a>
-                        <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
+                        <a href="#" class="post-title" data-animation="fadeInUp" data-delay="300ms">Khám phá nước
+                            Hàn</a>
+                        {{-- <a href="#" class="video-play" data-animation="bounceIn" data-delay="500ms"><i
+                                class="fa fa-play"></i></a> --}}
                     </div>
                 </div>
             </div>
@@ -51,7 +57,8 @@
 
 <!-- ##### Mag Posts Area Start ##### -->
 <section class="mag-posts-area d-flex flex-wrap">
-    <div class="mag-posts-content mt-30 mb-30 p-30 box-shadow" style="max-width: 100% !important; width: 100% !important">
+    <div class="mag-posts-content mt-30 mb-30 p-30 box-shadow"
+        style="max-width: 100% !important; width: 100% !important">
         <!-- Trending Now Posts Area -->
         <div class="trending-now-posts mb-30">
             <!-- Section Title -->
@@ -86,13 +93,16 @@
                         <div class="single-featured-post">
                             <!-- Thumbnail -->
                             <div class="post-thumbnail mb-50">
-                                <img src="https://tienghancoban.edu.vn/images/2018/03/13/du-hoc-han-quoc.jpg" width="100%" alt="">
+                                <img src="https://tienghancoban.edu.vn/images/2018/03/13/du-hoc-han-quoc.jpg"
+                                    width="100%" alt="">
                             </div>
                             <!-- Post Contetnt -->
                             <div class="post-content">
                                 <div class="post-meta"> </div>
                                 <a href="#" class="post-title">NHU CẦU CỦA BẠN?</a>
-                                <p>Đơn hàng xuất khẩu lao động đi làm việc tại Hàn Quốc của chúng tôi được tìm kiếm dựa trên sự tham vấn của chuyên gia, phù hợp với tiêu chí mà nhà tuyển dụng tìm kiếm ở nguồn nhân lực thế hệ mới. Hãy cho chúng tôi biết, nhu cầu của bạn là gì?</p>
+                                <p>Đơn hàng xuất khẩu lao động đi làm việc tại Hàn Quốc của chúng tôi được tìm kiếm dựa
+                                    trên sự tham vấn của chuyên gia, phù hợp với tiêu chí mà nhà tuyển dụng tìm kiếm ở
+                                    nguồn nhân lực thế hệ mới. Hãy cho chúng tôi biết, nhu cầu của bạn là gì?</p>
                             </div>
                             <!-- Post Share Area -->
                             <div class="post-share-area d-flex align-items-center justify-content-between">
@@ -104,10 +114,13 @@
                                     <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
                                     <!-- All Share Buttons -->
                                     <div class="all-share-btn d-flex">
-                                        <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#" class="facebook"><i class="fa fa-facebook"
+                                                aria-hidden="true"></i></a>
                                         <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                        <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                        <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        <a href="#" class="google-plus"><i class="fa fa-google-plus"
+                                                aria-hidden="true"></i></a>
+                                        <a href="#" class="instagram"><i class="fa fa-instagram"
+                                                aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -126,9 +139,11 @@
                                         <img src="{{ asset('images/'.$topnews->image) }}" alt="">
                                     </div>
                                     <div class="post-content">
-                                        <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-title">{{ $topnews->title }}</a>
+                                        <a href="{{ url('page/news/'.$topnews->slug) }}"
+                                            class="post-title">{{ $topnews->title }}</a>
                                         <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $topnews->view_count }}</a>
+                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                {{ $topnews->view_count }}</a>
                                             <!--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
                                             <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>-->
                                         </div>
@@ -147,7 +162,7 @@
         <div class="most-viewed-videos mb-30">
             <!-- Section Title -->
             <div class="section-heading">
-                <h5>Most Viewed Videos</h5>
+                <h5>Công việc vừa đăng</h5>
             </div>
 
             <div class="most-viewed-videos-slide owl-carousel">
@@ -189,15 +204,15 @@
                     <!-- Post Contetnt -->
                     <div class="post-content">
                         <a href="{{ url('page/rework/'.$rework->slug) }}" class="post-title">{{ $rework->title }}</a>
-                        <p>{{\substr($rework->details, 0, 100)}}</p>
+                        <p>{!!\substr($rework->details, 0, 100)!!}</p>
                     </div>
                     <!-- Post Share Area -->
                     <div class="post-share-area d-flex align-items-center justify-content-between">
                         <!-- Post Meta -->
                         <div class="post-meta pl-3">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $rework->view_count }}</a>
+                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $rework->view_count }}</a>
                             <!--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>-->  
+                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>-->
                         </div>
                         <!-- Share Info -->
                         <div class="share-info">
@@ -223,7 +238,8 @@
                             <img src="img/bg-img/31.jpg" alt="">
                         </div>
                         <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is Alive</a>
+                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                                Alive</a>
                             <div class="post-meta d-flex">
                                 <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                 <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
@@ -240,7 +256,8 @@
                             <img src="img/bg-img/32.jpg" alt="">
                         </div>
                         <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is Alive</a>
+                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                                Alive</a>
                             <div class="post-meta d-flex">
                                 <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                 <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
@@ -257,7 +274,8 @@
                             <img src="img/bg-img/33.jpg" alt="">
                         </div>
                         <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is Alive</a>
+                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                                Alive</a>
                             <div class="post-meta d-flex">
                                 <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                 <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
@@ -274,7 +292,8 @@
                             <img src="img/bg-img/34.jpg" alt="">
                         </div>
                         <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is Alive</a>
+                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                                Alive</a>
                             <div class="post-meta d-flex">
                                 <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                 <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
