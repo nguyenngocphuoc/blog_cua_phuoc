@@ -77,4 +77,12 @@ class FrontController extends Controller
         return view('view.archive',compact('newsarchives'));
     }
 
+    public function pageArchiveCategory($slug)
+    {
+        $category = Category::latest()->where('slug', $slug)->first();
+        $listRework = ReWork::latest()->where('category_id', $category->id)->get();
+        // return $listRework;
+        return view('view.archive_category',compact('category', 'listRework'));
+    }
+
 }

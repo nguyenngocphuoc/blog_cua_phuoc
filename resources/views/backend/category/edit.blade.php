@@ -44,6 +44,19 @@
                                 id="categoryname">
                         </div>
                         <div class="form-group">
+                            <label for="categoryname">Nhóm thể loại</label>
+                            <select id="group_categories_id" name="group_categories_id" class="form-control has-feedback{{ $errors->has('group_categories_id') ? ' has-error' : '' }}">
+                                @foreach($arrGroupCategory as $key => $topnews)
+                                @if ($category->group_categories_id == $topnews->id)
+                                <option selected value="{{$topnews->id}}">{{$topnews->name}}</option>
+                                @endif
+                                @if ($category->group_categories_id != $topnews->id)
+                                <option value="{{$topnews->id}}">{{$topnews->name}}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="categoryimage">Hình ảnh của thể loại</label>
                             <input type="file" name="image" id="categoryimage">
                             <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
