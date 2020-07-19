@@ -65,7 +65,7 @@
                 <div class="single-trending-post">
                     <img src="{{ asset('images/'.$topnews->image) }}" alt="">
                     <div class="post-content">
-                        <a href="#" class="post-cata">{{ $topnews->title }}</a>
+                        <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-cata">{{ $topnews->title }}</a>
                     </div>
                 </div>
                 @endforeach

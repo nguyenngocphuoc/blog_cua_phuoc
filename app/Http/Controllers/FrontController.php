@@ -74,7 +74,7 @@ class FrontController extends Controller
     {
         $newsarchives = Category::with('newslist')->whereHas('newslist')->get();
 
-        return view('frontend.pages.index',compact('newsarchives'));
+        return view('view.archive',compact('newsarchives'));
     }
 
 }
