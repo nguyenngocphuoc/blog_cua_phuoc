@@ -14,7 +14,7 @@
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <div class="breadcrumb-content">
-                            <h2>Contact Us</h2>
+                            <h2>Liên hệ với chúng tôi</h2>
                         </div>
                     </div>
                 </div>
@@ -54,6 +54,7 @@
 
                         <form action="{{ route('contact') }}" method="post">
                             @csrf
+                            <div style="margin: 5px;">Họ và tên</div>
                             <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <input type="text" name="name" class="form-control" placeholder="Họ và tên"
                                     value="{{ old('name') }}">
@@ -64,6 +65,7 @@
                                 </span>
                                 @endif
                             </div>
+                            <div style="margin: 5px;">Email</div>
                             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <input type="email" name="email" class="form-control" placeholder="Email"
                                     value="{{ old('email') }}">
@@ -74,12 +76,35 @@
                                 </span>
                                 @endif
                             </div>
+                            <div style="margin: 5px;">Ngày sinh</div>
                             <div class="form-group {{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
                                 <input style="padding-right: 5px;" type="date" name="date_of_birth" class="form-control"
                                     placeholder="Ngày sinh" value="{{ old('date_of_birth') }}">
                                 @if ($errors->has('date_of_birth'))
                                 <span class="help-block">
                                     <em>{{ $errors->first('date_of_birth') }}</em>
+                                </span>
+                                @endif
+                            </div>
+                            <div style="margin: 5px;">Địa chỉ hiện tại</div>
+                            <div class="form-group has-feedback{{ $errors->has('address') ? ' has-error' : '' }}">
+                                <input type="address" name="address" class="form-control" placeholder="Địa chỉ"
+                                    value="{{ old('address') }}">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                @if ($errors->has('address'))
+                                <span class="help-block">
+                                    <em>{{ $errors->first('address') }}</em>
+                                </span>
+                                @endif
+                            </div>
+                            <div style="margin: 5px;">Số điện thoại</div>
+                            <div class="form-group has-feedback{{ $errors->has('phone') ? ' has-error' : '' }}">
+                                <input type="phone" name="phone" class="form-control" placeholder="Số điện thoại"
+                                    value="{{ old('phone') }}">
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                @if ($errors->has('phone'))
+                                <span class="help-block">
+                                    <em>{{ $errors->first('phone') }}</em>
                                 </span>
                                 @endif
                             </div>
@@ -102,30 +127,10 @@
                                 </span>
                                 @endif
                             </div>
-                            <div class="form-group has-feedback{{ $errors->has('address') ? ' has-error' : '' }}">
-                                <input type="address" name="address" class="form-control" placeholder="Địa chỉ"
-                                    value="{{ old('address') }}">
-                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                                @if ($errors->has('address'))
-                                <span class="help-block">
-                                    <em>{{ $errors->first('address') }}</em>
-                                </span>
-                                @endif
-                            </div>
-                            <div class="form-group has-feedback{{ $errors->has('phone') ? ' has-error' : '' }}">
-                                <input type="phone" name="phone" class="form-control" placeholder="Số điện thoại"
-                                    value="{{ old('phone') }}">
-                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                                @if ($errors->has('phone'))
-                                <span class="help-block">
-                                    <em>{{ $errors->first('phone') }}</em>
-                                </span>
-                                @endif
-                            </div>
 
                             <div class="row">
                                 <div class="col-12">
-                                    <button class="btn mag-btn mt-30" type="submit">Send</button>
+                                    <button class="btn mag-btn mt-30" type="submit">Gởi</button>
                                 </div>
                             </div>
 
@@ -133,7 +138,7 @@
                         <br />
                         <!-- Section Title -->
                         <div class="section-heading">
-                            <h5>Contact Info</h5>
+                            <h5>THÔNG TIN LIÊN LẠC</h5>
                         </div>
 
                         <div class="contact-information mb-30">
@@ -144,13 +149,13 @@
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 </div>
                                 <div class="text">
-                                    <p>Our Office:</p>
-                                    <h6>5520 Quebec Place, Brooklyn, NY , USA 10000</h6>
+                                    <p>Địa chỉ:</p>
+                                    <h6>Số 06 - Ngõ 112 - Đ.Nguyễn Trãi - Tp.Vinh</h6>
                                 </div>
                             </div>
 
                             <!-- Single Contact Info -->
-                            <div class="single-contact-info d-flex align-items-center">
+                            <!-- <div class="single-contact-info d-flex align-items-center">
                                 <div class="icon mr-15">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
                                 </div>
@@ -158,7 +163,7 @@
                                     <p>Email:</p>
                                     <h6>infodeercreative@gmail.com</h6>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- Single Contact Info -->
                             <div class="single-contact-info d-flex align-items-center">
@@ -166,8 +171,8 @@
                                     <i class="fa fa-phone" aria-hidden="true"></i>
                                 </div>
                                 <div class="text">
-                                    <p>Phone:</p>
-                                    <h6>(+88) 012-3455-0028</h6>
+                                    <p>Tel:</p>
+                                    <h6>0977 466 919 (Mr. Hồng) <br/><br/> 09078 619 697 (Mr. Quân) <br/><br/> 0962 276 316 (Mr. Tuấn)</h6>
                                 </div>
                             </div>
                         </div>
