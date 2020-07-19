@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $arrGroupCategory = GroupCategory::get();
+        $arrGroupCategory = GroupCategory::latest()->get();
         return view('backend.category.create', compact('arrGroupCategory'));
     }
 
@@ -69,8 +69,8 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         $category = Category::findOrFail($category->id);
-
-        return view('backend.category.edit', compact('category'));
+        $arrGroupCategory = GroupCategory::latest()->get();
+        return view('backend.category.edit', compact('category', 'arrGroupCategory'));
     }
 
 
@@ -78,7 +78,8 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name'   => 'required|max:255',
-            'image'  => 'image|mimes:jpg,png,jpeg'
+            'image'  => 'image|mimes:jpg,png,jpeg',
+            'group_categories_id'  => 'required|max:2'
         ]);
 
         if(isset($request->status)){
@@ -106,7 +107,8 @@ class CategoryController extends Controller
             'name'   => $request->name,
             'slug'   => str_slug($request->name),
             'image'  => $imageName,
-            'status' => $status
+            'status' => $status,
+            'group_categories_id' => $request->group_categories_id,
         ]);
 
         return redirect()->route('admin.category.index')->with(['message' => 'Category updated successfully!']);

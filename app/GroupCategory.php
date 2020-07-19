@@ -13,4 +13,8 @@ class GroupCategory extends Model
     {
         return $this->hasMany('App\Category');
     }
+    public function groupCategorylist()
+    {
+        return $this->hasMany('App\GroupCategory');
+    }
 }

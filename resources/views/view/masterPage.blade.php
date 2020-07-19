@@ -61,7 +61,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="index.html">Trang chủ</a></li>
                                     <li><a href="#">GIỚI THIỆU</a>
                                         <ul class="dropdown">
                                             <li><a href="index.html">Về chúng tôi</a></li>
@@ -69,9 +69,24 @@
                                             <li><a href="">Góc Hàn Quốc</a></li>
                                         </ul>
                                     </li>
+                                    
                                     <li><a href="#">HỌC TẬP & VIỆC LÀM</a>
                                         <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
+                                            <!-- {{$arrGroupCategory = \App\GroupCategory::latest()->get()}} -->
+                                            @foreach($arrGroupCategory as $key => $group)
+                                                <ul class="single-mega cn-col-4">
+                                                    <a><b>{{$group->name}}</b></a>
+                                                    <!-- {{$categorys = \App\Category::where("group_categories_id",$group->id)->get()}} -->
+                                                    @foreach($categorys as $key => $category)
+                                                        <li><a href="{{ url('/page/category/'.$category->slug) }}">{{$category->name}}</a></li>
+                                                    @endforeach
+                                                    <!-- <li><a href="archive.html">Cơ hội việc làm</a></li>
+                                                    <li><a href="index.html">Thông tin chương trình</a></li>
+                                                    <li><a href="archive.html">Top các trường ĐH Hàn Quốc</a></li>
+                                                    <li><a href="archive.html">Các trường đào tạo ngôn ngữ Hàn</a></li> -->
+                                                </ul>
+                                            @endforeach
+                                            <!-- <ul class="single-mega cn-col-4">
                                                 <a><b>THÔNG TIN</b></a>
                                                 <li><a href="archive.html">Cơ hội việc làm</a></li>
                                                 <li><a href="index.html">Thông tin chương trình</a></li>
@@ -99,7 +114,7 @@
                                                 <li><a href="{{url('contact')}}">Ngành truyền thông</a></li>
                                                 <li><a href="contact.html">Ngành thẩm mỹ và Nghệ thuật làm đẹp</a></li>
                                                 <li><a href="login.html">Ngành kinh tế</a></li>
-                                            </ul>
+                                            </ul> -->
                                         </div>
                                     </li>
                                     <li><a href="{{url('contact')}}">ĐĂNG KÝ TƯ VẤN</a></li>
