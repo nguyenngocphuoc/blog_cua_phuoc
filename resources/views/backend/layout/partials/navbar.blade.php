@@ -1,4 +1,5 @@
 <header class="main-header">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <!-- Logo -->
     <a href="{{ route('dashboard') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -18,37 +19,33 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
-                <!--{{ $submited = \App\InfoSubmit::get() }}-->
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="label label-success">{{\count($submited)}}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">You have {{\count($submited)}} messages</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            <ul class="menu">
-                                @foreach($submited as $key => $value)
-                                <li>
-                                    <!-- start message -->
-                                    <a href="#">
-                                        <div class="pull-left">
-                                            <img src="{{ asset('backend/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
-                                        </div>
-                                        <h4>
-                                            {{ $value->orders }}
-                                            <small><i class="fa fa-clock-o"></i> {{ $value->created_at->diffForHumans() }}</small>
-                                        </h4>
-                                        <p>{{ $value->name }}</p>
-                                    </a>
-                                </li>
-                                <!-- end message -->
-                                @endforeach
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
-                    </ul>
+                <script>
+                        $.ajax({ 
+                            type: "GET",
+                            url: "{{url('api/submit-info/notify')}}",
+                            success: function(data){        
+                                $("#notifyPlace").html(data);
+                            }
+                        });
+                    var delayInMilliseconds = 5000; //1 second
+                    setInterval(function() {
+                        if($("ul.dropdown-menu").css('display') == 'none')
+                        {
+                            $.ajax({ 
+                                type: "GET",
+                                url: "{{url('api/submit-info/notify')}}",
+                                success: function(data){        
+                                    $("#notifyPlace").html(data);
+                                }
+                            });
+                        }
+                    }, delayInMilliseconds)
+                
+
+   
+                </script>
+                <li id="notifyPlace" class="dropdown messages-menu">
+
                 </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">

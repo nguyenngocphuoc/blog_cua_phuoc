@@ -17,7 +17,7 @@ class InfoSubmitController extends Controller
 
     public function index()
     {
-        $listInfoSubmit = InfoSubmit::with('groupCategory')->latest()->get();
+        $listInfoSubmit = InfoSubmit::latest()->get();
 
         return view('backend.info_submit.index', compact('listInfoSubmit'));
     }
@@ -57,7 +57,7 @@ class InfoSubmitController extends Controller
 
     public function destroy(InfoSubmit $infoSubmit)
     {
-        $infoSubmit = InfoSubmit::findOrFail($group_category->id);
+        $infoSubmit = InfoSubmit::findOrFail($infoSubmit->id);
 
         // if(file_exists(public_path('images/') . $group_category->image)){
         //     unlink(public_path('images/') . $group_category->image);
@@ -68,5 +68,18 @@ class InfoSubmitController extends Controller
         return back()->with(['message' => 'Info deleted successfully!']);
     }
 
+    public function readed($id)
+    {
+        $infoSubmit = InfoSubmit::whereId($id)->update([
+            'status'        => 1
+        ]);
+        return 'successfully!';
+    }
+
+    public function unreadedNotify()
+    {
+        return view('backend.layout.partials.notify');
+    }
+    
 
 }

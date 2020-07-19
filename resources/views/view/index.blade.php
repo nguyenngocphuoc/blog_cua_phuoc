@@ -61,12 +61,11 @@
 
             <div class="trending-post-slides owl-carousel">
                 <!-- Single Trending Post -->
-                @foreach($newscategory_one as $key => $topnews)
+                @foreach($newestlist as $key => $topnews)
                 <div class="single-trending-post">
                     <img src="{{ asset('images/'.$topnews->image) }}" alt="">
                     <div class="post-content">
-                        <a href="#" class="post-cata">{{ @$topnews->category->name }}</a>
-                        <a href="video-post.html" class="post-title">{{ $topnews->title }}</a>
+                        <a href="#" class="post-cata">{{ $topnews->title }}</a>
                     </div>
                 </div>
                 @endforeach
@@ -87,22 +86,18 @@
                         <div class="single-featured-post">
                             <!-- Thumbnail -->
                             <div class="post-thumbnail mb-50">
-                                <img src="img/bg-img/22.jpg" alt="">
-                                <a href="video-post.html" class="video-play"><i class="fa fa-play"></i></a>
+                                <img src="https://tienghancoban.edu.vn/images/2018/03/13/du-hoc-han-quoc.jpg" width="100%" alt="">
                             </div>
                             <!-- Post Contetnt -->
                             <div class="post-content">
                                 <div class="post-meta"> </div>
-                                <a href="video-post.html" class="post-title">A Closer Look At Our Front Porch Items From Lowe’s</a>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                                <a href="#" class="post-title">NHU CẦU CỦA BẠN?</a>
+                                <p>Đơn hàng xuất khẩu lao động đi làm việc tại Hàn Quốc của chúng tôi được tìm kiếm dựa trên sự tham vấn của chuyên gia, phù hợp với tiêu chí mà nhà tuyển dụng tìm kiếm ở nguồn nhân lực thế hệ mới. Hãy cho chúng tôi biết, nhu cầu của bạn là gì?</p>
                             </div>
                             <!-- Post Share Area -->
                             <div class="post-share-area d-flex align-items-center justify-content-between">
                                 <!-- Post Meta -->
                                 <div class="post-meta pl-3">
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
                                 </div>
                                 <!-- Share Info -->
                                 <div class="share-info">
@@ -122,83 +117,6 @@
                     <div class="col-12 col-lg-5">
                         <!-- Featured Video Posts Slide -->
                         <div class="featured-video-posts-slide owl-carousel">
-
-                            <div class="single--slide">
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex style-3">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/23.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Global Resorts Network Grn Putting Timeshares To Shame</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex style-3">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/24.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex style-3">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/25.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">American Standards And European Culture How To Avoid</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex style-3">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/26.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Mother Earth Hosts Our Travels</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex style-3">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/27.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is Alive</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="single--slide">
                                 <!-- Single Blog Post -->

@@ -12,15 +12,15 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $topnewslist = News::latest()->whereHas('category')->where('status',1)->take(5)->get();
+        $newestlist = News::latest()->whereHas('category')->where('status',1)->take(5)->get();
 
-        $newscategory_one   = News::latest()->whereHas('category')->where('category_id',6)->where('status',1)->take(9)->get();
+        $topnewslist   = News::orderBy("view_count")->take(9)->get();
         $newscategory_two   = News::latest()->whereHas('category')->where('category_id',7)->where('status',1)->take(3)->get();
         $newscategory_three = News::latest()->whereHas('category')->where('category_id',3)->where('status',1)->take(10)->get();
 
         return view('view.index',compact(
                 'topnewslist',
-                'newscategory_one',
+                'newestlist',
                 'newscategory_two',
                 'newscategory_three'
             )
