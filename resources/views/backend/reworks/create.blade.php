@@ -31,12 +31,16 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="reworkstitle">Tiêu đề</label>
-                            <input type="text" name="title" class="form-control" id="reworkstitle">
+                            <input value="{{ old('title')}}" type="text" name="title" class="form-control"
+                                id="reworkstitle">
                         </div>
                         <div class="form-group">
                             <label>Yêu cầu công việc</label>
-                            <textarea class="textarea" name="details" placeholder="Nhập yêu cầu công việc..."
-                                style="width: 100%; height: 285px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                            <textarea class="textarea" name="details"
+                                placeholder="Nhập yêu cầu công việc..."
+                                style="width: 100%; height: 285px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                {{old('details')}}
+                            </textarea>
                         </div>
                     </div>
                 </div>
@@ -70,23 +74,25 @@
                             <label>CHI TIẾT CÔNG VIỆC</label>
                             <div class="form-inline col-sm-12">
                                 <span class="col-sm-4">Địa điểm làm việc:</span>
-                                <input name="work_address" type="text" style="height: 30px;" class="form-control col-sm-8"
+                                <input value="{{ old('work_address')}}" name="work_address" type="text"
+                                    style="height: 30px;" class="form-control col-sm-8"
                                     placeholder="Nhập địa chỉ làm việc" id="address">
                             </div>
                             <div class="form-inline col-sm-12" style="margin-top: 10px;">
                                 <span class="col-sm-4">Hạn nộp hồ sơ:</span>
-                                <input name="deadline_for_sub" type="text" style="height: 30px;" class="form-control col-sm-8"
-                                    placeholder="Nhập hạn nộp hồ sơ" id="deadForSub">
+                                <input value="{{ old('deadline_for_sub')}}" name="deadline_for_sub" type="text"
+                                    style="height: 30px;" class="form-control col-sm-8" placeholder="Nhập hạn nộp hồ sơ"
+                                    id="deadForSub">
                             </div>
                             <div class="form-inline col-sm-12" style="margin-top: 10px;">
                                 <span class="col-sm-4">Mức lương cơ bản:</span>
-                                <input name="salary" type="text" style="height: 30px;" class="form-control col-sm-8"
-                                    placeholder="Nhập mức lương cơ bản" id="salary">
+                                <input value="{{ old('salary')}}" name="salary" type="text" style="height: 30px;"
+                                    class="form-control col-sm-8" placeholder="Nhập mức lương cơ bản" id="salary">
                             </div>
                             <div class="form-inline col-sm-12" style="margin-top: 10px;">
                                 <span class="col-sm-4">Số lượng tuyển dụng:</span>
-                                <input name="emp_total" type="text" style="height: 30px;" class="form-control col-sm-8"
-                                    placeholder="Nhập số lượng tuyển dụng" id="empTotal">
+                                <input value="{{ old('emp_total')}}" name="emp_total" type="text" style="height: 30px;"
+                                    class="form-control col-sm-8" placeholder="Nhập số lượng tuyển dụng" id="empTotal">
                             </div>
                         </div>
                         <div class="box-footer form-inline col-sm-12" style="margin-top: 10px;">
