@@ -14,13 +14,13 @@ z
             @elseif(isset($setting) && $setting['site_name'])
             {{ $setting['site_name'] }}
             @else
-            <b>NEWS</b> PORTAL
+            <b>ADMIN</b>
             @endif
         </a>
     </div>
 
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Đăng nhập vào trang ADMIN</p>
 
         @if (session()->has('errorcredentials'))
         <div class="text-center has-error">
@@ -55,11 +55,7 @@ z
             </div>
             <div class="row">
                 <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                        </label>
-                    </div>
+
                 </div>
 
                 <div class="col-xs-4">
@@ -68,19 +64,6 @@ z
             </div>
 
         </form>
-
-        <div class="social-auth-links text-center">
-            <p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-                Facebook
-            </a>
-            <a href="{{ route('login.google') }}" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-                Google+
-            </a>
-        </div>
-
-        <a href="#">I forgot my password</a><br>
-
     </div>
 
 </div>

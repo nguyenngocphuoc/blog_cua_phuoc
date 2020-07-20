@@ -10,8 +10,9 @@
 
 <section class="content-header">
     <h1>
-        Tạo mới thể loại
-        <small><a href="{{ route('admin.group-category.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i class="fa fa-plus"></i> Quay về</a></small>
+        Tạo mới nhóm thể loại
+        <small><a href="{{ route('admin.group-category.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i
+                    class="fa fa-plus"></i> Quay về</a></small>
     </h1>
     <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -23,19 +24,21 @@
 <section class="content">
     <div class="row">
 
-        <form action="{{ route('admin.group-category.store') }}" method="POST" enctype="multipart/form-data" role="form">
+        <form action="{{ route('admin.group-category.store') }}" method="POST" enctype="multipart/form-data"
+            role="form">
             @csrf
 
             <div class="col-md-6">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Tạo mới một thể loại</h3>
+                        <h3 class="box-title">Tạo mới một nhóm thể loại</h3>
                     </div>
 
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="groupcategoryname">Tên thể loại</label>
-                            <input type="text" name="name" class="form-control" id="groupcategoryname" value="{{ old('name') }}">
+                            <label for="groupcategoryname">Tên nhóm thể loại</label>
+                            <input type="text" name="name" class="form-control" id="groupcategoryname"
+                                value="{{ old('name') }}">
                         </div>
                     </div>
                 </div>
@@ -43,7 +46,7 @@
             <div class="col-md-6">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Hình ảnh của thể loại</h3>
+                        <h3 class="box-title">Hình ảnh của nhóm thể loại</h3>
                     </div>
                     <div class="box-body">
                         <div class="form-group">

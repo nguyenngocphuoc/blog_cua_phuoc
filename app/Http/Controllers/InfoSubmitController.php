@@ -18,7 +18,6 @@ class InfoSubmitController extends Controller
     public function index()
     {
         $listInfoSubmit = InfoSubmit::latest()->get();
-
         return view('backend.info_submit.index', compact('listInfoSubmit'));
     }
 
@@ -31,10 +30,9 @@ class InfoSubmitController extends Controller
 
     public function registration(Request $request)
     {
-
         $request->validate([
             'name'           => 'required|string|max:255',
-            'email'          => 'required|string|email|max:255',
+            'email'          => 'max:255',
             'date_of_birth'  => 'max:10',
             'orders'         => 'required|string|min:1',
             'phone'          => 'required|string|min:1|max:15',
@@ -47,7 +45,7 @@ class InfoSubmitController extends Controller
             'date_of_birth' => $request->date_of_birth,
             'phone'         => $request->phone,
             'address'       => $request->address,
-            'group_category_id'  => $request->orders
+            'orders'        => $request->orders
         ]);
         // return view('authentication.register',compact('arrCategory'));
         // return Redirect::back()->withErrors(['msg', 'The Message']);
@@ -80,6 +78,6 @@ class InfoSubmitController extends Controller
     {
         return view('backend.layout.partials.notify');
     }
-    
+
 
 }

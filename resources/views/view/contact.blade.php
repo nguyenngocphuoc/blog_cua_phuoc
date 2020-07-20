@@ -113,11 +113,11 @@
                                 <select id="orders" name="orders"
                                     class="form-control has-feedback{{ $errors->has('orders') ? ' has-error' : '' }}">
                                     @foreach($arrCategory as $key => $topnews)
-                                    @if (old('orders') == $topnews->id)
-                                    <option selected value="{{$topnews->id}}">{{$topnews->name}}</option>
+                                    @if (old('orders') == $topnews->name)
+                                    <option selected value="{{$topnews->name}}">{{$topnews->name}}</option>
                                     @endif
-                                    @if (old('orders')!= $topnews->id)
-                                    <option value="{{$topnews->id}}">{{$topnews->name}}</option>
+                                    @if (old('orders')!= $topnews->name)
+                                    <option value="{{$topnews->name}}">{{$topnews->name}}</option>
                                     @endif
                                     @endforeach
                                 </select>
@@ -172,7 +172,8 @@
                                 </div>
                                 <div class="text">
                                     <p>Tel:</p>
-                                    <h6>0977 466 919 (Mr. Hồng) <br/><br/> 09078 619 697 (Mr. Quân) <br/><br/> 0962 276 316 (Mr. Tuấn)</h6>
+                                    <h6>0977 466 919 (Mr. Hồng) <br /><br /> 09078 619 697 (Mr. Quân) <br /><br /> 0962
+                                        276 316 (Mr. Tuấn)</h6>
                                 </div>
                             </div>
                         </div>

@@ -31,7 +31,11 @@ class ReWorkController extends Controller
             'title'         => 'required|unique:reworks|max:255',
             'details'       => 'required',
             'category_id'   => 'required',
-            'image'         => 'required|image|mimes:jpg,png,jpeg'
+            'image'         => 'required|image|mimes:jpg,png,jpeg',
+            'work_address'  => 'required',
+            'deadline_for_sub'  => 'required',
+            'salary'  => 'required',
+            'emp_total'  => 'required'
         ]);
 
         // if(isset($request->status)){
@@ -89,7 +93,11 @@ class ReWorkController extends Controller
             'title'         => 'required|max:255',
             'details'       => 'required',
             'category_id'   => 'required',
-            'image'         => 'image|mimes:jpg,png,jpeg'
+            'image'         => 'image|mimes:jpg,png,jpeg',
+            'work_address'  => 'required',
+            'deadline_for_sub'  => 'required',
+            'salary'  => 'required',
+            'emp_total'  => 'required',
         ]);
 
         if(isset($request->status)){
@@ -143,5 +151,13 @@ class ReWorkController extends Controller
         }
         $reworks->delete();
         return back()->with(['message' => 'Xóa thành công!']);
+    }
+
+    public function postSearch(Request $request)
+    {
+        $reworks = ReWork::select('*')->where('title', 'like', '%' .$request->resultSearch. '%')
+                ->orWhere('slug', 'like', '%'.$request->resultSearch.'%')
+                ->orWhere('details', 'like', '%'.$request->resultSearch.'%')->get();
+        return view('view.archive', compact('reworks'));
     }
 }
