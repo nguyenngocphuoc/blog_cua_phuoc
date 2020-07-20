@@ -53,8 +53,13 @@
                         <div class="form-group">
                             <label>Phân loại công việc</label>
                             <select name="category_id" class="form-control select2" style="width: 100%;">
-                                @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @foreach($categories as $key => $category)
+                                @if ($reworks->category_id == $category->id)
+                                <option selected value="{{$category->id}}">{{$category->name}}</option>
+                                @endif
+                                @if ($reworks->category_id != $category->id)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endif
                                 @endforeach
                             </select>
                         </div>
@@ -75,13 +80,15 @@
                             <label>CHI TIẾT CÔNG VIỆC</label>
                             <div class="form-inline col-sm-12">
                                 <span class="col-sm-4">Địa điểm làm việc:</span>
-                                <input name="work_address" type="text" style="height: 30px;" value="{{ $reworks->work_address }}"
-                                    class="form-control col-sm-8" placeholder="Nhập địa chỉ làm việc" id="address">
+                                <input name="work_address" type="text" style="height: 30px;"
+                                    value="{{ $reworks->work_address }}" class="form-control col-sm-8"
+                                    placeholder="Nhập địa chỉ làm việc" id="address">
                             </div>
                             <div class="form-inline col-sm-12" style="margin-top: 10px;">
                                 <span class="col-sm-4">Hạn nộp hồ sơ:</span>
-                                <input name="deadline_for_sub" type="text" style="height: 30px;" value="{{ $reworks->deadline_for_sub }}"
-                                    class="form-control col-sm-8" placeholder="Nhập hạn nộp hồ sơ" id="deadForSub">
+                                <input name="deadline_for_sub" type="text" style="height: 30px;"
+                                    value="{{ $reworks->deadline_for_sub }}" class="form-control col-sm-8"
+                                    placeholder="Nhập hạn nộp hồ sơ" id="deadForSub">
                             </div>
                             <div class="form-inline col-sm-12" style="margin-top: 10px;">
                                 <span class="col-sm-4">Mức lương cơ bản:</span>
@@ -91,7 +98,8 @@
                             <div class="form-inline col-sm-12" style="margin-top: 10px;">
                                 <span class="col-sm-4">Số lượng tuyển dụng:</span>
                                 <input name="emp_total" type="text" style="height: 30px;" class="form-control col-sm-8"
-                                    placeholder="Nhập số lượng tuyển dụng" id="empTotal" value="{{ $reworks->emp_total }}">
+                                    placeholder="Nhập số lượng tuyển dụng" id="empTotal"
+                                    value="{{ $reworks->emp_total }}">
                             </div>
                         </div>
                         <div class="box-footer form-inline col-sm-12" style="margin-top: 10px;">
@@ -110,7 +118,7 @@
 <script src="{{ asset('backend/plugins/iCheck/icheck.min.js') }}"></script>
 <script src="{{ asset('backend/components/select2/dist/js/select2.full.min.js') }}"></script>
 <script>
-$(function() {
+    $(function() {
 
     $('.select2').select2();
 
