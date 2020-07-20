@@ -1,5 +1,5 @@
 <header class="main-header">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <!-- Logo -->
     <a href="{{ route('dashboard') }}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -20,10 +20,10 @@
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
                 <script>
-                        $.ajax({ 
+                    $.ajax({
                             type: "GET",
                             url: "{{url('api/submit-info/notify')}}",
-                            success: function(data){        
+                            success: function(data){
                                 $("#notifyPlace").html(data);
                             }
                         });
@@ -31,18 +31,18 @@
                     setInterval(function() {
                         if($("ul.dropdown-menu").css('display') == 'none')
                         {
-                            $.ajax({ 
+                            $.ajax({
                                 type: "GET",
                                 url: "{{url('api/submit-info/notify')}}",
-                                success: function(data){        
+                                success: function(data){
                                     $("#notifyPlace").html(data);
                                 }
                             });
                         }
                     }, delayInMilliseconds)
-                
 
-   
+
+
                 </script>
                 <li id="notifyPlace" class="dropdown messages-menu">
 
@@ -69,14 +69,16 @@
                                 <a href="{{ route('profile.update') }}" class="btn btn-success btn-flat">Profile</a>
                             </div>
                             <div>
-                                <a href="{{ route('home') }}" target="_blank" class="btn btn-info btn-flat">Visit Website</a>
+                                <a href="{{ route('home') }}" target="_blank" class="btn btn-info btn-flat">Visit
+                                    Website</a>
                             </div>
                             <div class="pull-right">
                                 <a href="javascript:void(0)" class="btn btn-danger btn-flat" onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
                                     Sign out
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    style="display: none;">
                                     @csrf
                                 </form>
                             </div>
