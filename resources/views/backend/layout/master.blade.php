@@ -14,7 +14,7 @@
         <!-- Ionicons -->
         <link rel="stylesheet" href="{{ asset('backend/components/Ionicons/css/ionicons.min.css') }}">
 
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
 
         @stack('styles')
 
@@ -91,7 +91,7 @@
         <!-- AdminLTE for demo purposes -->
         <script src="{{ asset('backend/dist/js/demo.js') }}"></script>
         
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script>
             // toastr.options.closeButton = true;
             @if(Session::has('message'))
