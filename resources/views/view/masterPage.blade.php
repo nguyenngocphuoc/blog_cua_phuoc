@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <p id="myBtn" title="Go to top"><a href="tel:+84947467073">+84947467073</a></p>
+   
     
     <div id="messageDivId">
         @if ( session()->has('messageSuccess') )
