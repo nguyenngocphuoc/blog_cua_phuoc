@@ -187,7 +187,7 @@
         </div>
 
         <!-- Sports Videos -->
-        <div class="sports-videos-area">
+        {{-- <div class="sports-videos-area">
             <!-- Section Title -->
             <div class="section-heading">
                 <h5>Sports Videos</h5>
@@ -200,111 +200,111 @@
                     <!-- Thumbnail -->
                     <div class="post-thumbnail mb-50">
                         <img src="{{ asset('images/'.$rework->image) }}" alt="" style="width: 550px; height: 450px">
-                    </div>
-                    <!-- Post Contetnt -->
-                    <div class="post-content">
-                        <a href="{{ url('page/rework/'.$rework->slug) }}" class="post-title">{{ $rework->title }}</a>
-                        <p>{!!\substr($rework->details, 0, 100)!!}</p>
-                    </div>
-                    <!-- Post Share Area -->
-                    <div class="post-share-area d-flex align-items-center justify-content-between">
-                        <!-- Post Meta -->
-                        <div class="post-meta pl-3">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $rework->view_count }}</a>
-                            <!--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
+    </div>
+    <!-- Post Contetnt -->
+    <div class="post-content">
+        <a href="{{ url('page/rework/'.$rework->slug) }}" class="post-title">{{ $rework->title }}</a>
+        <p>{!!\substr($rework->details, 0, 100)!!}</p>
+    </div>
+    <!-- Post Share Area -->
+    <div class="post-share-area d-flex align-items-center justify-content-between">
+        <!-- Post Meta -->
+        <div class="post-meta pl-3">
+            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $rework->view_count }}</a>
+            <!--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
                             <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>-->
-                        </div>
-                        <!-- Share Info -->
-                        <div class="share-info">
-                            <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                            <!-- All Share Buttons -->
-                            <div class="all-share-btn d-flex">
-                                <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-
-            <div class="row">
-                <!-- Single Blog Post -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-blog-post d-flex style-3 mb-30">
-                        <div class="post-thumbnail">
-                            <img src="img/bg-img/31.jpg" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
-                                Alive</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-blog-post d-flex style-3 mb-30">
-                        <div class="post-thumbnail">
-                            <img src="img/bg-img/32.jpg" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
-                                Alive</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-blog-post d-flex style-3 mb-30">
-                        <div class="post-thumbnail">
-                            <img src="img/bg-img/33.jpg" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
-                                Alive</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="col-12 col-lg-6">
-                    <div class="single-blog-post d-flex style-3 mb-30">
-                        <div class="post-thumbnail">
-                            <img src="img/bg-img/34.jpg" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
-                                Alive</a>
-                            <div class="post-meta d-flex">
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+        <!-- Share Info -->
+        <div class="share-info">
+            <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+            <!-- All Share Buttons -->
+            <div class="all-share-btn d-flex">
+                <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    @endforeach
+    </div> --}}
+
+    <div class="row">
+        <!-- Single Blog Post -->
+        <div class="col-12 col-lg-6">
+            <div class="single-blog-post d-flex style-3 mb-30">
+                <div class="post-thumbnail">
+                    <img src="img/bg-img/31.jpg" alt="">
+                </div>
+                <div class="post-content">
+                    <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                        Alive</a>
+                    <div class="post-meta d-flex">
+                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
+                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
+                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="col-12 col-lg-6">
+            <div class="single-blog-post d-flex style-3 mb-30">
+                <div class="post-thumbnail">
+                    <img src="img/bg-img/32.jpg" alt="">
+                </div>
+                <div class="post-content">
+                    <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                        Alive</a>
+                    <div class="post-meta d-flex">
+                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
+                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
+                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="col-12 col-lg-6">
+            <div class="single-blog-post d-flex style-3 mb-30">
+                <div class="post-thumbnail">
+                    <img src="img/bg-img/33.jpg" alt="">
+                </div>
+                <div class="post-content">
+                    <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                        Alive</a>
+                    <div class="post-meta d-flex">
+                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
+                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
+                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Blog Post -->
+        <div class="col-12 col-lg-6">
+            <div class="single-blog-post d-flex style-3 mb-30">
+                <div class="post-thumbnail">
+                    <img src="img/bg-img/34.jpg" alt="">
+                </div>
+                <div class="post-content">
+                    <a href="single-post.html" class="post-title">From Wetlands To Canals And Dams Amsterdam Is
+                        Alive</a>
+                    <div class="post-meta d-flex">
+                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
+                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
+                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
     </div>
 </section>
 @endsection
