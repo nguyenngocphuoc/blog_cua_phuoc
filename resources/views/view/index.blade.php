@@ -170,7 +170,7 @@
                 <!-- Single Blog Post -->
                 <div class="single-blog-post style-4">
                     <div class="post-thumbnail">
-                        <img src="{{ asset('images/'.$rework->image) }}" alt="">
+                        <img src="{{ asset('images/'.$rework->image) }}" alt="" style="width: 550px; height: 450px">
                     </div>
                     <div class="post-content">
                         <a href="{{ url('page/rework/'.$rework->slug) }}" class="post-title">{{ $rework->title }}</a>
@@ -199,7 +199,7 @@
                 <div class="single-featured-post">
                     <!-- Thumbnail -->
                     <div class="post-thumbnail mb-50">
-                        <img src="{{ asset('images/'.$rework->image) }}" alt="">
+                        <img src="{{ asset('images/'.$rework->image) }}" alt="" style="width: 550px; height: 450px">
                     </div>
                     <!-- Post Contetnt -->
                     <div class="post-content">
