@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="@yield('description','{{\App/Setting::getDescription()}}')">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <p id="myBtn" title="Go to top"><a href="tel:+84947467073">+84947467073</a></p>
+   
     
     <div id="messageDivId">
         @if ( session()->has('messageSuccess') )
