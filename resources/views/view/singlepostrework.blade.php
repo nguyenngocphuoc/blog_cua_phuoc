@@ -94,6 +94,20 @@
                         </div>
                         <br />
                         {!! $newssingle->details !!}
+                        <br /><br />
+                        <!-- submit info -->
+                        <hr/>
+
+                                    <!-- Section Title -->
+                                    <div class="section-heading">
+                                        <h5>Liên hệ với chúng tôi</h5>
+                                    </div>
+                                    <div class="contact-form-area">
+
+                                        @include('view/contactForm')
+                                    </div>
+                                </div>
+
                         <!-- Like Dislike Share -->
                         <div class="like-dislike-share my-5">
                             <h4 class="share">240<span>Share</span></h4>

@@ -124,7 +124,7 @@
                                 <div class="box-body">
                                     <div class="aboutus">
                                         <label>About Us</label>
-                                        <textarea class="textarea" name="about_us" paceholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ @$setting->about_us }}</textarea>
+                                        <textarea class="textarea" id="editor1" name="about_us" paceholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ @$setting->about_us }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                                 <div class="box-body">
                                     <div class="address">
                                         <label>Address</label>
-                                        <textarea class="textarea" name="address" value="Place some text here" style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ @$setting->address }}</textarea>
+                                        <textarea class="textarea" id="editor1" name="address" value="Place some text here" style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ @$setting->address }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
 @push('scripts')
 <script>
     $(function () {
-        $('.textarea').wysihtml5();
+		CKEDITOR.replace( 'editor1' );
     });
 </script>
 @endpush

@@ -166,8 +166,7 @@
 
 @push('scripts')
 <script>
-    $(function () {
-        // $('.textarea').wysihtml5();
-    });
+			
+
 </script>
 @endpush
