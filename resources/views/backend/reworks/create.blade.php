@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label>Yêu cầu công việc</label>
-                            <textarea class="textarea" name="details"
+                            <textarea class="textarea" id="editor1" name="details"
                                 placeholder="Nhập yêu cầu công việc..."
                                 style="width: 100%; height: 285px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                                 {{old('details')}}
@@ -120,7 +120,9 @@ $(function() {
         radioClass: 'iradio_square-blue'
     });
 
-    $('.textarea').wysihtml5();
+
+	CKEDITOR.replace( 'editor1' );
+
 });
 </script>
 @endpush

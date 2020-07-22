@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Chi tiết nội dung</label>
-                                <textarea class="textarea" name="details" placeholder="Place some text here" style="width: 100%; height: 1010px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                <textarea class="textarea" id="editor1" name="details" placeholder="Place some text here" style="width: 100%; height: 1010px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
                                     {{ $news->details }}
                                 </textarea>
                             </div>
@@ -103,7 +103,7 @@
                 radioClass: 'iradio_square-blue'
             });
 
-            $('.textarea').wysihtml5();
+            CKEDITOR.replace( 'editor1' );
         });
     </script>
 @endpush

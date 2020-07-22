@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Nội dung chi tiết</label>
-                                <textarea class="textarea" name="details" placeholder="Nhập nội dung tại đây..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                <textarea id="editor1" name="details" placeholder="Nhập nội dung tại đây..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -95,8 +95,9 @@
                 checkboxClass: 'icheckbox_square-blue',
                 radioClass: 'iradio_square-blue'
             });
+            
 
-            $('.textarea').wysihtml5();
+            CKEDITOR.replace( 'editor1' );
         });
     </script>
 @endpush

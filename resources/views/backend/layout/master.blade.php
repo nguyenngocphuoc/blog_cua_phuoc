@@ -26,8 +26,7 @@
         <link rel="stylesheet" href="{{ asset('backend/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
         <!-- Daterange picker -->
         <link rel="stylesheet" href="{{ asset('backend/components/bootstrap-daterangepicker/daterangepicker.css') }}">
-        <!-- bootstrap wysihtml5 - text editor -->
-        <link rel="stylesheet" href="{{ asset('backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+     
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,8 +78,7 @@
         <script src="{{ asset('backend/components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
         <!-- datepicker -->
         <script src="{{ asset('backend/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="{{ asset('backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
+        <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
         <!-- Slimscroll -->
         <script src="{{ asset('backend/components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
         <!-- FastClick -->
@@ -120,6 +118,7 @@
                     toastr.error('{{ $error }}','ERROR!',{ progressBar: true });
                 @endforeach
             @endif
+            
         </script>
         
     </body>
