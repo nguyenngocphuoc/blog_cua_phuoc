@@ -12,7 +12,7 @@
     <title>@yield('title',\App\Setting::getTitle())</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('img/core-img/favicon.ico')}}">
+    <link rel="icon" href="{{ asset('favicon.ico')}}">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('style.css')}}">
@@ -132,7 +132,7 @@
                         <div class="top-meta-data d-flex align-items-center">
                             <!-- Top Search Area -->
                             <div class="top-search-area">
-                                <form action="{{ route('page.search') }}" method="POST" enctype="multipart/form-data"
+                                <form action="{{ route('page.search') }}" method="GET" enctype="multipart/form-data"
                                     role="form">
                                     @csrf
                                     @method('POST')
