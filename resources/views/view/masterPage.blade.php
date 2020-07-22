@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -166,7 +165,7 @@
         </div>
         <div class="hotline-bar">
             <a href="tel:0947467073">
-                <span class="text-hotline">0947.467.073</span>
+                <span class="text-hotline">{{ Config::get('properties.contact.phone')}}</span>
             </a>
         </div>
     </div>
