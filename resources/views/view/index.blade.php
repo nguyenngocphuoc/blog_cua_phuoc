@@ -70,7 +70,7 @@
                 <!-- Single Trending Post -->
                 @foreach($newestlist as $key => $topnews)
                 <div class="single-trending-post">
-                    <img src="{{ asset('images/'.$topnews->image) }}" alt="">
+                    <img src="{{ asset('images/'.$topnews->image) }}" alt="" style="height: 200px; width: 350px;">
                     <div class="post-content">
                         <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-cata">{{ $topnews->title }}</a>
                     </div>
