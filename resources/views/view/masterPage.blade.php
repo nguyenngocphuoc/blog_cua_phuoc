@@ -45,7 +45,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="/" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="/" class="nav-brand"><img src={{ url('img/core-img/logo.png') }} alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -78,7 +78,8 @@
                                             <!-- {{$arrGroupCategory = \App\GroupCategory::latest()->get()}} -->
                                             @foreach($arrGroupCategory as $key => $group)
                                             <ul class="single-mega cn-col-4">
-                                                <a><b>{{$group->name}}</b></a>
+                                                <a
+                                                    href="{{ url('/page/category-group/'.$group->slug) }}"><b>{{$group->name}}</b></a>
                                                 <!-- {{$categorys = \App\Category::where("group_categories_id",$group->id)->get()}} -->
                                                 @foreach($categorys as $key => $category)
                                                 <li><a
@@ -142,7 +143,7 @@
                                 </form>
                             </div>
                             <!-- Login -->
-                            <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            {{-- <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a> --}}
                         </div>
                     </div>
                 </nav>
@@ -150,7 +151,9 @@
         </div>
     </header>
 
+
     @yield('content')
+
     <!-- ##### Mag Posts Area End ##### -->
 
     <div class="hotline-phone-ring-wrap">
