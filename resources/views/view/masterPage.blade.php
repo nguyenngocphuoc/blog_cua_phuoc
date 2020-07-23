@@ -12,7 +12,7 @@
     <title>@yield('title',\App\Setting::getTitle())</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('favicon.ico')}}">
+    <link rel="icon" href="{{ asset('images/'.\App\Setting::getIcon())}}">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('style.css')}}">
@@ -45,7 +45,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="/" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="/" class="nav-brand"><img src="{{ asset('images/'.\App\Setting::getLogo())}}" width="74" height="29" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -165,8 +165,8 @@
             </div>
         </div>
         <div class="hotline-bar">
-            <a href="tel:0947467073">
-                <span class="text-hotline">0947.467.073</span>
+            <a href="tel:{{\App\Setting::getPhoneNumber()}}">
+                <span class="text-hotline">{{\App\Setting::getPhoneNumber()}}</span>
             </a>
         </div>
     </div>

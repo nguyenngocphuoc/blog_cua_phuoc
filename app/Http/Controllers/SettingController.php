@@ -18,15 +18,16 @@ class SettingController extends Controller
     public function store(Request $request)
     {   
         $request->validate([
-            'site_name'     => 'required|max:250',
-            'site_logo'     => 'nullable|image|mimes:png',
-            'site_favicon'  => 'nullable',
-            'email'         => 'required|max:250',
-            'facebook'      => 'nullable|url',
-            'twitter'       => 'nullable|url',
-            'linkedin'      => 'nullable|url',
-            'vimeo'         => 'nullable|url',
-            'youtube'       => 'nullable|url'
+            'site_name'         => 'required|max:250',
+            'meta_description'  => 'required',
+            'site_logo'         => 'nullable|image|mimes:png',
+            'site_favicon'      => 'nullable',
+            'email'             => 'required|max:250',
+            'facebook'          => 'nullable|url',
+            'twitter'           => 'nullable|url',
+            'linkedin'          => 'nullable|url',
+            'vimeo'             => 'nullable|url',
+            'youtube'           => 'nullable|url'
         ]);
 
         $setting = new Setting();
@@ -62,7 +63,8 @@ class SettingController extends Controller
             'vimeo'         => $request->vimeo,
             'youtube'       => $request->youtube,
             'about_us'      => $request->about_us,
-            'address'       => $request->address
+            'address'       => $request->address,
+            'meta_description'       => $request->meta_description
           ]
         );
 
