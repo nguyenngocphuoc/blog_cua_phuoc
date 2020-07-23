@@ -9,10 +9,11 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                        <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Trang
+                                chủ</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Feature</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Archive by Category “TRAVEL”</li>
+                        {{-- <li class="breadcrumb-item"><a href="#">Feature</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Archive by Category “TRAVEL”</li> --}}
                     </ol>
                 </nav>
             </div>
@@ -33,7 +34,8 @@
                         <!-- Thumbnail -->
                         <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/42.jpg);">
                             <!-- <a href="video-post.html" class="video-play"><i class="fa fa-play"></i></a> -->
-                            <img src="{{ url('images/'.$rework->image) }}" alt="Girl in a jacket" width="500" height="600">
+                            <img src="{{ url('images/'.$rework->image) }}" alt="Girl in a jacket" width="500"
+                                height="600">
                         </div>
 
                         <!-- Post Contetnt -->

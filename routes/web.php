@@ -7,6 +7,7 @@ Route::get('/page/rework/{slug}', 'FrontController@pageReworks')->name('page.rew
 Route::get('/page', 'FrontController@pageArchive')->name('page');
 Route::get('/page/search', 'ReWorkController@postSearch')->name('page.search');
 Route::get('/page/category/{slug}', 'FrontController@pageArchiveCategory')->name('page.archive_category');
+Route::get('/page/category-group/{slug}', 'FrontController@pageArchiveCategoryGroup')->name('page.archive_category_group');
 
 
 // AUTHENTICATION

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\News;
 use App\ReWork;
+use App\GroupCategory;
 use App\Category;
 use App\Advertisement;
 use Illuminate\Http\Request;
@@ -48,7 +49,7 @@ class FrontController extends Controller
         }
         return view('view.singlepost',compact('newssingle'));
     }
-  
+
     public function pageReworks($slug)
     {
         $newssingle = ReWork::with('category')->where('slug',$slug)->first();
@@ -83,6 +84,23 @@ class FrontController extends Controller
         $listRework = ReWork::latest()->where('category_id', $category->id)->get();
         // return $listRework;
         return view('view.archive_category',compact('category', 'listRework'));
+    }
+
+    public function pageArchiveCategoryGroup($slug)
+    {
+        $groupCategory = GroupCategory::latest()->where('slug', $slug)->first();
+        $listCategory = Category::latest()->where('group_categories_id', $groupCategory->id)->get();
+        $arr = [];
+        foreach ($listCategory as $key => $value) {
+            $obj = [];
+            $listRework = ReWork::latest()->where('category_id', $value->id)->get();
+            $obj["list"] = $listRework;
+            $obj["categoryInfo"] = $value;
+            array_push($arr,$obj);
+        }
+
+        // return $listRework;
+        return view('view.archive_category_group',compact('listCategory', 'arr', 'groupCategory'));
     }
 
 }

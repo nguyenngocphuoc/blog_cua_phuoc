@@ -5,7 +5,7 @@
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="breadcrumb-content">
-                    <h2>{{$category->name}}</h2>
+                    <h2>{{$groupCategory->name}}</h2>
                 </div>
             </div>
         </div>
@@ -40,7 +40,13 @@
             <div class="col-12 col-xl-8">
                 <div class="archive-posts-area bg-white p-30 mb-30 box-shadow">
                     <!-- Single Catagory Post -->
-                    @foreach($listRework as $key => $rework)
+                    @foreach($arr as $value)
+                    <div class="breadcrumb-content">
+                        <h4 style="text-align: center; padding-bottom: 15px; color: #158351"><b
+                                style="text-transform: uppercase;">{{$value['categoryInfo']->name}}</b>
+                        </h4>
+                    </div>
+                    @foreach($value['list'] as $rework)
                     <div class="single-catagory-post d-flex flex-wrap">
                         <div class="post-thumbnail bg-img"
                             style="background-image: url('{{url('images/'.$rework->image)}}')">
@@ -56,8 +62,8 @@
                             </div>
                             <p>{!!str_limit(strip_tags($rework->details ),200) !!}</p>
                         </div>
-
                     </div>
+                    @endforeach
                     @endforeach
 
                     <!-- Pagination -->
