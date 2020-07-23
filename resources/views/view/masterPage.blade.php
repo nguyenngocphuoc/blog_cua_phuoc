@@ -12,7 +12,7 @@
     <title>@yield('title',\App\Setting::getTitle())</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('images/'.\App\Setting::getIcon())}}">
+    <link rel="icon" href="{{ asset(\App\Setting::getIcon())}}">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('style.css')}}">
@@ -45,7 +45,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="/" class="nav-brand"><img src="{{ asset('images/'.\App\Setting::getLogo())}}" width="74" height="29" alt=""></a>
+                    <a href="/" class="nav-brand"><img src="{{ asset(\App\Setting::getLogo())}}" width="74" height="29" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">

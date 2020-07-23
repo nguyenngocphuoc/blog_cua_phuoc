@@ -21,16 +21,16 @@ class Setting extends Model
     public static function getTitle() {
         if(Setting::first() !== null)
             return Setting::first()->site_name;
-        return "this is default description";
+        return "this is default title";
     }
     public static function getIcon() {
         if(Setting::first() !== null)
-            return Setting::first()->site_favicon;
-        return "this is default description";
+            return 'images/'.Setting::first()->site_favicon;
+        return "favicon.ico";
     }
     public static function getLogo() {
         if(Setting::first() !== null)
-            return Setting::first()->site_logo;
+            return 'images/'.Setting::first()->site_logo;
         return "img/core-img/logo.png";
     }
     public static function getPhoneNumber() {
