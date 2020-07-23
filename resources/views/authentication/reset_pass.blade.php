@@ -42,6 +42,16 @@
                 </span>
                 @endif
             </div>
+            <div class="form-group has-feedback{{ $errors->has('cupassword') ? ' has-error' : '' }}">
+                <input type="password" name="cupassword" class="form-control" placeholder="Mật khẩu hiện tại">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                @if ($errors->has('cupassword'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('cupassword') }}</strong>
+                </span>
+                @endif
+            </div>
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
                 <input type="password" name="password" class="form-control" placeholder="Mật khẩu mới">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>

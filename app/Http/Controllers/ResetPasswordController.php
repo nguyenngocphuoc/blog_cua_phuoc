@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Setting;
 use App\User;
 use DB;
+use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,20 +27,25 @@ class ResetPasswordController extends Controller
         $request->validate([
             'email'         => 'required',
             'password'      => 'required',
-            'repassword'    => 'required'
+            'repassword'    => 'required',
+            'cupassword'    => 'required'
         ]);
 
         $emailReq    = $request->email;
         $passwordReq = $request->password;
         $repasswordReq = $request->repassword;
-        $rememberReq = $request->remember_token;
+        $cupassword = $request->cupassword;
 
         if($repasswordReq == $passwordReq) {
             $users = User::select('*')->get();
             foreach ($users as $user) {
                 if($user->email == $emailReq) {
-                    DB::table('users')->where('id',$user->id)->update(["password" => bcrypt($passwordReq)]);
-                    return redirect()->route('dashboard')->with(['message' => 'Đổi mật khẩu thành công!!']);
+                    if(Hash::check($cupassword, $user->password)) {
+                        DB::table('users')->where('id',$user->id)->update(["password" => bcrypt($passwordReq)]);
+                        return redirect()->route('dashboard')->with(['message' => 'Đổi mật khẩu thành công!!']);
+                    } else {
+                        return redirect()->route('resetpassword')->with('errorcredentials','Mật khẩu hiện tại chưa chính xác!');
+                    }
                 }
             } 
         }
