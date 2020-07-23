@@ -121,8 +121,8 @@
                                             </ul> -->
                                         </div>
                                     </li>
-                                    <li><a href="{{url('contact')}}">ĐĂNG KÝ TƯ VẤN</a></li>
-                                    <li><a href="contact.html">HỎI ĐÁP</a></li>
+                                    <li><a href="{{url('contact')}}">{{ Config::get('properties.contact.signup_advice')}}</a></li>
+                                    <li><a href="contact.html">{{ Config::get('properties.contact.ask')}}</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -131,10 +131,10 @@
                         <div class="top-meta-data d-flex align-items-center">
                             <!-- Top Search Area -->
                             <div class="top-search-area">
-                                <form action="{{ route('page.search') }}" method="POST" enctype="multipart/form-data"
+                                <form action="{{ route('page.search') }}" method="GET" enctype="multipart/form-data"
                                     role="form">
                                     @csrf
-                                    @method('POST')
+                                    @method('GET')
                                     <input type="search" name="resultSearch" id="topSearch" placeholder="Tìm Kiếm...">
                                     <button type="submit" class="btn"><i class="fa fa-search"
                                             aria-hidden="true"></i></button>

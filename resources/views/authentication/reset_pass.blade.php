@@ -1,6 +1,6 @@
 @extends('authentication.master')
 
-@section('title', 'Login')
+@section('title', 'ResetPassWord')
 
 @section('content')
 
@@ -19,9 +19,10 @@
     </div>
 
     <div class="login-box-body">
-        <p class="login-box-msg">Đăng nhập vào trang ADMIN</p>
+        <p class="login-box-msg">Thay đổi mật khẩu</p>
 
         @if (session()->has('errorcredentials'))
+        console.log("Nhucc")
         <div class="text-center has-error">
             <span class="help-block">
                 <strong>{!! session()->get('errorcredentials') !!}</strong>
@@ -29,7 +30,7 @@
         </div>
         @endif
 
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('reset.password') }}" method="post">
             @csrf
 
             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -49,6 +50,16 @@
                 @if ($errors->has('password'))
                 <span class="help-block">
                     <strong>{{ $errors->first('password') }}</strong>
+                </span>
+                @endif
+            </div>
+            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+                <input type="password" name="repassword" class="form-control" placeholder="Confirm Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                @if ($errors->has('repassword'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('repassword') }}</strong>
                 </span>
                 @endif
             </div>
