@@ -1,17 +1,6 @@
 @extends('view.masterPage')
 @section('content')
-<section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/41.jpg);">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <div class="breadcrumb-content">
-                    <h2>Travel</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### Breadcrumb Area End ##### -->
+
 
 <!-- ##### Breadcrumb Area Start ##### -->
 <div class="mag-breadcrumb py-5">
@@ -20,10 +9,11 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                        <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Trang
+                                chủ</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Feature</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Archive by Category “TRAVEL”</li>
+                        {{-- <li class="breadcrumb-item"><a href="#">Feature</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Archive by Category “TRAVEL”</li> --}}
                     </ol>
                 </nav>
             </div>
@@ -44,7 +34,8 @@
                         <!-- Thumbnail -->
                         <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/42.jpg);">
                             <!-- <a href="video-post.html" class="video-play"><i class="fa fa-play"></i></a> -->
-                            <img src="{{ url('images/'.$rework->image) }}" alt="Girl in a jacket" width="500" height="600">
+                            <img src="{{ url('images/'.$rework->image) }}" alt="Girl in a jacket" width="500"
+                                height="600">
                         </div>
 
                         <!-- Post Contetnt -->

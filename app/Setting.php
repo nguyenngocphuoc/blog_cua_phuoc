@@ -10,14 +10,32 @@ class Setting extends Model
         'site_name',    'site_logo',    'site_favicon',     'email',    'phone',
         'facebook',     'twitter',      'linkedin',         'vimeo',    'youtube',
         'about_us',     'address',
-        'breaking_news_category_id'
+        'breaking_news_category_id', 'meta_description'
     ];
 
     public static function getDescription() {
-        return "Với tiêu chí đặt lợi ích của quý khách hàng lên hàng đầu, trung tâm Hàn ngữ Hồng Quân cam kết đưa ra những dịch vụ với chất lượng tốt nhất, cam kết chi phí ở mức thấp nhất. Luôn luôn hướng tới khách hàng, đồng hành cùng quý khách hàng trong chặng đường chinh phục đất nước Hàn Quốc.";
+        if(Setting::first() !== null)
+            return Setting::first()->meta_description;
+        return "this is default description";
     }
     public static function getTitle() {
-        return "Kỹ sư Hàn Quốc, Du học Hàn Quốc tại Nghệ An";
+        if(Setting::first() !== null)
+            return Setting::first()->site_name;
+        return "this is default title";
     }
-
+    public static function getIcon() {
+        if(Setting::first() !== null)
+            return 'images/'.Setting::first()->site_favicon;
+        return "favicon.ico";
+    }
+    public static function getLogo() {
+        if(Setting::first() !== null)
+            return 'images/'.Setting::first()->site_logo;
+        return "img/core-img/logo.png";
+    }
+    public static function getPhoneNumber() {
+        if(Setting::first() !== null)
+            return Setting::first()->phone;
+        return "0947467073";
+    }
 }

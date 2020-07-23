@@ -70,7 +70,7 @@
                 <!-- Single Trending Post -->
                 @foreach($newestlist as $key => $topnews)
                 <div class="single-trending-post">
-                    <img src="{{ asset('images/'.$topnews->image) }}" alt="">
+                    <img src="{{ asset('images/'.$topnews->image) }}" alt="" style="height: 200px; width: 350px;">
                     <div class="post-content">
                         <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-cata">{{ $topnews->title }}</a>
                     </div>
@@ -230,8 +230,7 @@
     @endforeach
     </div> --}}
 
-    <div class="row">
-        <!-- Single Blog Post -->
+    {{-- <div class="row">
         <div class="col-12 col-lg-6">
             <div class="single-blog-post d-flex style-3 mb-30">
                 <div class="post-thumbnail">
@@ -249,7 +248,6 @@
             </div>
         </div>
 
-        <!-- Single Blog Post -->
         <div class="col-12 col-lg-6">
             <div class="single-blog-post d-flex style-3 mb-30">
                 <div class="post-thumbnail">
@@ -267,7 +265,6 @@
             </div>
         </div>
 
-        <!-- Single Blog Post -->
         <div class="col-12 col-lg-6">
             <div class="single-blog-post d-flex style-3 mb-30">
                 <div class="post-thumbnail">
@@ -285,7 +282,6 @@
             </div>
         </div>
 
-        <!-- Single Blog Post -->
         <div class="col-12 col-lg-6">
             <div class="single-blog-post d-flex style-3 mb-30">
                 <div class="post-thumbnail">
@@ -302,7 +298,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     </div>
     </div>

@@ -73,8 +73,6 @@
                     <li><a href="{{ route('admin.menus.index') }}"><i class="fa fa-circle-o"></i> Menu Setting</a></li>
                     <li><a href="{{ route('admin.advertisements.index') }}"><i class="fa fa-circle-o"></i> Advertisement
                             Setting</a></li>
-                    <li><a href="{{ route('admin.settings.breakingnews') }}"><i class="fa fa-circle-o"></i> Breaking
-                            News Setting</a></li>
                 </ul>
             </li>
 

@@ -11,7 +11,7 @@
     <title>@yield('title',\App\Setting::getTitle())</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('img/core-img/favicon.ico')}}">
+    <link rel="icon" href="{{ asset(\App\Setting::getIcon())}}">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('style.css')}}">
@@ -19,8 +19,8 @@
 </head>
 
 <body>
-   
-    
+
+
     <div id="messageDivId">
         @if ( session()->has('messageSuccess') )
         <div class="alert alert-success alert-dismissable">{{ session()->get('messageSuccess') }}</div>
@@ -44,7 +44,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="/" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="/" class="nav-brand"><img src="{{ asset(\App\Setting::getLogo())}}" width="74" height="29" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -77,7 +77,8 @@
                                             <!-- {{$arrGroupCategory = \App\GroupCategory::latest()->get()}} -->
                                             @foreach($arrGroupCategory as $key => $group)
                                             <ul class="single-mega cn-col-4">
-                                                <a><b>{{$group->name}}</b></a>
+                                                <a
+                                                    href="{{ url('/page/category-group/'.$group->slug) }}"><b>{{$group->name}}</b></a>
                                                 <!-- {{$categorys = \App\Category::where("group_categories_id",$group->id)->get()}} -->
                                                 @foreach($categorys as $key => $category)
                                                 <li><a
@@ -141,7 +142,7 @@
                                 </form>
                             </div>
                             <!-- Login -->
-                            <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            {{-- <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a> --}}
                         </div>
                     </div>
                 </nav>
@@ -149,7 +150,9 @@
         </div>
     </header>
 
+
     @yield('content')
+
     <!-- ##### Mag Posts Area End ##### -->
 
     <div class="hotline-phone-ring-wrap">
@@ -164,8 +167,8 @@
             </div>
         </div>
         <div class="hotline-bar">
-            <a href="tel:0947467073">
-                <span class="text-hotline">{{ Config::get('properties.contact.phone')}}</span>
+            <a href="tel:{{\App\Setting::getPhoneNumber()}}">
+                <span class="text-hotline">{{\App\Setting::getPhoneNumber()}}</span>
             </a>
         </div>
     </div>
@@ -176,12 +179,16 @@
         <div class="container">
             <div class="row">
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-6">
                     <div class="footer-widget">
                         <!-- Logo -->
-                        <a href="url('/')" class="foo-logo"><img src="img/core-img/logo2.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
+                        <a href="/" class="foo-logo"><img src="img/core-img/logo2.png" alt=""></a>
+                        <p>CÔNG TY TNHH TƯ VẤN GIÁO DỤC HỒNG QUÂN</p>
+                        <P>ĐC: Số 06 - Ngõ 112 - Đ.Nguyễn Trãi - TP. Vinh</P>
+                        <p>Tel: <a href="tel:0977466919" style="color: #158351">0977 466
+                                919 (Mr. Hồng)</a> - <a href="tel:0978619697" style="color: #158351">0978 619
+                                697(Mr. Quân)</a> - <a href="tel:0962276316" style="color: #158351">0962 276 316(Mr.
+                                Tuấn)</a></p>
                         <div class="footer-social-info">
                             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
@@ -193,12 +200,18 @@
                 </div>
 
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-6 col-lg-6">
                     <div class="footer-widget">
-                        <h6 class="widget-title">Categories</h6>
+                        <h6 class="widget-title">Công việc Hàn Quốc</h6>
                         <nav class="footer-widget-nav">
                             <ul>
-                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life
+                                <!--{{ $categoris = \App\Category::where("status","1")->get() }}-->
+                                @foreach($categoris as $key => $topnews)
+                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                        {{$topnews->name}}</a></li>
+                                @endforeach
+
+                                {{-- <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Life
                                         Style</a></li>
                                 <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Tech</a>
                                 </li>
@@ -217,14 +230,14 @@
                                 <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Sports</a>
                                 </li>
                                 <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> TV Show</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </nav>
                     </div>
                 </div>
 
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
+                {{-- <div class="col-12 col-sm-6 col-lg-3">
                     <div class="footer-widget">
                         <h6 class="widget-title">Sport Videos</h6>
                         <!-- Single Blog Post -->
@@ -257,10 +270,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-lg-3">
+                {{-- <div class="col-12 col-sm-6 col-lg-3">
                     <div class="footer-widget">
                         <h6 class="widget-title">Channels</h6>
                         <ul class="footer-tags">
@@ -281,7 +294,7 @@
                             <li><a href="#">clips</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -297,11 +310,11 @@
                                 document.write(new Date().getFullYear());
 
                             </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                aria-hidden="true"></i> by <a href="" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
-                    <div class="col-12 col-sm-6">
+                    {{-- <div class="col-12 col-sm-6">
                         <nav class="footer-nav">
                             <ul>
                                 <li><a href="#">Home</a></li>
@@ -310,7 +323,7 @@
                                 <li><a href="#">Contact Us</a></li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

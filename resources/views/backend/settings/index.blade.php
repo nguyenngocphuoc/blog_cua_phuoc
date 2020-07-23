@@ -35,13 +35,19 @@
                             <div class="tab-pane active" id="tab_1">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="sitename" class="col-sm-2 control-label">Site Name:</label>
+                                        <label for="sitename" class="col-sm-2 control-label">Tên Trang Web:</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="site_name" class="form-control" id="sitename" value="{{ @$setting->site_name }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="sitelogo" class="col-sm-2 control-label">Site Logo:</label>
+                                        <label for="metadescription" class="col-sm-2 control-label">Mô Tả Trang Web:</label>
+                                        <div class="col-sm-10">
+                                            <textarea type="text" name="meta_description" class="form-control" id="metadescription" >{{ @$setting->meta_description }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sitelogo" class="col-sm-2 control-label">Logo Trang Web(.png):</label>
                                         <div class="col-sm-10 col-md-6">
                                             <input type="file" name="site_logo" class="form-control" id="sitelogo" value="{{ @$setting->site_logo }}">
                                         </div>
@@ -54,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="sitefavicon" class="col-sm-2 control-label">Site Favicon:</label>
+                                        <label for="sitefavicon" class="col-sm-2 control-label">Favicon Trang web:</label>
                                         <div class="col-sm-10 col-md-6">
                                             <input type="file" name="site_favicon" class="form-control" id="sitefavicon">
                                         </div>
@@ -75,7 +81,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="sitephone" class="col-sm-2 control-label">Phone:</label>
+                                        <label for="sitephone" class="col-sm-2 control-label">Số Điện Thoại:</label>
                                         <div class="col-sm-10">
                                             <input type="number" name="phone" class="form-control" id="sitephone" value="{{ @$setting->phone }}">
                                         </div>
