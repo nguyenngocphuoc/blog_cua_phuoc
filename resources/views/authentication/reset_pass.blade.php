@@ -22,7 +22,6 @@
         <p class="login-box-msg">Thay đổi mật khẩu</p>
 
         @if (session()->has('errorcredentials'))
-        console.log("Nhucc")
         <div class="text-center has-error">
             <span class="help-block">
                 <strong>{!! session()->get('errorcredentials') !!}</strong>
@@ -44,7 +43,7 @@
                 @endif
             </div>
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" name="password" class="form-control" placeholder="Password">
+                <input type="password" name="password" class="form-control" placeholder="Mật khẩu mới">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password'))
@@ -53,8 +52,8 @@
                 </span>
                 @endif
             </div>
-            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" name="repassword" class="form-control" placeholder="Confirm Password">
+            <div class="form-group has-feedback{{ $errors->has('repassword') ? ' has-error' : '' }}">
+                <input type="password" name="repassword" class="form-control" placeholder="Nhập lại mật khẩu mới">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('repassword'))
@@ -69,7 +68,7 @@
                 </div>
 
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Đổi mật khẩu</button>
                 </div>
             </div>
 
