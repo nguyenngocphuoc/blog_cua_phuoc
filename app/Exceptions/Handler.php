@@ -49,12 +49,12 @@ class Handler extends ExceptionHandler
         /*
             // 404 page when a model is not found
             if ($e instanceof ModelNotFoundException) {
-                return response()->view('errors.404', [], 404);
+                return response()->view('backend.layout.partials.errors', [], 404);
             }
 
             // custom error message
             if ($e instanceof \ErrorException) {
-                return response()->view('errors.500', [], 500);
+                return response()->view('backend.layout.partials.errors', [], 500);
             } else {
                 return parent::render($request, $e);
             }
