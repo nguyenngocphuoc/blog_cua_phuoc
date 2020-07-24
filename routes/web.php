@@ -7,6 +7,7 @@ Route::get('/page/rework/{slug}', 'FrontController@pageReworks')->name('page.rew
 Route::get('/page', 'FrontController@pageArchiprofile.updatee')->name('page');
 Route::get('/page/search', 'ReWorkController@postSearch')->name('page.search');
 Route::get('/page/category/{slug}', 'FrontController@pageArchiveCategory')->name('page.archive_category');
+Route::get('/page/category-group/{slug}', 'FrontController@pageArchiveCategoryGroup')->name('page.archive_category_group');
 
 
 // AUTHENTICATION
@@ -54,7 +55,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'r
     Route::resource('news','NewsController');
     Route::resource('reworks','ReWorkController');
     Route::resource('info-submit','InfoSubmitController');
-    
+
 });
 
 // USER, EDITOR AND ADMIN
