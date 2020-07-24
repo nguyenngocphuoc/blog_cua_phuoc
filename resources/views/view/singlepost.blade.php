@@ -1,4 +1,13 @@
 @extends('view.masterPage')
+
+@section('title')
+{{ $newssingle->title }}
+@endsection
+
+@section('description')
+{!! str_limit(strip_tags($newssingle->details),300) !!}
+@endsection
+
 @section('content')
 <!-- ##### Breadcrumb Area Start ##### -->
 <section class="breadcrumb-area bg-img bg-overlay"
