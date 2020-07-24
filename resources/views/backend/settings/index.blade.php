@@ -47,9 +47,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="sitelogo" class="col-sm-2 control-label">Logo Trang Web(.png):</label>
+                                        <label for="sitelogo" class="col-sm-2 control-label">Logo Trang Web:</label>
                                         <div class="col-sm-10 col-md-6">
-                                            <input type="file" name="site_logo" class="form-control" id="sitelogo" value="{{ @$setting->site_logo }}">
+                                            <input type="file" name="site_logo" class="form-control" id="sitelogo" value="{{ @$setting->site_logo }}" accept="image/gif, image/jpeg, image/png">
                                         </div>
                                         <div class="col-sm-10 col-md-4">
                                             @if(@$setting->site_logo)
@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label for="sitefavicon" class="col-sm-2 control-label">Favicon Trang web:</label>
                                         <div class="col-sm-10 col-md-6">
-                                            <input type="file" name="site_favicon" class="form-control" id="sitefavicon">
+                                            <input type="file" name="site_favicon" class="form-control" id="sitefavicon" accept="image/gif, image/jpeg, image/png">
                                         </div>
                                         <div class="col-sm-10 col-md-4">
                                             @if(@$setting->site_favicon)
@@ -139,7 +139,7 @@
                                 <div class="box-body">
                                     <div class="address">
                                         <label>Address</label>
-                                        <textarea class="textarea" id="editor1" name="address" value="Place some text here" style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ @$setting->address }}</textarea>
+                                        <textarea class="textarea" id="editor2" name="address" value="Place some text here" style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ @$setting->address }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -163,6 +163,7 @@
 <script>
     $(function () {
 		CKEDITOR.replace( 'editor1' );
+        CKEDITOR.replace( 'editor2' );
     });
 </script>
 @endpush

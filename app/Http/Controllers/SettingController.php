@@ -20,7 +20,7 @@ class SettingController extends Controller
         $request->validate([
             'site_name'         => 'required|max:250',
             'meta_description'  => 'required',
-            'site_logo'         => 'nullable|image|mimes:png',
+            'site_logo'         => 'nullable|image',
             'site_favicon'      => 'nullable',
             'email'             => 'required|max:250',
             'facebook'          => 'nullable|url',

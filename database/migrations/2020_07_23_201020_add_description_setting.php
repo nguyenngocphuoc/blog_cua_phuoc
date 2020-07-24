@@ -14,7 +14,7 @@ class AddDescriptionSetting extends Migration
     public function up()
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->string('meta_description')->default("this is description");
+            $table->longText('meta_description')->default("this is description");
         });
     }
 
