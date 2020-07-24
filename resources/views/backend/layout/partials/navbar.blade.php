@@ -87,7 +87,7 @@
                 </li>
                 <!-- Control Sidebar Toggle Button -->
                 <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    <a href="{{ route('resetpassword') }}"><i class="fa fa-gears">&nbspĐổi mật khẩu</i></a>
                 </li>
             </ul>
         </div>

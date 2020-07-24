@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="@yield('description',\App\Setting::getDescription())">
@@ -123,8 +122,8 @@
                                             </ul> -->
                                         </div>
                                     </li>
-                                    <li><a href="{{url('contact')}}">ĐĂNG KÝ TƯ VẤN</a></li>
-                                    <li><a href="contact.html">HỎI ĐÁP</a></li>
+                                    <li><a href="{{url('contact')}}">{{ Config::get('properties.contact.signup_advice')}}</a></li>
+                                    <li><a href="contact.html">{{ Config::get('properties.contact.ask')}}</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -136,7 +135,7 @@
                                 <form action="{{ route('page.search') }}" method="GET" enctype="multipart/form-data"
                                     role="form">
                                     @csrf
-                                    @method('POST')
+                                    @method('GET')
                                     <input type="search" name="resultSearch" id="topSearch" placeholder="Tìm Kiếm...">
                                     <button type="submit" class="btn"><i class="fa fa-search"
                                             aria-hidden="true"></i></button>

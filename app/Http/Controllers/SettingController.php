@@ -16,7 +16,7 @@ class SettingController extends Controller
     }
 
     public function store(Request $request)
-    {   
+    {
         $request->validate([
             'site_name'         => 'required|max:250',
             'meta_description'  => 'required',
@@ -40,7 +40,7 @@ class SettingController extends Controller
         }else{
             $site_logo = 'logo.png';
         }
-        
+
         if ($request->hasFile('site_favicon')) {
             $site_favicon = 'favicon'.'.'.$request->site_favicon->getClientOriginalExtension();
             $request->site_favicon->move(public_path('images'), $site_favicon);
@@ -76,7 +76,7 @@ class SettingController extends Controller
     }
 
 
-    public function breakingNews() 
+    public function breakingNews()
     {
         $categories = Category::all();
         $setting    = Setting::first();

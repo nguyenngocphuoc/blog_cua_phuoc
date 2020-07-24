@@ -1,6 +1,6 @@
 @extends('authentication.master')
 
-@section('title', 'Login')
+@section('title', 'ResetPassWord')
 
 @section('content')
 
@@ -19,7 +19,7 @@
     </div>
 
     <div class="login-box-body">
-        <p class="login-box-msg">Đăng nhập vào trang ADMIN</p>
+        <p class="login-box-msg">Thay đổi mật khẩu</p>
 
         @if (session()->has('errorcredentials'))
         <div class="text-center has-error">
@@ -29,7 +29,7 @@
         </div>
         @endif
 
-        <form action="{{ route('login') }}" method="post">
+        <form action="{{ route('reset.password') }}" method="post">
             @csrf
 
             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -42,13 +42,33 @@
                 </span>
                 @endif
             </div>
+            <div class="form-group has-feedback{{ $errors->has('cupassword') ? ' has-error' : '' }}">
+                <input type="password" name="cupassword" class="form-control" placeholder="Mật khẩu hiện tại">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                @if ($errors->has('cupassword'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('cupassword') }}</strong>
+                </span>
+                @endif
+            </div>
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" name="password" class="form-control" placeholder="Password">
+                <input type="password" name="password" class="form-control" placeholder="Mật khẩu mới">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password'))
                 <span class="help-block">
                     <strong>{{ $errors->first('password') }}</strong>
+                </span>
+                @endif
+            </div>
+            <div class="form-group has-feedback{{ $errors->has('repassword') ? ' has-error' : '' }}">
+                <input type="password" name="repassword" class="form-control" placeholder="Nhập lại mật khẩu mới">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                @if ($errors->has('repassword'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('repassword') }}</strong>
                 </span>
                 @endif
             </div>
@@ -58,7 +78,7 @@
                 </div>
 
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Đổi mật khẩu</button>
                 </div>
             </div>
 

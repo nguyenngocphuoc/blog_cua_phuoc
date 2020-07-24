@@ -4,16 +4,19 @@ Route::get('/', 'FrontController@index')->name('home');
 // Route::get('/page/category/{slug}', 'FrontController@pageCategory')->name('page.category');
 Route::get('/page/news/{slug}', 'FrontController@pageNews')->name('page.news');
 Route::get('/page/rework/{slug}', 'FrontController@pageReworks')->name('page.reworks');
-Route::get('/page', 'FrontController@pageArchive')->name('page');
+Route::get('/page', 'FrontController@pageArchiprofile.updatee')->name('page');
 Route::get('/page/search', 'ReWorkController@postSearch')->name('page.search');
 Route::get('/page/category/{slug}', 'FrontController@pageArchiveCategory')->name('page.archive_category');
-Route::get('/page/category-group/{slug}', 'FrontController@pageArchiveCategoryGroup')->name('page.archive_category_group');
 
 
 // AUTHENTICATION
 Route::get('/login', 'LoginController@login')->name('login');
 Route::post('/login', 'LoginController@authenticate')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
+Route::get('/reset-password', 'ResetPasswordController@ressetForm')->name('resetpassword');
+Route::post('/reset-password', 'ResetPasswordController@checkExist')->name('reset.password');
+
+
 
 Route::get('/contact', 'InfoSubmitController@register')->name('contact');
 // Route::post('/register', 'RegisterController@registration')->name('register');
@@ -51,7 +54,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'r
     Route::resource('news','NewsController');
     Route::resource('reworks','ReWorkController');
     Route::resource('info-submit','InfoSubmitController');
-
+    
 });
 
 // USER, EDITOR AND ADMIN
