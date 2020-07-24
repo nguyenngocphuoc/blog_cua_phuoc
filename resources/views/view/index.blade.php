@@ -114,13 +114,9 @@
                                     <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
                                     <!-- All Share Buttons -->
                                     <div class="all-share-btn d-flex">
-                                        <a href="#" class="facebook"><i class="fa fa-facebook"
-                                                aria-hidden="true"></i></a>
-                                        <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                        <a href="#" class="google-plus"><i class="fa fa-google-plus"
-                                                aria-hidden="true"></i></a>
-                                        <a href="#" class="instagram"><i class="fa fa-instagram"
-                                                aria-hidden="true"></i></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?caption=du học nào các bạn ơi &u={{\urlencode(url('/'))}}" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="http://twitter.com/share?text=du học nào các bạn ơi &url={{\urlencode(url('/'))}}" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    
                                     </div>
                                 </div>
                             </div>
@@ -219,10 +215,8 @@
             <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
             <!-- All Share Buttons -->
             <div class="all-share-btn d-flex">
-                <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?caption=du học nào các bạn ơi &u={{\urlencode(url('/'))}}" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="http://twitter.com/share?text=du học nào các bạn ơi &url={{\urlencode(url('/'))}}" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>

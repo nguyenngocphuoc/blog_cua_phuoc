@@ -190,11 +190,10 @@
                                 697(Mr. Quân)</a> - <a href="tel:0962276316" style="color: #158351">0962 276 316(Mr.
                                 Tuấn)</a></p>
                         <div class="footer-social-info">
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="{{\App\Setting::getFacebook()}}" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="{{\App\Setting::getYoutube()}}" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="{{\App\Setting::getTwitter()}}" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="{{\App\Setting::getLinkedin()}}" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>

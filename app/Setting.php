@@ -38,4 +38,24 @@ class Setting extends Model
             return Setting::first()->phone;
         return "0947467073";
     }
+    public static function getFacebook() {
+        if(Setting::first() !== null)
+            return Setting::first()->facebook;
+        return "";
+    }
+    public static function getTwitter() {
+        if(Setting::first() !== null)
+            return Setting::first()->twitter;
+        return "";
+    }
+    public static function getYoutube() {
+        if(Setting::first() !== null)
+            return Setting::first()->youtube;
+        return "";
+    }
+    public static function getLinkedin() {
+        if(Setting::first() !== null)
+            return Setting::first()->linkedin;
+        return "";
+    }
 }

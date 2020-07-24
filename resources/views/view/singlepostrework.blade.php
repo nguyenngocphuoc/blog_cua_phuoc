@@ -103,40 +103,27 @@
                         </div>
                         <br />
                         {!! $newssingle->details !!}
-                        <br /><br />
-                        <!-- submit info -->
-                        <hr />
 
-                        <!-- Section Title -->
-                        <div class="section-heading">
-                            <h5>Liên hệ với chúng tôi</h5>
-                        </div>
-                        <div class="contact-form-area">
-
-                            @include('view/contactForm')
-                        </div>
                     </div>
-
                     <!-- Like Dislike Share -->
+                    
                     <div class="like-dislike-share my-5">
-                        <h4 class="share">240<span>Share</span></h4>
-                        <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Share on
-                            Facebook</a>
-                        <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Share on
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{\urlencode(url('page/rework/'.$newssingle->slug))}}" class="facebook" target="_blank">>
+                            <i class="fa fa-facebook" aria-hidden="true"></i> 
+                            Share on Facebook
+                        </a>
+                        <a href="http://twitter.com/share?text={{$newssingle->title}}&url={{\urlencode(url('page/rework/'.$newssingle->slug))}}" target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Share on
                             Twitter</a>
                     </div>
+                    <!-- submit info -->
+                    <hr />
+                    <!-- Section Title -->
+                    <div class="section-heading">
+                        <h5>Liên hệ với chúng tôi</h5>
+                    </div>
+                    <div class="contact-form-area">
 
-                    <!-- Post Author -->
-                    <div class="post-author d-flex align-items-center">
-                        <div class="post-author-thumb">
-                            <img src="https://image.thanhnien.vn/660/uploaded/ngocthanh/2020_07_13/ngoctrinhmuonsinhcon1_swej.jpg"
-                                alt="">
-                        </div>
-                        <div class="post-author-desc pl-4">
-                            <a href="#" class="author-name">Alan Shaerer</a>
-                            <p>Duis tincidunt turpis sodales, tincidunt nisi et, auctor nisi. Curabitur vulputate
-                                sapien eu metus ultricies fermentum nec vel augue. Maecenas eget lacinia est.</p>
-                        </div>
+                        @include('view/contactForm')
                     </div>
                 </div>
                 <!-- {{$categoryId = $newssingle->category_id}} -->

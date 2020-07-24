@@ -110,12 +110,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="svimeo" class="col-sm-2 control-label">Vimeo:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="vimeo" class="form-control" id="svimeo" value="{{ @$setting->vimeo }}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="syoutube" class="col-sm-2 control-label">Youtube:</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="youtube" class="form-control" id="syoutube" value="{{ @$setting->youtube }}">
