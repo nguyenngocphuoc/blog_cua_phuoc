@@ -190,6 +190,7 @@
                             }).then(function(response){
                                 var input_id = $(itemData).attr("hidden-id");
                                 $('#'+input_id).val(response);
+                                $('#postimage').attr('src', response);
                             })
                         });
                     }

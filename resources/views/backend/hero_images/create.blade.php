@@ -8,7 +8,9 @@
 @endpush
 
 @section('content')
-
+<script>
+croppieRatio = 16/7;
+</script>
 <section class="content-header">
     <h1>
         THÊM MỚI
@@ -45,7 +47,8 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label>Hình ảnh bài viết</label>
-                            <input type="file" name="image" id="heroImage" onchange="readURL(this);">
+                            <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="heroImage" >
+                            <input id="{{$uniqid}}" type="hidden" name="image" onchange="readURL(this);">
                             <p class="help-block">(Hình ảnh được đăng dưới 2 loại .png hoặc .jpg)</p>
                         </div>
                         <div class="form-group">
@@ -88,15 +91,8 @@ $(function() {
 </script>
 <script>
 function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            $('#postimage').attr('src', e.target.result);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
+    console.log($(input).val())
+    $('#postimage').attr('src', $(input).val());
 }
 </script>
 @endpush

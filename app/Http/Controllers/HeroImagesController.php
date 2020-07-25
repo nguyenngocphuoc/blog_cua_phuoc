@@ -26,15 +26,23 @@ class HeroImagesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image'    => 'required|image|mimes:jpg,png,jpeg'
+            'image'    => 'required|is_img'
         ]);
 
         $status = ($request->status == null) ? 0 : 1;
         $title = ($request->title == null) ? '' : $request->title;
 
-        if ($request->hasFile('image')) {
-            $imageName = 'hero_images-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+        if (strlen($request->image) > 0) {
+
+            $image_array_1 = explode(";", $request->image);
+
+            $image_array_2 = explode(",", $image_array_1[1]);
+
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = 'news-'. time().uniqid(). '.png';
+
+            file_put_contents(public_path('images/').$imageName, $data);
         }
 
         HeroImages::create([
@@ -59,15 +67,18 @@ class HeroImagesController extends Controller
         $hero = HeroImages::findOrFail($id);
         $status = ($request->status == null) ? 0 : 1;
         $title = ($request->title == null) ? '' : $request->title;
-        if ($request->hasFile('image')) {
+ 
+        if (strlen($request->image) > 0) {
 
-            if(file_exists(public_path('images/') . $hero->image)){
-                unlink(public_path('images/') . $hero->image);
-            }
+            $image_array_1 = explode(";", $request->image);
 
-            $imageName = 'hero_images-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+            $image_array_2 = explode(",", $image_array_1[1]);
 
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = $hero->image;
+
+            file_put_contents(public_path('images/').$imageName, $data);
         }else{
             $imageName = $hero->image;
         }

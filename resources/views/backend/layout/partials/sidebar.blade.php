@@ -72,6 +72,8 @@
                     </li>
                     <li><a href="{{ route('admin.advertisements.index') }}"><i class="fa fa-circle-o"></i> Advertisement
                             Setting</a></li>
+                    <li><a href="{{ route('admin.hero-images.index') }}"><i class="fa fa-circle-o"></i> AD Image Setting</a>
+                    </li>
                 </ul>
             </li>
 

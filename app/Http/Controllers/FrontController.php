@@ -9,6 +9,7 @@ use App\Category;
 use App\Advertisement;
 use App\Setting;
 use Illuminate\Http\Request;
+use App\HeroImages;
 
 class FrontController extends Controller
 {
@@ -19,12 +20,13 @@ class FrontController extends Controller
         $topnewslist   = News::orderBy("view_count")->take(10)->get();
         $reworks   = ReWork::latest()->take(10)->get();
         $reworks2 = ReWork::latest()->take(10)->get();
-
+        $heroImg = HeroImages::latest()->get();
         return view('view.index',compact(
                 'topnewslist',
                 'newestlist',
                 'reworks',
-                'reworks2'
+                'reworks2',
+                'heroImg'
             )
         );
     }

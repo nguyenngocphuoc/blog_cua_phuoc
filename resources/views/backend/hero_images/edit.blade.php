@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@section('title', 'Edit ReWorks')
+@section('title', 'Edit Hero"Image')
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('backend/plugins/iCheck/square/blue.css') }}">
@@ -8,11 +8,13 @@
 @endpush
 
 @section('content')
-
+<script>
+croppieRatio = 16/7;
+</script>
 <section class="content-header">
     <h1>
         CẬP NHẬT
-        <small><a href="{{ route('admin.reworks.index') }}" class="btn btn-block btn-xs btn-warning btn-flat">Quay
+        <small><a href="{{ route('admin.hero-images.index') }}" class="btn btn-block btn-xs btn-warning btn-flat">Quay
                 lại</a></small>
     </h1>
     <ol class="breadcrumb">
@@ -46,7 +48,8 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label>Hình ảnh bài viết</label>
-                            <input type="file" name="image" id="heroImage" onchange="readURL(this);">
+                            <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="heroImage" onchange="readURL(this);">
+                            <input id="{{$uniqid}}" type="hidden" name="image">
                             <p class="help-block">(Hình ảnh được đăng dưới 2 loại .png hoặc .jpg)</p>
                         </div>
                         <div class="form-group">
