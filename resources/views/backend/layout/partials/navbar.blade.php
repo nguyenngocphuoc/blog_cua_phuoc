@@ -6,7 +6,7 @@
         <span class="logo-mini"><b>N</b>P</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" width="200px">
+            <img src="{{ asset(\App\Setting::getLogo())}}" alt="Logo" width="200px" height="50px">
         </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->

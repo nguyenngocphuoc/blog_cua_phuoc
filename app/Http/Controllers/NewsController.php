@@ -29,8 +29,7 @@ class NewsController extends Controller
         $request->validate([
             'title'         => 'required|unique:news|max:255',
             'details'       => 'required',
-            'category_id'   => 'required',
-            'image'         => 'required|image|mimes:jpg,png,jpeg',
+            'image'         => 'required|is_img',
         ]);
 
         if(isset($request->status)){
@@ -44,20 +43,26 @@ class NewsController extends Controller
         }else{
             $featured = false;
         }
+        if (strlen($request->image) > 0) {
 
-        if ($request->hasFile('image')) {
-            $imageName = 'news-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+            $image_array_1 = explode(";", $request->image);
+
+            $image_array_2 = explode(",", $image_array_1[1]);
+
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = 'news-'. time().uniqid(). '.png';
+
+            file_put_contents(public_path('images/').$imageName, $data);
         }
-
         News::create([
             'title'         => $request->title,
             'slug'          => str_slug($request->title),
             'details'       => $request->details,
-            'category_id'   => $request->category_id,
+            'category_id'   => 1, // $request->category_id,
             'image'         => $imageName,
-            'status'        => $status,
-            'featured'      => $featured
+            'status'        => 1,
+            'featured'      => 1
         ]);
 
         return redirect()->route('admin.news.index')->with(['message' => 'Tạo thành công!']);
@@ -85,7 +90,7 @@ class NewsController extends Controller
             'title'         => 'required|max:255',
             'details'       => 'required',
             'category_id'   => 'required',
-            'image'         => 'image|mimes:jpg,png,jpeg',
+            'image'         => 'is_img',
         ]);
 
         if(isset($request->status)){
@@ -102,15 +107,17 @@ class NewsController extends Controller
 
         $news = News::findOrFail($news->id);
 
-        if ($request->hasFile('image')) {
+        if (strlen($request->image) > 0) {
 
-            if(file_exists(public_path('images/') . $news->image)){
-                unlink(public_path('images/') . $news->image);
-            }
+            $image_array_1 = explode(";", $request->image);
 
-            $imageName = 'news-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+            $image_array_2 = explode(",", $image_array_1[1]);
 
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = $news->image;
+
+            file_put_contents(public_path('images/').$imageName, $data);
         }else{
             $imageName = $news->image;
         }

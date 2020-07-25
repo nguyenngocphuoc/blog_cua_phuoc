@@ -5,7 +5,7 @@
 @endsection
 
 @section('description')
-{!! str_limit(strip_tags($newssingle->details),300) !!}
+{{ str_limit(strip_tags($newssingle->details),300) }}
 @endsection
 
 @section('content')

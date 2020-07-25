@@ -78,7 +78,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name'   => 'required|max:255',
-            'image'  => 'image|mimes:jpg,png,jpeg',
+            'image'  => 'required|is_img',
             'group_categories_id'  => 'required|max:2'
         ]);
 

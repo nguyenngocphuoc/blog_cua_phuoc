@@ -7,6 +7,7 @@ use App\ReWork;
 use App\GroupCategory;
 use App\Category;
 use App\Advertisement;
+use App\Setting;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -81,15 +82,14 @@ class FrontController extends Controller
     public function pageArchiveCategory($slug)
     {
         $category = Category::latest()->where('slug', $slug)->first();
-        $listRework = ReWork::latest()->where('category_id', $category->id)->get();
-        // return $listRework;
+        $listRework = ReWork::latest()->where('category_id', $category->id)->paginate(5);
         return view('view.archive_category',compact('category', 'listRework'));
     }
 
     public function pageArchiveCategoryGroup($slug)
     {
         $groupCategory = GroupCategory::latest()->where('slug', $slug)->first();
-        $listCategory = Category::latest()->where('group_categories_id', $groupCategory->id)->get();
+        $listCategory = Category::latest()->where('group_categories_id', $groupCategory->id)->paginate(5);
         $arr = [];
         foreach ($listCategory as $key => $value) {
             $obj = [];
@@ -99,8 +99,14 @@ class FrontController extends Controller
             array_push($arr,$obj);
         }
 
-        // return $listRework;
         return view('view.archive_category_group',compact('listCategory', 'arr', 'groupCategory'));
+    }
+
+    public function getPageAbout()
+    {
+        $setting = Setting::latest()->first();
+
+        return view('view.about', compact('setting'));
     }
 
 }

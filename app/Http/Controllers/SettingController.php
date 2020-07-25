@@ -11,7 +11,7 @@ class SettingController extends Controller
 {
     public function index()
     {
-        $setting = Setting::first();
+        $setting = Setting::where('id',1)->first();
 
         return view('backend.settings.index',compact('setting'));
     }
@@ -31,21 +31,21 @@ class SettingController extends Controller
             'youtube'           => 'nullable|url'
         ]);
         $setting = new Setting();
-
+        $name = round(microtime(true) * 1000) . '';
         if ($request->hasFile('site_logo')) {
-            $site_logo = 'logo'.'.'.$request->site_logo->getClientOriginalExtension();
+            $site_logo = 'logo'.$name.'.'.$request->site_logo->getClientOriginalExtension();
             $request->site_logo->move(public_path('images'), $site_logo);
-        }elseif($request->site_logo){
-            $site_logo = $request->site_logo;
+        }elseif(Setting::where('id',1)->first() !== null){
+            $site_logo = Setting::where('id',1)->first()->site_logo;
         }else{
             $site_logo = 'logo.png';
         }
 
         if ($request->hasFile('site_favicon')) {
-            $site_favicon = 'favicon'.'.'.$request->site_favicon->getClientOriginalExtension();
+            $site_favicon = 'favicon'.$name.'.'.$request->site_favicon->getClientOriginalExtension();
             $request->site_favicon->move(public_path('images'), $site_favicon);
-        }elseif($request->site_favicon){
-            $site_logo = $request->site_favicon;
+        }elseif(Setting::where('id',1)->first() !== null){
+            $site_favicon = Setting::where('id',1)->first()->site_favicon;
         }else{
             $site_favicon = 'favicon.ico';
         }
@@ -68,7 +68,7 @@ class SettingController extends Controller
                 'address'       => $request->address,
                 'meta_description'       => $request->meta_description
                 ]
-            ); 
+            );
         }else {
             $setting->updateOrCreate(['id' => 1],
             [
@@ -101,7 +101,7 @@ class SettingController extends Controller
     public function breakingNews()
     {
         $categories = Category::all();
-        $setting    = Setting::first();
+        $setting    = Setting::where('id',1)->first();
 
         return view('backend.settings.breaking-news',compact('categories','setting'));
     }

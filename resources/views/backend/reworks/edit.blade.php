@@ -65,7 +65,8 @@
                         </div>
                         <div class="form-group">
                             <label for="reworksimage">Hình ảnh bài viết</label>
-                            <input type="file" name="image" id="reworksimage">
+                            <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="newsimage">
+                            <input id="{{$uniqid}}" type="hidden" name="image">
                             <p class="help-block">(Hình ảnh được đăng dưới 2 loại .png hoặc .jpg)</p>
                         </div>
                         <hr>

@@ -8,7 +8,7 @@ Route::get('/page', 'FrontController@pageArchiprofile.updatee')->name('page');
 Route::get('/page/search', 'ReWorkController@postSearch')->name('page.search');
 Route::get('/page/category/{slug}', 'FrontController@pageArchiveCategory')->name('page.archive_category');
 Route::get('/page/category-group/{slug}', 'FrontController@pageArchiveCategoryGroup')->name('page.archive_category_group');
-
+Route::get('/page/about', 'FrontController@getPageAbout')->name('page.about');
 
 // AUTHENTICATION
 Route::get('/login', 'LoginController@login')->name('login');

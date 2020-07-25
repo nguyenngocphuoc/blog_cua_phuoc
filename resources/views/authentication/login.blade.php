@@ -9,7 +9,7 @@
     <div class="login-logo">
         <a href="{{ route('home') }}">
             @if(isset($setting) && $setting['site_logo'])
-            <img src="{{ asset('images/'.$setting['site_logo']) }}" alt="Logo">
+            <img src="{{ asset('images/'.$setting['site_logo']) }}" alt="Logo" width="200px" height="50px">
             @elseif(isset($setting) && $setting['site_name'])
             {{ $setting['site_name'] }}
             @else
