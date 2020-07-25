@@ -31,28 +31,24 @@ class ReWorkController extends Controller
             'title'         => 'required|unique:reworks|max:255',
             'details'       => 'required',
             'category_id'   => 'required',
-            'image'         => 'required|image|mimes:jpg,png,jpeg',
+            'image'         => 'required|is_img',
             'work_address'  => 'required',
             'deadline_for_sub'  => 'required',
             'salary'  => 'required',
             'emp_total'  => 'required'
         ]);
 
-        // if(isset($request->status)){
-        //     $status = true;
-        // }else{
-        //     $status = false;
-        // }
+        if (strlen($request->image) > 0) {
 
-        // if(isset($request->featured)){
-        //     $featured = true;
-        // }else{
-        //     $featured = false;
-        // }
+            $image_array_1 = explode(";", $request->image);
 
-        if ($request->hasFile('image')) {
-            $imageName = 'reworks-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+            $image_array_2 = explode(",", $image_array_1[1]);
+
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = 'news-'. time().uniqid(). '.png';
+
+            file_put_contents(public_path('images/').$imageName, $data);
         }
 
         ReWork::create([
@@ -93,7 +89,7 @@ class ReWorkController extends Controller
             'title'         => 'required|max:255',
             'details'       => 'required',
             'category_id'   => 'required',
-            'image'         => 'image|mimes:jpg,png,jpeg',
+            'image'         => 'is_img',
             'work_address'  => 'required',
             'deadline_for_sub'  => 'required',
             'salary'  => 'required',
@@ -112,15 +108,18 @@ class ReWorkController extends Controller
             $featured = false;
         }
         $reworks = ReWork::findOrFail($id);
-        if ($request->hasFile('image')) {
 
-            if(file_exists(public_path('images/') . $reworks->image)){
-                unlink(public_path('images/') . $reworks->image);
-            }
+        if (strlen($request->image) > 0) {
 
-            $imageName = 'reworks-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+            $image_array_1 = explode(";", $request->image);
 
+            $image_array_2 = explode(",", $image_array_1[1]);
+
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = $reworks->image;
+            
+            file_put_contents(public_path('images/').$imageName, $data);
         }else{
             $imageName = $reworks->image;
         }

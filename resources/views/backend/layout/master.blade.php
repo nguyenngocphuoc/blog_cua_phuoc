@@ -197,6 +197,17 @@
                 });
  
             }); 
+            // khi data đã được nhập thì bạn phải confirm để thoát
+            var isDataChange = false;
+            $("form input").on("change paste keyup", function() {
+                if(!isDataChange){
+                    window.onbeforeunload = function () {
+                        var msg = "sure?";
+                        return msg;
+                    };
+                }
+            });
+
         </script>
         
     </body>
