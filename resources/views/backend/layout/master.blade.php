@@ -63,7 +63,7 @@
         </div>
         
         <div id="uploadimageModal" class="modal" role="dialog">
-            <div class="modal-dialog" style="width:1200px;">
+            <div class="modal-dialog" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -72,7 +72,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-8 text-center">
-                                <div id="image_demo" style="width:700px; margin-top:30px"></div>
+                                <div id="image_demo" style="width:350px; margin-top:30px"></div>
                             </div>
                             <div class="col-md-4" style="padding-top:30px;">
                                 <br />
@@ -151,8 +151,8 @@
                 @endforeach
             @endif
 
-            var width = 600;
-            var heigth = croppieRatio ? 600 / croppieRatio : 400;
+            var width = 300;
+            var heigth = croppieRatio ? 300 / croppieRatio : 200;
             $(document).ready(function(){
                 $image_crop = $('#image_demo').croppie({
                         enableExif: true,
@@ -162,8 +162,8 @@
                             type: 'square' //circle
                         },
                         boundary: {
-                            width: 600,
-                            height: 600
+                            width: 300,
+                            height: 300
                         }
                     });
                 $.each($.find("input[type='file']"), function(index, itemData) {
