@@ -72,7 +72,7 @@
                 <div class="single-trending-post">
                     <img src="{{ asset('images/'.$topnews->image) }}" alt="" style="height: 200px; width: 350px;">
                     <div class="post-content">
-                        <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-cata">{{ $topnews->title }}</a>
+                        <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-title">{{ $topnews->title }}</a>
                     </div>
                 </div>
                 @endforeach
@@ -114,9 +114,11 @@
                                     <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
                                     <!-- All Share Buttons -->
                                     <div class="all-share-btn d-flex">
-                                        <a href="https://www.facebook.com/sharer/sharer.php?caption=du học nào các bạn ơi &u={{\urlencode(url('/'))}}" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        <a href="http://twitter.com/share?text=du học nào các bạn ơi &url={{\urlencode(url('/'))}}" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    
+                                        <a href="https://www.facebook.com/sharer/sharer.php?caption=du học nào các bạn ơi &u={{\urlencode(url('/'))}}"
+                                            class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="http://twitter.com/share?text=du học nào các bạn ơi &url={{\urlencode(url('/'))}}"
+                                            class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
                                     </div>
                                 </div>
                             </div>
@@ -170,6 +172,7 @@
                     </div>
                     <div class="post-content">
                         <a href="{{ url('page/rework/'.$rework->slug) }}" class="post-title">{{ $rework->title }}</a>
+                        <p>{!!\substr($rework->details, 0, 100)!!}</p>
                         <div class="post-meta d-flex">
                             <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $rework->view_count }}</a>
                             <!--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
@@ -215,8 +218,10 @@
             <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
             <!-- All Share Buttons -->
             <div class="all-share-btn d-flex">
-                <a href="https://www.facebook.com/sharer/sharer.php?caption=du học nào các bạn ơi &u={{\urlencode(url('/'))}}" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="http://twitter.com/share?text=du học nào các bạn ơi &url={{\urlencode(url('/'))}}" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?caption=du học nào các bạn ơi &u={{\urlencode(url('/'))}}"
+                    class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="http://twitter.com/share?text=du học nào các bạn ơi &url={{\urlencode(url('/'))}}"
+                    class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
