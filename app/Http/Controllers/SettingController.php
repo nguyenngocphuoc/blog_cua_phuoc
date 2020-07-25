@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Setting;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SettingController extends Controller
 {
@@ -29,7 +30,6 @@ class SettingController extends Controller
             'vimeo'             => 'nullable|url',
             'youtube'           => 'nullable|url'
         ]);
-
         $setting = new Setting();
 
         if ($request->hasFile('site_logo')) {
@@ -49,24 +49,46 @@ class SettingController extends Controller
         }else{
             $site_favicon = 'favicon.ico';
         }
+        $first = Setting::where('id',1)->first();
+        if($first === null){
+            DB::table('settings')->insert(
+                [
+                'id'            => 1,
+                'site_name'     => $request->site_name,
+                'site_logo'     => $site_logo,
+                'site_favicon'  => $site_favicon,
+                'email'         => $request->email,
+                'phone'         => $request->phone,
+                'facebook'      => $request->facebook,
+                'twitter'       => $request->twitter,
+                'linkedin'      => $request->linkedin,
+                'vimeo'         => $request->vimeo,
+                'youtube'       => $request->youtube,
+                'about_us'      => $request->about_us,
+                'address'       => $request->address,
+                'meta_description'       => $request->meta_description
+                ]
+            );
+        }else {
+            $setting->updateOrCreate(['id' => 1],
+            [
+              'site_name'     => $request->site_name,
+              'site_logo'     => $site_logo,
+              'site_favicon'  => $site_favicon,
+              'email'         => $request->email,
+              'phone'         => $request->phone,
+              'facebook'      => $request->facebook,
+              'twitter'       => $request->twitter,
+              'linkedin'      => $request->linkedin,
+              'vimeo'         => $request->vimeo,
+              'youtube'       => $request->youtube,
+              'about_us'      => $request->about_us,
+              'address'       => $request->address,
+              'meta_description'       => $request->meta_description
+            ]
+          );
+        }
 
-        $setting->updateOrCreate(['id' => 1],
-          [
-            'site_name'     => $request->site_name,
-            'site_logo'     => $site_logo,
-            'site_favicon'  => $site_favicon,
-            'email'         => $request->email,
-            'phone'         => $request->phone,
-            'facebook'      => $request->facebook,
-            'twitter'       => $request->twitter,
-            'linkedin'      => $request->linkedin,
-            'vimeo'         => $request->vimeo,
-            'youtube'       => $request->youtube,
-            'about_us'      => $request->about_us,
-            'address'       => $request->address,
-            'meta_description'       => $request->meta_description
-          ]
-        );
 
         $notification = array(
             'message'    => 'Settings updated successfully !'
