@@ -116,8 +116,8 @@ class NewsController extends Controller
 
             $data = base64_decode($image_array_2[1]);
 
-            $imageName = 'news-'. time().uniqid(). '.png';
-
+            $imageName = $news->image;
+            
             file_put_contents(public_path('images/').$imageName, $data);
         }else{
             $imageName = $news->image;

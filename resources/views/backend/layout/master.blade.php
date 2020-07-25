@@ -72,7 +72,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-8 text-center">
-                                <div id="image_demo" style="width:350px; margin-top:30px"></div>
+                                <div id="image_demo" style="width:100%; margin-top:30px"></div>
                             </div>
                             <div class="col-md-4" style="padding-top:30px;">
                                 <br />
@@ -151,8 +151,8 @@
                 @endforeach
             @endif
 
-            var width = 300;
-            var heigth = croppieRatio ? 300 / croppieRatio : 200;
+            var width = 200;
+            var heigth = croppieRatio ? 200 / croppieRatio : 133;
             $(document).ready(function(){
                 $image_crop = $('#image_demo').croppie({
                         enableExif: true,
@@ -186,7 +186,7 @@
                         $('.crop_image').click(function(event){
                             $image_crop.croppie('result', {
                             type: 'canvas',
-                            size: 'viewport'
+                            size: { width: 480*(width/heigth), height: 480 }
                             }).then(function(response){
                                 var input_id = $(itemData).attr("hidden-id");
                                 $('#'+input_id).val(response);
