@@ -30,11 +30,13 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="newstitle">Tiêu đề</label>
-                                <input type="text" name="title" class="form-control" id="newstitle">
+                                <input type="text" name="title" class="form-control" id="newstitle" value="{{ old('title')}}">
                             </div>
                             <div class="form-group">
                                 <label>Nội dung chi tiết</label>
-                                <textarea id="editor1" name="details" placeholder="Nhập nội dung tại đây..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                <textarea id="editor1" name="details" placeholder="Nhập nội dung tại đây..." style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                                {{old('details')}}
+                                </textarea>
                             </div>
                         </div>
                     </div>

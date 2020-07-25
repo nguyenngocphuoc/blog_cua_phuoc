@@ -35,7 +35,7 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="categoryname">Tên thể loại</label>
-                            <input type="text" name="name" class="form-control" id="categoryname" value="{{ old('name') }}">
+                            <input type="text" name="name" class="form-control" id="categoryname" value="1">
                         </div>
                         <div class="form-group">
                             <label for="categoryname">Nhóm thể loại</label>
