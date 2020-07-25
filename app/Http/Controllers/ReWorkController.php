@@ -82,7 +82,7 @@ class ReWorkController extends Controller
         return view('backend.reworks.edit', compact('categories','reworks'));
     }
 
- 
+
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -140,7 +140,7 @@ class ReWorkController extends Controller
         return redirect()->route('admin.reworks.index')->with(['message' => 'Chỉnh sửa thành công!']);
     }
 
- 
+
     public function destroy($id)
     {
         $reworks = ReWork::findOrFail($id);
@@ -156,7 +156,7 @@ class ReWorkController extends Controller
     {
         $reworks = ReWork::select('*')->where('title', 'like', '%' .$request->resultSearch. '%')
                 ->orWhere('slug', 'like', '%'.$request->resultSearch.'%')
-                ->orWhere('details', 'like', '%'.$request->resultSearch.'%')->get();
+                ->orWhere('details', 'like', '%'.$request->resultSearch.'%')->paginate(5);
         return view('view.archive', compact('reworks'));
     }
 }
