@@ -18,3 +18,7 @@ yarn-error.log
 /public/images/!logo.png
 /public/images/!category.jpg
 /public/images/!post.jpg
+*.jpg
+*.jpeg
+*.png
+*.gif
