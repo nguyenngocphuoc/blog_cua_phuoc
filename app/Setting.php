@@ -14,48 +14,48 @@ class Setting extends Model
     ];
 
     public static function getDescription() {
-        if(Setting::first() !== null)
-            return Setting::first()->meta_description;
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->meta_description;
         return "this is default description";
     }
     public static function getTitle() {
-        if(Setting::first() !== null)
-            return Setting::first()->site_name;
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->site_name;
         return "this is default title";
     }
     public static function getIcon() {
-        if(Setting::first() !== null)
-            return 'images/'.Setting::first()->site_favicon;
+        if(Setting::where('id',1)->first() !== null)
+            return 'images/'.Setting::where('id',1)->first()->site_favicon;
         return "favicon.ico";
     }
     public static function getLogo() {
-        if(Setting::first() !== null)
-            return 'images/'.Setting::first()->site_logo;
+        if(Setting::where('id',1)->first() !== null)
+            return 'images/'.Setting::where('id',1)->first()->site_logo;
         return "img/core-img/logo.png";
     }
     public static function getPhoneNumber() {
-        if(Setting::first() !== null)
-            return Setting::first()->phone;
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->phone;
         return "0947467073";
     }
     public static function getFacebook() {
-        if(Setting::first() !== null)
-            return Setting::first()->facebook;
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->facebook;
         return "";
     }
     public static function getTwitter() {
-        if(Setting::first() !== null)
-            return Setting::first()->twitter;
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->twitter;
         return "";
     }
     public static function getYoutube() {
-        if(Setting::first() !== null)
-            return Setting::first()->youtube;
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->youtube;
         return "";
     }
     public static function getLinkedin() {
-        if(Setting::first() !== null)
-            return Setting::first()->linkedin;
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->linkedin;
         return "";
     }
 }

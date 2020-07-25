@@ -17,7 +17,7 @@ class RegisterController extends Controller
 
     public function register()
     {
-        $setting = Setting::first();
+        $setting = Setting::where('id',1)->first();
 
         return view('authentication.register',compact('setting'));
     }

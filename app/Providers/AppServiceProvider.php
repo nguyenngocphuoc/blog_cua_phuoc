@@ -9,6 +9,7 @@ use App\Category;
 use App\Advertisement;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
                     'frontend.layout.partials.footer'
                 ],
                 function($view) {
-                $view->with('headersettings', Setting::first());
+                $view->with('headersettings', Setting::where('id',1)->first());
                 $view->with('headerads', Advertisement::get());
             });
 
@@ -39,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
             });
 
             view()->composer('frontend.layout.partials.header', function($view) {
-                $categoryid = Setting::first();
+                $categoryid = Setting::where('id',1)->first();
                 $newstickers = [];//News::latest()->whereHas('category')->where('category_id',$categoryid->breaking_news_category_id)->where('status',1)->get();
                 $view->with('newstickers', $newstickers);
             });
@@ -67,6 +68,9 @@ class AppServiceProvider extends ServiceProvider
             });
 
         }
+        Validator::extend('is_img',function($attribute, $value, $params, $validator) {
+            return strlen($value) == 0 ||strlen($value) > 10;
+        });
     }
 
     /**

@@ -60,7 +60,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="newsimage">Featured Image</label>
-                                <input type="file" name="image" id="newsimage">
+                                <!--<input type="file" name="image" id="newsimage"> -->
+                                <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="newsimage">
+                                <input id="{{$uniqid}}" type="hidden" name="image">
                                 <p class="help-block">(Image must be in .png or .jpg format)</p>
                             </div>
                             <hr>

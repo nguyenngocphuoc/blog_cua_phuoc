@@ -15,7 +15,7 @@ class LoginController extends Controller
 
     public function login()
     {
-        $setting = Setting::first();
+        $setting = Setting::where('id',1)->first();
 
         return view('authentication.login',compact('setting'));
     }

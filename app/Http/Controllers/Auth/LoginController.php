@@ -46,7 +46,7 @@ class LoginController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
-3
+
     public function handleProviderCallback()
     {
         $guser = Socialite::driver('google')->user();
