@@ -205,6 +205,9 @@
                         var msg = "sure?";
                         return msg;
                     };
+                    window.onsubmit = function () {
+                        window.onbeforeunload = null;
+                    };
                 }
             });
 

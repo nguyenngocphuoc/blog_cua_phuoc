@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="@yield('description',\App\Setting::getDescription())">
@@ -20,6 +19,8 @@
 </head>
 
 <body>
+
+
     <div id="messageDivId">
         @if ( session()->has('messageSuccess') )
         <div class="alert alert-success alert-dismissable">{{ session()->get('messageSuccess') }}</div>
@@ -43,8 +44,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="/" class="nav-brand"><img src="{{ asset(\App\Setting::getLogo())}}" width="74" height="29"
-                            alt=""></a>
+                    <a href="/" class="nav-brand"><img src="{{ asset(\App\Setting::getLogo())}}" width="74" height="29" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -66,9 +66,9 @@
                                     <li class="active"><a href="/">Trang chủ</a></li>
                                     <li><a href="#">GIỚI THIỆU</a>
                                         <ul class="dropdown">
-                                            <li><a href="{{ url('/page/about') }}">Về chúng tôi</a></li>
-                                            {{-- <li><a href="archive.html">Bản tin công ty</a></li>
-                                            <li><a href="">Góc Hàn Quốc</a></li> --}}
+                                            <li><a href="index.html">Về chúng tôi</a></li>
+                                            <li><a href="archive.html">Bản tin công ty</a></li>
+                                            <li><a href="">Góc Hàn Quốc</a></li>
                                         </ul>
                                     </li>
 
@@ -122,9 +122,7 @@
                                             </ul> -->
                                         </div>
                                     </li>
-                                    <li><a
-                                            href="{{url('contact')}}">{{ Config::get('properties.contact.signup_advice')}}</a>
-                                    </li>
+                                    <li><a href="{{url('contact')}}">{{ Config::get('properties.contact.signup_advice')}}</a></li>
                                     <li><a href="contact.html">{{ Config::get('properties.contact.ask')}}</a></li>
                                 </ul>
                             </div>
