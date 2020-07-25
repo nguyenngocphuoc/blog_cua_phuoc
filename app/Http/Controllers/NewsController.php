@@ -61,8 +61,8 @@ class NewsController extends Controller
             'details'       => $request->details,
             'category_id'   => 1, // $request->category_id,
             'image'         => $imageName,
-            'status'        => 1,
-            'featured'      => 1
+            'status'        => $status,
+            'featured'      => $featured
         ]);
 
         return redirect()->route('admin.news.index')->with(['message' => 'Tạo thành công!']);

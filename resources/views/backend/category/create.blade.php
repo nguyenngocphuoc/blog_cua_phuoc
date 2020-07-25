@@ -7,7 +7,9 @@
 @endpush
 
 @section('content')
-
+<script>
+    var croppieRatio = 16/7;
+</script>
 <section class="content-header">
     <h1>
         Tạo mới thể loại
@@ -65,7 +67,7 @@
                         <div class="form-group">
                             {{-- <input type="file" name="image" id="categoryimage"> --}}
                             <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="categoryimage">
-                            <input id="{{$uniqid}}" type="hidden" name="categoryimage">
+                            <input id="{{$uniqid}}" type="hidden" name="image">
                             <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
                         </div>
                         <div class="checkbox">

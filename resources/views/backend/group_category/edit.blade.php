@@ -20,7 +20,9 @@
             <li class="active">General Elements</li>
         </ol> -->
 </section>
-
+<script>
+    var croppieRatio = 16/7;
+</script>
 <section class="content">
     <div class="row">
 
@@ -47,7 +49,7 @@
                             <label for="groupcategoryimage">Hình ảnh của nhóm thể loại</label>
                             {{-- <input type="file" name="image" id="groupcategoryimage"> --}}
                             <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="groupcategoryimage">
-                            <input id="{{$uniqid}}" type="hidden" name="groupcategoryimage">
+                            <input id="{{$uniqid}}" type="hidden" name="image">
                             <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
                         </div>
                         <div class="checkbox">

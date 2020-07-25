@@ -63,16 +63,16 @@
                         <p class="help-block">(Hình ảnh được đăng dưới 2 loại .png hoặc .jpg)</p>
                     </div>
                     <hr>
-                    {{-- <div class="checkbox">
+                    <div class="checkbox">
                         <label>
                             <input type="checkbox" name="status"> Published
                         </label>
-                    </div> --}}
-                    <!-- <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="featured"> Featured
-                                </label>
-                            </div> -->
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="featured"> Featured
+                        </label>
+                    </div>
                 </div>
 
                 <div class="box-footer">

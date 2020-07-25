@@ -118,7 +118,7 @@ class ReWorkController extends Controller
             $data = base64_decode($image_array_2[1]);
 
             $imageName = $reworks->image;
-            
+
             file_put_contents(public_path('images/').$imageName, $data);
         }else{
             $imageName = $reworks->image;
