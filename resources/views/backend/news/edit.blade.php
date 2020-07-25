@@ -19,7 +19,9 @@
         <li><a href="#" style="margin-right: 30px; font-size: 15px;"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
     </ol>
 </section>
-
+<script>
+    var croppieRatio = 16/7;
+</script>
 <section class="content">
     <div class="row">
 
@@ -72,26 +74,26 @@
                             <p class="help-block">(Image must be in .png or .jpg format)</p>
                         </div>
                         <hr>
-                        {{-- <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" name="status" {{ $news->status ? 'checked' : '' }}>
-                        Published
-                        </label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="status" {{ $news->status ? 'checked' : '' }}>
+                                Published
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="featured" {{ $news->featured ? 'checked' : '' }}> Featured
+                            </label>
+                        </div>
                     </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="featured" {{ $news->featured ? 'checked' : '' }}> Featured
-                        </label>
-                    </div> --}}
-                </div>
 
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary btn-flat">UPDATE</button>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary btn-flat">UPDATE</button>
+                    </div>
                 </div>
             </div>
-    </div>
 
-    </form>
+        </form>
 
     </div>
 </section>
