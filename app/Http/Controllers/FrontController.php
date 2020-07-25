@@ -7,6 +7,7 @@ use App\ReWork;
 use App\GroupCategory;
 use App\Category;
 use App\Advertisement;
+use App\Setting;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -101,6 +102,13 @@ class FrontController extends Controller
 
         // return $listRework;
         return view('view.archive_category_group',compact('listCategory', 'arr', 'groupCategory'));
+    }
+
+    public function getPageAbout()
+    {
+        $setting = Setting::latest()->first();
+
+        return view('view.about', compact('setting'));
     }
 
 }

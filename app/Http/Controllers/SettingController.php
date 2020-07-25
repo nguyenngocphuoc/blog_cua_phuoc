@@ -68,7 +68,7 @@ class SettingController extends Controller
                 'address'       => $request->address,
                 'meta_description'       => $request->meta_description
                 ]
-            ); 
+            );
         }else {
             $setting->updateOrCreate(['id' => 1],
             [
