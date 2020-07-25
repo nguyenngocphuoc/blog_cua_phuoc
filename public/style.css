@@ -3658,11 +3658,5 @@ hotline-phone-ring-wrap {
 }
 
 .one-line-title {
-    width: 200px;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    text-overflow: ellipsis;
-    border: 1px solid #ddd;
-    margin: 0;
+
 }

@@ -1,5 +1,9 @@
 <!-- Sidebar Widget -->
+@if(isset($class))
+<div class="{{ $class }}">
+@else
 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+@endif
     <div class="sidebar-area bg-white mb-30 box-shadow">
 
         <!-- Sidebar Widget -->
@@ -41,7 +45,7 @@
                     <img src="{{ asset('images/'.$new->image) }}" alt="{{ $new->title }}" title="{{ $new->title }}">
                 </div>
                 <div class="youtube-channel-content">
-                    <a href="{{ url('page/rework/'.$new->slug) }}" title="{{ $new->title }}" class="one-line-title channel-title">{{ $new->title }}</a>
+                    <a href="{{ url('page/rework/'.$new->slug) }}" title="{{ $new->title }}" class="one-line-title channel-title">{{ str_limit(strip_tags($new->title),30)}}</a>
                     <a href="{{ url('page/rework/'.$new->slug) }}" title="{{ $new->title }}" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i>
                         Xem</a>
                 </div>
