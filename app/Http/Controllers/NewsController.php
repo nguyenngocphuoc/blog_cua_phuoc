@@ -29,7 +29,6 @@ class NewsController extends Controller
         $request->validate([
             'title'         => 'required|unique:news|max:255',
             'details'       => 'required',
-            'category_id'   => 'required',
             'image'         => 'required|is_img',
         ]);
 
@@ -60,10 +59,10 @@ class NewsController extends Controller
             'title'         => $request->title,
             'slug'          => str_slug($request->title),
             'details'       => $request->details,
-            'category_id'   => $request->category_id,
+            'category_id'   => 1, // $request->category_id,
             'image'         => $imageName,
-            'status'        => $status,
-            'featured'      => $featured
+            'status'        => 1,
+            'featured'      => 1
         ]);
 
         return redirect()->route('admin.news.index')->with(['message' => 'Tạo thành công!']);
@@ -117,7 +116,7 @@ class NewsController extends Controller
             $data = base64_decode($image_array_2[1]);
 
             $imageName = $news->image;
-            
+
             file_put_contents(public_path('images/').$imageName, $data);
         }else{
             $imageName = $news->image;

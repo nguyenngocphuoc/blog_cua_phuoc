@@ -13,7 +13,9 @@
     </div>
 </section>
 <!-- ##### Breadcrumb Area End ##### -->
-
+<script>
+    var croppieRatio = 16/9;
+</script>
 <!-- ##### Breadcrumb Area Start ##### -->
 <div class="mag-breadcrumb py-5">
     <div class="container">

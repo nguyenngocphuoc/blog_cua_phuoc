@@ -11,7 +11,8 @@
 <section class="content-header">
     <h1>
         Tạo mới thể loại
-        <small><a href="{{ route('admin.category.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i class="fa fa-plus"></i> Quay về</a></small>
+        <small><a href="{{ route('admin.category.index') }}" class="btn btn-block btn-xs btn-warning btn-flat"><i
+                    class="fa fa-plus"></i> Quay về</a></small>
     </h1>
     <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -35,11 +36,13 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="categoryname">Tên thể loại</label>
-                            <input type="text" name="name" class="form-control" id="categoryname" value="{{ old('name') }}">
+                            <input type="text" name="name" class="form-control" id="categoryname"
+                                value="{{ old('name') }}">
                         </div>
                         <div class="form-group">
                             <label for="categoryname">Nhóm thể loại</label>
-                            <select id="group_categories_id" name="group_categories_id" class="form-control has-feedback{{ $errors->has('group_categories_id') ? ' has-error' : '' }}">
+                            <select id="group_categories_id" name="group_categories_id"
+                                class="form-control has-feedback{{ $errors->has('group_categories_id') ? ' has-error' : '' }}">
                                 @foreach($arrGroupCategory as $key => $topnews)
                                 @if (old('group_categories_id') == $topnews->id)
                                 <option selected value="{{$topnews->id}}">{{$topnews->name}}</option>
@@ -60,7 +63,9 @@
                     </div>
                     <div class="box-body">
                         <div class="form-group">
-                            <input type="file" name="image" id="categoryimage" value="{{ old('image') }}">
+                            {{-- <input type="file" name="image" id="categoryimage"> --}}
+                            <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="categoryimage">
+                            <input id="{{$uniqid}}" type="hidden" name="categoryimage">
                             <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
                         </div>
                         <div class="checkbox">
