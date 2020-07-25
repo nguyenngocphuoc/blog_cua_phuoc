@@ -133,8 +133,8 @@
                                     </div>
                                 </div>
 
-                                <small class="pull-right"><em>If you don't want to show a social media on front-end,
-                                        just leave the input field blank.</em></small>
+                                <small class="pull-right"><em>Nếu bạn không muốn hiển thị phương tiện truyền thông xã
+                                        hội, chỉ cần để trống trường nhập.</em></small>
                             </div>
                         </div>
 
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="box-footer">
-                        <button type="submit" name="genarel" class="btn btn-info btn-flat">SAVE</button>
+                        <button type="submit" name="genarel" class="btn btn-info btn-flat">Thay đổi</button>
                     </div>
 
             </div>
