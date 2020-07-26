@@ -13,16 +13,18 @@ class CreateInfoSubmitTable extends Migration
      */
     public function up()
     {
-        Schema::create('info_submits', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('address')->nullable();
-            $table->string('date_of_birth')->nullable();
-            $table->string('category_id')->nullable();
-            $table->string('phone')->nullable();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('info_submits')) {
+            Schema::create('info_submits', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name')->nullable();
+                $table->string('email')->nullable();
+                $table->string('address')->nullable();
+                $table->string('date_of_birth')->nullable();
+                $table->string('category_id')->nullable();
+                $table->string('phone')->nullable();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

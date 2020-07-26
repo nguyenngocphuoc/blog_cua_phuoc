@@ -200,7 +200,7 @@
             }); 
             // khi data đã được nhập thì bạn phải confirm để thoát
             var isDataChange = false;
-            $("form input").on("change paste keyup", function() {
+            $("form input, div.cke_contents ").on("change paste keyup", function() {
                 if(!isDataChange){
                     window.onbeforeunload = function () {
                         var msg = "sure?";
@@ -211,6 +211,23 @@
                     };
                 }
             });
+            var delayInMilliseconds = 1000; //1 second
+
+            setTimeout(function() {
+                for (var i in CKEDITOR.instances) {
+                    CKEDITOR.instances[i].on('change', function() {
+                        if(!isDataChange){
+                            window.onbeforeunload = function () {
+                                var msg = "sure?";
+                                return msg;
+                            };
+                            window.onsubmit = function () {
+                                window.onbeforeunload = null;
+                            };
+                        }
+                    });
+                }
+            }, delayInMilliseconds);
 
         </script>
         

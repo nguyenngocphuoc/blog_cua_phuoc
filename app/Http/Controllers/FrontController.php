@@ -21,12 +21,13 @@ class FrontController extends Controller
         $reworks2 = ReWork::latest()->where('status',1)->take(10)->get();
         
         $max = 5;
-        if(ReWork::count() < $max) $max = ReWork::count();
-        if(News::count() < $max) $max = News::count();
-        $reworkRad = ReWork::all()->random($max);
-        $newsRad = News::all()->random($max);
+        if(ReWork::where('status',1)->count() < $max) $max = ReWork::where('status',1)->count();
+        if(News::where('status',1)->count() < $max) $max = News::where('status',1)->count();
         
-        $heroImg = HeroImages::latest()->get();
+        $reworkRad = ReWork::all()->where('status',1)->random($max);
+        $newsRad = News::all()->where('status',1)->random($max);
+        
+        $heroImg = HeroImages::latest()->where('status',1)->get();
         return view('view.index',compact(
                 'topnewslist',
                 'newestlist',
@@ -77,7 +78,7 @@ class FrontController extends Controller
     {
         $search = request()->input('search');
 
-        $newssearch = News::with('category')->where('title','like','%'.$search.'%')->whereHas('category')->where('status',1)->get();
+        $newssearch = News::with('category')->where('status',1)->where('title','like','%'.$search.'%')->whereHas('category')->where('status',1)->get();
 
         return view('frontend.pages.search',compact('newssearch'));
     }

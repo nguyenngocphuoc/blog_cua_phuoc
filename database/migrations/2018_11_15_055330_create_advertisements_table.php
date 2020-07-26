@@ -13,18 +13,20 @@ class CreateAdvertisementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('advertisements', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('type')->default('category');
-            $table->string('slug',191)->unique();
-            $table->string('header_top')->nullable();
-            $table->string('body_top')->nullable();
-            $table->string('body_middle')->nullable();
-            $table->string('body_bottom')->nullable();
-            $table->string('sidebar_one')->nullable();
-            $table->string('sidebar_two')->nullable();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('info_submits')) {
+            Schema::create('advertisements', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('type')->default('category');
+                $table->string('slug',191)->unique();
+                $table->string('header_top')->nullable();
+                $table->string('body_top')->nullable();
+                $table->string('body_middle')->nullable();
+                $table->string('body_bottom')->nullable();
+                $table->string('sidebar_one')->nullable();
+                $table->string('sidebar_two')->nullable();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

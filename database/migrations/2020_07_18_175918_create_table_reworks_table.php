@@ -13,21 +13,24 @@ class CreateTableReworksTable extends Migration
      */
     public function up()
     {
-        Schema::create('reworks', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->string('slug');
-            $table->text('details');
-            $table->string('image');
-            $table->integer('category_id');
-            $table->boolean('status');
-            $table->integer('view_count')->default(0);
-            $table->string('work_address');
-            $table->string('deadline_for_sub');
-            $table->string('salary');
-            $table->integer('emp_total');
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('reworks')) {
+ 
+            Schema::create('reworks', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('title');
+                $table->string('slug');
+                $table->text('details');
+                $table->string('image');
+                $table->integer('category_id');
+                $table->boolean('status');
+                $table->integer('view_count')->default(0);
+                $table->string('work_address');
+                $table->string('deadline_for_sub');
+                $table->string('salary');
+                $table->integer('emp_total');
+                $table->timestamps();
+            });
+        }
     }
 
     /**
