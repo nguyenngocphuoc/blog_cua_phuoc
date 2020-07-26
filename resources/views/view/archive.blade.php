@@ -9,8 +9,10 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Trang
+                        <li class="breadcrumb-item"><a href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i> Trang
                                 chủ</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="/"> Tìm kiếm </a>
                         </li>
                         {{-- <li class="breadcrumb-item"><a href="#">Feature</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Archive by Category “TRAVEL”</li> --}}

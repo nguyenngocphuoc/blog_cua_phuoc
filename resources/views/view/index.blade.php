@@ -61,7 +61,7 @@
     <!-- ##### Hero Area End ##### -->
 
     <!-- ##### Mag Posts Area Start ##### -->
-    <section class="row d-flex flex-wrap">
+    <section class="mag-posts-area d-flex flex-wrap">
 
         <!-- >>>>>>>>>>>>>>>>>>>>
          Post Left Sidebar Area
@@ -71,166 +71,43 @@
             <div class="single-sidebar-widget p-30">
                 <!-- Section Title -->
                 <div class="section-heading">
-                    <h5>Most Popular</h5>
+                    <h5>CÓ THỂ BẠN QUAN TÂM</h5>
                 </div>
-
+                @foreach($newsRad as $key => $topnews)
                 <!-- Single Blog Post -->
                 <div class="single-blog-post d-flex">
                     <div class="post-thumbnail">
-                        <img src="img/bg-img/4.jpg" alt="">
+                        <img src="{{ asset('images/'.$topnews->image) }}" alt="{{ $topnews->title }}">
                     </div>
                     <div class="post-content">
-                        <a href="single-post.html" class="post-title">Global Travel And Vacations Luxury Travel</a>
+                        <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-title" title="{{ $topnews->title }}">{{ str_limit(strip_tags($topnews->title),50) }}</a>
                         <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
+                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>{{ $topnews->view_count }} Lượt Xem </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/5.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Cruising Destination Ideas</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/6.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">The Luxury Of Traveling With</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/7.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Choose The Perfect Accommodations</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/8.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <!-- Sidebar Widget -->
             <div class="single-sidebar-widget p-30">
                 <!-- Section Title -->
                 <div class="section-heading">
-                    <h5>Latest Videos</h5>
+                    <h5>TIN TUYỂN DỤNG CŨ HƠN</h5>
                 </div>
-
+                @foreach($reworkRad as $key => $topnews)
                 <!-- Single Blog Post -->
                 <div class="single-blog-post d-flex">
                     <div class="post-thumbnail">
-                        <img src="img/bg-img/9.jpg" alt="">
+                        <img src="{{ asset('images/'.$topnews->image) }}" alt="{{ $topnews->title }}">
                     </div>
                     <div class="post-content">
-                        <a href="single-post.html" class="post-title">Coventry City Guide Including Coventry</a>
+                        <a href="{{ url('page/news/'.$topnews->slug) }}" class="post-title" title="{{ $topnews->title }}">{{ str_limit(strip_tags($topnews->title),50) }}</a>
                         <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
+                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>{{ $topnews->view_count }} Lượt Xem </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/10.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Choose The Perfect Accommodations</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/11.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Get Ready Fast For Fall Leaf Viewing</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/12.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Global Resorts Network Grn Putting</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="img/bg-img/13.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Travel Prudently Luggage And Carry</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
 

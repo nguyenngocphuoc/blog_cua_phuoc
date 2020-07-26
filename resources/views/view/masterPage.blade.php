@@ -134,7 +134,6 @@
                             <div class="top-search-area">
                                 <form action="{{ route('page.search') }}" method="GET" enctype="multipart/form-data"
                                     role="form">
-                                    @csrf
                                     @method('GET')
                                     <input type="search" name="resultSearch" id="topSearch" placeholder="Tìm Kiếm...">
                                     <button type="submit" class="btn"><i class="fa fa-search"

@@ -1004,7 +1004,8 @@ input:focus {
     flex: 0 0 calc(100% - 690px);
     max-width: calc(100% - 690px);
     width: calc(100% - 690px);
-}
+    margin-left: 15px;
+    margin-right: 15px; }
 
 @media only screen and (min-width: 1200px) and (max-width: 1499px) {
     .mag-posts-content {

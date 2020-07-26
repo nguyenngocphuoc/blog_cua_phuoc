@@ -15,16 +15,22 @@ class FrontController extends Controller
     public function index()
     {
         $newestlist = News::latest()->whereHas('category')->where('status',1)->take(10)->get();
-
-        $topnewslist   = News::orderBy("view_count")->take(10)->get();
-        $reworks   = ReWork::latest()->take(10)->get();
-        $reworks2 = ReWork::latest()->take(10)->get();
-
+        $topnewslist   = News::where('status',1)->orderBy("view_count")->take(10)->get();
+        $reworks   = ReWork::latest()->where('status',1)->take(10)->get();
+        $reworks2 = ReWork::latest()->where('status',1)->take(10)->get();
+        
+        $max = 5;
+        if(ReWork::count() < $max) $max = ReWork::count();
+        if(News::count() < $max) $max = News::count();
+        $reworkRad = ReWork::all()->random($max);
+        $newsRad = News::all()->random($max);
         return view('view.index',compact(
                 'topnewslist',
                 'newestlist',
                 'reworks',
-                'reworks2'
+                'reworks2',
+                'reworkRad',
+                'newsRad'
             )
         );
     }

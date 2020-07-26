@@ -17,7 +17,7 @@
             <ul class="catagory-widgets">
                 @foreach($categories as $category)
                 <li>
-                    <a href="{{url('/page/category/'.$category->slug)}}">
+                    <a href="{{url('/page/category-group/'.$category->slug)}}">
                         <span>
                             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                             {{ $category->name }}
