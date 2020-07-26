@@ -6,7 +6,7 @@
             value="{{ old('name') }}">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
         @if ($errors->has('name'))
-        <span class="help-block">
+        <span class="text-danger help-block">
             <em>{{ $errors->first('name') }}</em>
         </span>
         @endif
@@ -17,7 +17,7 @@
             value="{{ old('email') }}">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         @if ($errors->has('email'))
-        <span class="help-block">
+        <span class="text-danger help-block">
             <em>{{ $errors->first('email') }}</em>
         </span>
         @endif
@@ -27,7 +27,7 @@
         <input style="padding-right: 5px;" type="date" name="date_of_birth" class="form-control"
             placeholder="Ngày sinh" value="{{ old('date_of_birth') }}">
         @if ($errors->has('date_of_birth'))
-        <span class="help-block">
+        <span class="text-danger help-block">
             <em>{{ $errors->first('date_of_birth') }}</em>
         </span>
         @endif
@@ -38,7 +38,7 @@
             value="{{ old('address') }}">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         @if ($errors->has('address'))
-        <span class="help-block">
+        <span class="text-danger help-block">
             <em>{{ $errors->first('address') }}</em>
         </span>
         @endif
@@ -49,7 +49,7 @@
             value="{{ old('phone') }}">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         @if ($errors->has('phone'))
-        <span class="help-block">
+        <span class="text-danger help-block">
             <em>{{ $errors->first('phone') }}</em>
         </span>
         @endif
@@ -61,7 +61,7 @@
             class="form-control has-feedback{{ $errors->has('orders') ? ' has-error' : '' }} placeholder="Số điện thoại"
                 value="{{ $newssingle->title }}" readonly>
         @if ($errors->has('orders'))
-        <span class="help-block">
+        <span class="text-danger help-block">
             <em>{{ $errors->first('orders') }}</em>
         </span>
         @endif
@@ -80,7 +80,7 @@
             @endforeach
         </select>
         @if ($errors->has('orders'))
-        <span class="help-block">
+        <span class="text-danger help-block">
             <em>{{ $errors->first('orders') }}</em>
         </span>
         @endif

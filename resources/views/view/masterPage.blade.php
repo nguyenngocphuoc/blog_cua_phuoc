@@ -118,7 +118,7 @@
                                         </div>
                                     </li>
                                     <li><a href="{{url('contact')}}">{{ Config::get('properties.contact.signup_advice')}}</a></li>
-                                    <li><a href="contact.html">{{ Config::get('properties.contact.ask')}}</a></li>
+                                    <!--<li><a href="contact.html">{{ Config::get('properties.contact.ask')}}</a></li>-->
                                 </ul>
                             </div>
                             <!-- Nav End -->
