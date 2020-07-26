@@ -58,4 +58,9 @@ class Setting extends Model
             return Setting::where('id',1)->first()->linkedin;
         return "";
     }
+    public static function getAddress() {
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->address;
+        return "";
+    }
 }

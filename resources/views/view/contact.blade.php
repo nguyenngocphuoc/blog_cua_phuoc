@@ -61,7 +61,10 @@
                         </div>
 
                         <div class="contact-information mb-30">
-
+                            <!-- {{$data = \App\Setting::getAddress()}} -->
+                            @if(strlen($data)>0)
+                             {!! $data !!}
+                            @else 
                             <!-- Single Contact Info -->
                             <div class="single-contact-info d-flex align-items-center">
                                 <div class="icon mr-15">
@@ -72,18 +75,6 @@
                                     <h6>Số 06 - Ngõ 112 - Đ.Nguyễn Trãi - Tp.Vinh</h6>
                                 </div>
                             </div>
-
-                            <!-- Single Contact Info -->
-                            <!-- <div class="single-contact-info d-flex align-items-center">
-                                <div class="icon mr-15">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                </div>
-                                <div class="text">
-                                    <p>Email:</p>
-                                    <h6>infodeercreative@gmail.com</h6>
-                                </div>
-                            </div> -->
-
                             <!-- Single Contact Info -->
                             <div class="single-contact-info d-flex align-items-center">
                                 <div class="icon mr-15">
@@ -95,6 +86,7 @@
                                         276 316 (Mr. Tuấn)</h6>
                                 </div>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>

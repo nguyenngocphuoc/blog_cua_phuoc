@@ -57,8 +57,8 @@
                             @foreach($listInfoSubmit as $info)
                             <tr>
                                 <td>{{ $info->name }}</td>
-                                <td>{{ $info->phone }}</td>
-                                <td>{{ $info->email }}</td>
+                                <td><a href="tel:555-555-5555">{{ $info->phone }}</a></td>
+                                <td><a href="mailto:{{ $info->email }}">{{ $info->email }}</a></td>
                                 <td>{{ $info->address }}</td>
                                 <td>{{ $info->date_of_birth }}</td>
                                 <td>{{ $info->orders }}</td>

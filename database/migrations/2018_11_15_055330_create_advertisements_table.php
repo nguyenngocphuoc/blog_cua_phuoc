@@ -13,7 +13,7 @@ class CreateAdvertisementsTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('info_submits')) {
+        if (!Schema::hasTable('advertisements')) {
             Schema::create('advertisements', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('type')->default('category');
