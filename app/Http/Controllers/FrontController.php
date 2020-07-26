@@ -115,7 +115,7 @@ class FrontController extends Controller
 
     public function getPageAbout()
     {
-        $setting = Setting::latest()->first();
+        $setting = Setting::latest()->where('id',1)->first();
 
         return view('view.about', compact('setting'));
     }

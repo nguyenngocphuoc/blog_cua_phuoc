@@ -64,12 +64,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="/">Trang chủ</a></li>
-                                    <li><a href="#">GIỚI THIỆU</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Về chúng tôi</a></li>
-                                            <li><a href="archive.html">Bản tin công ty</a></li>
-                                            <li><a href="">Góc Hàn Quốc</a></li>
-                                        </ul>
+                                    <li><a href="{{ url('page/about') }}">GIỚI THIỆU</a>
                                     </li>
 
                                     <li><a href="#">HỌC TẬP & VIỆC LÀM</a>
