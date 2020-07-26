@@ -9,6 +9,7 @@ use App\Category;
 use App\Advertisement;
 use App\Setting;
 use Illuminate\Http\Request;
+use App\HeroImages;
 
 class FrontController extends Controller
 {
@@ -24,13 +25,16 @@ class FrontController extends Controller
         if(News::count() < $max) $max = News::count();
         $reworkRad = ReWork::all()->random($max);
         $newsRad = News::all()->random($max);
+        
+        $heroImg = HeroImages::latest()->get();
         return view('view.index',compact(
                 'topnewslist',
                 'newestlist',
                 'reworks',
                 'reworks2',
                 'reworkRad',
-                'newsRad'
+                'newsRad',
+                'heroImg'
             )
         );
     }

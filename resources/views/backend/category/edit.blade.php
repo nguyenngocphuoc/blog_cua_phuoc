@@ -20,7 +20,9 @@
             <li class="active">General Elements</li>
         </ol> -->
 </section>
-
+<script>
+    var croppieRatio = 16/7;
+</script>
 <section class="content">
     <div class="row">
 
@@ -45,7 +47,8 @@
                         </div>
                         <div class="form-group">
                             <label for="categoryname">Nhóm thể loại</label>
-                            <select id="group_categories_id" name="group_categories_id" class="form-control has-feedback{{ $errors->has('group_categories_id') ? ' has-error' : '' }}">
+                            <select id="group_categories_id" name="group_categories_id"
+                                class="form-control has-feedback{{ $errors->has('group_categories_id') ? ' has-error' : '' }}">
                                 @foreach($arrGroupCategory as $key => $topnews)
                                 @if ($category->group_categories_id == $topnews->id)
                                 <option selected value="{{$topnews->id}}">{{$topnews->name}}</option>
@@ -58,7 +61,9 @@
                         </div>
                         <div class="form-group">
                             <label for="categoryimage">Hình ảnh của thể loại</label>
-                            <input type="file" name="image" id="categoryimage">
+                            {{-- <input type="file" name="image" id="categoryimage"> --}}
+                            <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="categoryimage">
+                            <input id="{{$uniqid}}" type="hidden" name="image">
                             <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
                         </div>
                         <div class="checkbox">

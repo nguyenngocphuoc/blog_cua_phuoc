@@ -56,7 +56,8 @@
                                 <td>
                                     <div class="btn-group-vertical">
                                         <div class="form-inline">
-                                            <a href="" class="btn btn-primary btn-flat"><i class="fa fa-eye"></i></a>
+                                            <a href="{{ url('page/news/'.$news->slug) }}"
+                                                class="btn btn-primary btn-flat"><i class="fa fa-eye"></i></a>
                                             <a href="{{ route('admin.news.edit',$news->id) }}"
                                                 class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
                                             <a href="javascript:void(0)" class="btn btn-danger btn-flat" onclick="if (confirm('Bạn có muốn xóa {{$news->title}} không?')) {

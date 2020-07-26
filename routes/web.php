@@ -19,6 +19,7 @@ Route::post('/reset-password', 'ResetPasswordController@checkExist')->name('rese
 
 
 
+
 Route::get('/contact', 'InfoSubmitController@register')->name('contact');
 // Route::post('/register', 'RegisterController@registration')->name('register');
 Route::post('/contact', 'InfoSubmitController@registration')->name('contact');
@@ -44,7 +45,6 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware' => ['auth','roles'],
     Route::resource('menus','MenuController');
     Route::post('menuitems-json','MenuController@getMenuItems')->name('menuitems.json');
     Route::post('menuitemsdetails-json','MenuController@getMenuItemsDetails')->name('menuitemsdetails.json');
-
 });
 
 // BOTH EDITOR AND ADMIN
@@ -55,6 +55,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth','roles'],'r
     Route::resource('news','NewsController');
     Route::resource('reworks','ReWorkController');
     Route::resource('info-submit','InfoSubmitController');
+    Route::resource('hero-images', 'HeroImagesController');
 
 });
 

@@ -26,7 +26,7 @@ class GroupCategoryController extends Controller
     {
         $request->validate([
             'name'   => 'required|unique:categories|max:255',
-            'image'  => 'required|image|mimes:jpg,png,jpeg'
+            'image'  => 'required|is_img',
         ]);
 
         // if(isset($request->status)){
@@ -40,9 +40,22 @@ class GroupCategoryController extends Controller
             $status = false;
         }
 
-        if ($request->hasFile('image')) {
-            $imageName = 'group-category-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+        // if ($request->hasFile('image')) {
+        //     $imageName = 'group-category-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
+        //     $request->image->move(public_path('images'), $imageName);
+        // }
+
+        if (strlen($request->image) > 0) {
+
+            $image_array_1 = explode(";", $request->image);
+
+            $image_array_2 = explode(",", $image_array_1[1]);
+
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = 'group-category-'. time().uniqid(). '.png';
+
+            file_put_contents(public_path('images/').$imageName, $data);
         }
 
         GroupCategory::create([
@@ -74,7 +87,7 @@ class GroupCategoryController extends Controller
     {
         $request->validate([
             'name'   => 'required|max:255',
-            'image'  => 'image|mimes:jpg,png,jpeg'
+            'image'  => 'required|is_img',
         ]);
 
         if(isset($request->status)){
@@ -85,15 +98,30 @@ class GroupCategoryController extends Controller
 
         $group_category = GroupCategory::findOrFail($group_category->id);
 
-        if ($request->hasFile('image')) {
+        // if ($request->hasFile('image')) {
 
-            if(file_exists(public_path('images/') . $group_category->image)){
-                unlink(public_path('images/') . $group_category->image);
-            }
+        //     if(file_exists(public_path('images/') . $group_category->image)){
+        //         unlink(public_path('images/') . $group_category->image);
+        //     }
 
-            $imageName = 'group-category-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
+        //     $imageName = 'group-category-'.time().uniqid().'.'.$request->image->getClientOriginalExtension();
+        //     $request->image->move(public_path('images'), $imageName);
 
+        // }else{
+        //     $imageName = $group_category->image;
+        // }
+
+        if (strlen($request->image) > 0) {
+
+            $image_array_1 = explode(";", $request->image);
+
+            $image_array_2 = explode(",", $image_array_1[1]);
+
+            $data = base64_decode($image_array_2[1]);
+
+            $imageName = $group_category->image;
+
+            file_put_contents(public_path('images/').$imageName, $data);
         }else{
             $imageName = $group_category->image;
         }

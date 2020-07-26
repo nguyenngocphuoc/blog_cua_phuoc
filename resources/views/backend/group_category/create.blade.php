@@ -50,7 +50,9 @@
                     </div>
                     <div class="box-body">
                         <div class="form-group">
-                            <input type="file" name="image" id="groupcategoryimage" value="{{ old('image') }}">
+                            {{-- <input type="file" name="image" id="groupcategoryimage"> --}}
+                            <input type="file" hidden-id="{{$uniqid = uniqid()}}" id="image">
+                            <input id="{{$uniqid}}" type="hidden" name="image">
                             <p class="help-block">(Hình ảnh phải ở định dạng .png hoặc .jpg)</p>
                         </div>
                         <div class="checkbox">
