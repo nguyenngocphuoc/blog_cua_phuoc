@@ -124,15 +124,14 @@
                                         <input type="text" name="linkedin" class="form-control" id="slinkedin"
                                             value="{{ @$setting->linkedin }}">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="syoutube" class="col-sm-2 control-label">Youtube:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="youtube" class="form-control" id="syoutube"
-                                                value="{{ @$setting->youtube }}">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="syoutube" class="col-sm-2 control-label">Youtube:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="youtube" class="form-control" id="syoutube"
+                                            value="{{ @$setting->youtube }}">
                                     </div>
                                 </div>
-
                                 <small class="pull-right"><em>Nếu bạn không muốn hiển thị phương tiện truyền thông xã
                                         hội, chỉ cần để trống trường nhập.</em></small>
                             </div>

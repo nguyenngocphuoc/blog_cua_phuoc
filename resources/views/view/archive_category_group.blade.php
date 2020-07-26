@@ -47,6 +47,9 @@
                                 style="text-transform: uppercase;">{{$value['categoryInfo']->name}}</b>
                         </h4>
                     </div>
+                    @if(count($value['list'])<=0)
+                    <p>chưa có bài viết nào<p>
+                    @else
                     @foreach($value['list'] as $rework)
                     <div class="single-catagory-post d-flex flex-wrap">
                         <div class="post-thumbnail bg-img"
@@ -65,6 +68,7 @@
                         </div>
                     </div>
                     @endforeach
+                    @endif
                     @endforeach
 
                     <!-- Pagination -->

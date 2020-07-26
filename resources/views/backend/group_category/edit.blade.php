@@ -7,7 +7,9 @@
 @endpush
 
 @section('content')
-
+<script>
+croppieRatio = 16/7;
+</script>
 <section class="content-header">
     <h1>
         Chỉnh sửa nhóm thể loại

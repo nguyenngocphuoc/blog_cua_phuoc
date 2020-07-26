@@ -8,7 +8,7 @@
 
 @section('content')
 <script>
-    var croppieRatio = 16/7;
+    croppieRatio = 16/7;
 </script>
 <section class="content-header">
     <h1>
