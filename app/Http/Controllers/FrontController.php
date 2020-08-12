@@ -16,7 +16,7 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $newslist = News::latest()->whereHas('category')->where('status',1)->take(10)->get();
+        $newslist = News::latest()->with('category')->whereHas('category')->where('status',1)->take(10)->get();
         return view('view.index',compact(
                 'newslist'
             )
@@ -25,7 +25,7 @@ class FrontController extends Controller
 
     public function loadMore($page)
     {
-        $newslist = News::latest()->whereHas('category')->where('status', 1)->skip($page * 10)->take(10);
+        $newslist = News::latest()->with('category')->whereHas('category')->where('status', 1)->skip($page * 10)->take(10);
         if($newslist->exists()){
             $newslist = $newslist->get();
             $html = view('view.postitem',compact('newslist'))->render();
@@ -83,7 +83,7 @@ class FrontController extends Controller
     {
         $newslist = [];
         
-        $newslist = News::select('*')->where('title', 'like', '%' .$request->search. '%')
+        $newslist = News::select('*')->with('category')->where('title', 'like', '%' .$request->search. '%')
             ->orWhere('slug', 'like', '%'.$request->search.'%')
             ->orWhere('tags', 'like', '%'.$request->search.'%')
             ->orderBy('created_at','desc')
@@ -116,7 +116,7 @@ class FrontController extends Controller
     public function pageArchiveCategory($slug)
     {
         $category = Category::latest()->where('slug', $slug)->first();
-        $newslist = News::latest()->where('category_id', $category->id)->paginate(5);
+        $newslist = News::latest()->with('category')->where('category_id', $category->id)->paginate(5);
         return view('view.archive_category',compact('category', 'newslist'));
     }
 
@@ -127,7 +127,7 @@ class FrontController extends Controller
         $arr = [];
         foreach ($listCategory as $key => $value) {
             $obj = [];
-            $listRework = ReWork::latest()->where('category_id', $value->id)->get();
+            $listRework = ReWork::latest()->with('category')->where('category_id', $value->id)->get();
             $obj["list"] = $listRework;
             $obj["categoryInfo"] = $value;
             array_push($arr,$obj);

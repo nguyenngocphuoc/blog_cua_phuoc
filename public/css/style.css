@@ -8585,11 +8585,12 @@ h1, h2, h3, h4, h5,
   .blog-entry .img {
     display: block;
     height: 150px;
-    width: 150px;
-    -webkit-border-radius: 50%;
+    min-width: 150px;
+    /*width: 150px;*/
+    /*-webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
-    border-radius: 50%; }
+    border-radius: 50%; */}
     @media (max-width: 767.98px) {
       .blog-entry .img {
         margin: 0 auto;
