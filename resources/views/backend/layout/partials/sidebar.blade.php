@@ -39,18 +39,12 @@
                     <span>Tin Tức</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('admin.reworks.index') }}">
-                    <i class="fa fa-th"></i>
-                    <span>Tuyển Dụng</span>
-                </a>
-            </li>
 
             <li class="header">LABELS</li>
             <li>
                 <a href="{{ route('admin.info-submit.index') }}">
                     <i class="fa fa-users"></i>
-                    <span>Liên hệ ứng viên</span>
+                    <span>Liên hệ</span>
                 </a>
             </li>
             <li>

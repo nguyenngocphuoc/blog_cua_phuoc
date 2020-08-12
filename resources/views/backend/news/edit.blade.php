@@ -19,9 +19,6 @@
         <li><a href="#" style="margin-right: 30px; font-size: 15px;"><i class="fa fa-dashboard"></i> Trang Chủ</a></li>
     </ol>
 </section>
-<script>
-    var croppieRatio = 16/7;
-</script>
 <section class="content">
     <div class="row">
 
@@ -84,6 +81,11 @@
                             <label>
                                 <input type="checkbox" name="featured" {{ $news->featured ? 'checked' : '' }}> Featured
                             </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="newstags">Tags</label>
+                            <input value="{{ $news->tags }}" type="text" name="tags" class="form-control"
+                                id="newstags">
                         </div>
                     </div>
 

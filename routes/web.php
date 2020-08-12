@@ -5,7 +5,7 @@ Route::get('/', 'FrontController@index')->name('home');
 Route::get('/page/news/{slug}', 'FrontController@pageNews')->name('page.news');
 Route::get('/page/rework/{slug}', 'FrontController@pageReworks')->name('page.reworks');
 Route::get('/page', 'FrontController@pageArchiprofile.updatee')->name('page');
-Route::get('/page/search', 'ReWorkController@postSearch')->name('page.search');
+Route::get('/page/search', 'FrontController@pageArchive')->name('page.search');
 Route::get('/page/category/{slug}', 'FrontController@pageArchiveCategory')->name('page.archive_category');
 Route::get('/page/category-group/{slug}', 'FrontController@pageArchiveCategoryGroup')->name('page.archive_category_group');
 Route::get('/page/about', 'FrontController@getPageAbout')->name('page.about');
@@ -17,8 +17,10 @@ Route::post('/logout', 'LoginController@logout')->name('logout');
 Route::get('/reset-password', 'ResetPasswordController@ressetForm')->name('resetpassword');
 Route::post('/reset-password', 'ResetPasswordController@checkExist')->name('reset.password');
 
-
-
+// comments
+Route::resource('comments','CommentController');
+// follows
+Route::resource('follows','FollowedController');
 
 Route::get('/contact', 'InfoSubmitController@register')->name('contact');
 // Route::post('/register', 'RegisterController@registration')->name('register');

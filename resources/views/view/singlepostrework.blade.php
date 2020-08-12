@@ -126,7 +126,9 @@
                         @include('view/contactForm')
                     </div>
                 </div>
-                <!-- {{$categoryId = $newssingle->category_id}} -->
+                @php
+                    $categoryId = $newssingle->category_id}} 
+                @endphp
                 @include('view.relativepostbottom')
             </div>
 

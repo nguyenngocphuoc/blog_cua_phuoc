@@ -14,4 +14,6 @@ use Illuminate\Http\Request;
 */
 
 Route::get('submit-info/read/{id}', 'InfoSubmitController@readed')->name('readed');
+Route::get('comment/read/{id}', 'CommentController@readed');
 Route::get('submit-info/notify', 'InfoSubmitController@unreadedNotify');
+Route::get('load-more/{page}', 'FrontController@loadMore');

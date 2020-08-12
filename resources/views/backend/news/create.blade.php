@@ -22,10 +22,8 @@
 
 <section class="content">
     <div class="row">
-
         <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data" role="form">
             @csrf
-
             <div class="col-md-6">
                 <div class="box box-primary">
                     <div class="box-body">
@@ -72,6 +70,11 @@
                         <label>
                             <input type="checkbox" name="featured"> Featured
                         </label>
+                    </div>
+                    <div class="form-group">
+                            <label for="newstags">Tags</label>
+                            <input value="{{ old('tags')}}" type="text" name="tags" class="form-control"
+                                id="newstags">
                     </div>
                 </div>
 

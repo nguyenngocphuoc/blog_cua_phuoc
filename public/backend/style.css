@@ -13,3 +13,15 @@
     background-repeat: no-repeat;
     height: 34px;
 }
+@media screen and (max-width: 767px) {
+    .mobile-hide {
+        display: none;
+    }
+    .mobile-show {
+        display: block !important; 
+    }
+}
+
+.mobile-show {
+    display: none;
+}

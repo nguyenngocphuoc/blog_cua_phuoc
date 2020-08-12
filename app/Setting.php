@@ -13,6 +13,12 @@ class Setting extends Model
         'breaking_news_category_id', 'meta_description'
     ];
 
+    public static function getEmail() {
+        if(Setting::where('id',1)->first() !== null)
+            return Setting::where('id',1)->first()->email;
+        return "this is default email";
+    }
+
     public static function getDescription() {
         if(Setting::where('id',1)->first() !== null)
             return Setting::where('id',1)->first()->meta_description;

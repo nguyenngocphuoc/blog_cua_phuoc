@@ -35,12 +35,12 @@
                     <table id="category-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Ảnh</th>
+                                <th class="mobile-hide">ID</th>
+                                <th class="mobile-hide">Ảnh</th>
                                 <th>Tên</th>
-                                <th>Slug</th>
+                                <th class="mobile-hide">Slug</th>
                                 <th>Nhóm thể loại</th>
-                                <th>Trạng thái</th>
+                                <th class="mobile-hide">Trạng thái</th>
                                 <th>Hành động</th>
                             </tr>
                         </thead>
@@ -48,15 +48,14 @@
                         <tbody>
                             @foreach($categories as $category)
                             <tr>
-                                <td>{{ $category->id }}</td>
-                                <td>
+                                <td class="mobile-hide">{{ $category->id }}</td>
+                                <td class="mobile-hide">
                                     <img src="{{ asset('images/'.$category->image) }}" alt="{{ $category->name }}" width="40px">
                                 </td>
                                 <td>{{ $category->name }}</td>
-                                <td>{{ $category->slug }}</td>
+                                <td class="mobile-hide">{{ $category->slug }}</td>
                                 <td>{{ @$category->groupCategory->name }}</td>
-                                <td>{{ $category->slug }}</td>
-                                <td>{{ $category->status ? 'Có hiệu lực' : 'Không' }}</td>
+                                <td class="mobile-hide">{{ $category->status ? 'Có hiệu lực' : 'Không' }}</td>
                                 <td>
                                     <div class="btn-group">
                                         <a href="{{ route('admin.category.edit',$category->id) }}" class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
@@ -78,12 +77,12 @@
 
                         <tfoot>
                             <tr>
-                                <th>ID</th>
-                                <th>Ảnh</th>
+                                <th class="mobile-hide">ID</th>
+                                <th class="mobile-hide">Ảnh</th>
                                 <th>Tên</th>
-                                <th>Slug</th>
+                                <th class="mobile-hide">Slug</th>
                                 <th>Nhóm thể loại</th>
-                                <th>Trạng thái</th>
+                                <th class="mobile-hide">Trạng thái</th>
                                 <th>Hành động</th>
                             </tr>
                         </tfoot>

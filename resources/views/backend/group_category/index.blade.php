@@ -35,10 +35,10 @@
                     <table id="group-category-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Ảnh</th>
+                                <th class="mobile-hide">ID</th>
+                                <th class="mobile-hide">Ảnh</th>
                                 <th>Tên</th>
-                                <th>Slug</th>
+                                <th class="mobile-hide">Slug</th>
                                 <th>Trạng thái</th>
                                 <th>Hành động</th>
                             </tr>
@@ -47,12 +47,12 @@
                         <tbody>
                             @foreach($group_categorys as $group_category)
                             <tr>
-                                <td>{{ $group_category->id }}</td>
-                                <td>
+                                <td class="mobile-hide">{{ $group_category->id }}</td>
+                                <td class="mobile-hide">
                                     <img src="{{ asset('images/'.$group_category->image) }}" alt="{{ $group_category->name }}" width="40px">
                                 </td>
                                 <td>{{ $group_category->name }}</td>
-                                <td>{{ $group_category->slug }}</td>
+                                <td class="mobile-hide">{{ $group_category->slug }}</td>
                                 <td>{{ $group_category->status ? 'Có hiệu lực' : 'Không' }}</td>
                                 <td>
                                     <div class="btn-group">
@@ -75,10 +75,10 @@
 
                         <tfoot>
                             <tr>
-                                <th>ID</th>
-                                <th>Ảnh</th>
+                                <th class="mobile-hide">ID</th>
+                                <th class="mobile-hide">Ảnh</th>
                                 <th>Tên</th>
-                                <th>Slug</th>
+                                <th class="mobile-hide">Slug</th>
                                 <th>Trạng thái</th>
                                 <th>Hành động</th>
                             </tr>

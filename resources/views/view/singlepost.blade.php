@@ -9,89 +9,111 @@
 @endsection
 
 @section('content')
-<!-- ##### Breadcrumb Area Start ##### -->
-<section class="breadcrumb-area bg-img bg-overlay"
-    style="background-image: url('{{ asset('images/'.$newssingle->image) }}');">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <div class="breadcrumb-content">
-                    <h2></h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### Breadcrumb Area End ##### -->
-
-<!-- ##### Breadcrumb Area Start ##### -->
-<div class="mag-breadcrumb py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Trang
-                                chủ</a></li>
-                        {{-- <li class="breadcrumb-item"><a href="#">Features</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Single Post</li> --}}
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ##### Breadcrumb Area End ##### -->
-
-<!-- ##### Post Details Area Start ##### -->
-<section class="post-details-area">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Post Details Content Area -->
-            <div class="col-12 col-xl-8">
-                <div class="post-details-content bg-white mb-30 p-30 box-shadow">
-                    <div class="blog-thumb mb-30">
-                        <img src="img/bg-img/50.jpg" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <h1 class="post-title h4">{{ $newssingle->title }}</h1>
+<style>
+    .single-post-detail img{
+        max-width:100%;
+    }
+</style>
+<div id="colorlib-main">
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" style="padding-top: 3rem !important;">
+                    <div class="" style="padding-top: 1.5rem !important;">
+                        <div>
+                            <h1 class="mb-3">{{ $newssingle->title }}</h1>
+                        </div>
                         <!-- Post Meta -->
                         <div class="post-meta-2">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $newssingle->view_count }}</a>
-                            <!--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>-->
-                            <!--<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>-->
+                            <p> {{ $newssingle->view_count }} Lượt xem</p>
                         </div>
-                        {!! $newssingle->details !!}
+                        <div class="single-post-detail">
+                            {!! $newssingle->details !!}
+                        </div>
+                        <div class="tag-widget post-tag-container mb-5 mt-5">
+                            <div class="tagcloud">
+                                @foreach(explode(',',$newssingle->tags) as $tag)
+                                    @if(!ctype_space($tag))
+                                    <a class="tag-cloud-link" href="{{url('/page/search') . '?search=' .urlencode('#' . $tag)}}">{{ $tag }} </a>                            
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="pt-5 mt-5" style="width: 100%">
+                            @if(count($comments)>0)<h3 class="mb-5 font-weight-bold">{{\count($comments)}} Bình Luận</h3>@endif
+                            <ul class="comment-list" >
+                                @foreach($comments as $comment)
+                                <li class="comment">
+                                    <div class="vcard bio">
+                                        <img src="https://www.shareicon.net/data/512x512/2017/01/06/868320_people_512x512.png" alt="Image placeholder">
+                                    </div>
+                                    <div class="comment-body">
+                                        <h3>{{$comment->name}}</h3>
+                                        <div class="meta">{{$comment->created_at->diffForHumans()}}</div>
+                                        {{$comment->content}}
+                                    </div>
+                                </li>
+                                @endforeach
+                            </ul>
+                            <!-- END comment-list -->
 
-                    </div>
-                    <!-- Like Dislike Share -->
-                    
-                    <div class="like-dislike-share my-5">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{\urlencode(url('page/news/'.$newssingle->slug))}}" class="facebook" target="_blank">>
-                            <i class="fa fa-facebook" aria-hidden="true"></i> 
-                            Share on Facebook
-                        </a>
-                        <a href="http://twitter.com/share?text={{$newssingle->title}}&url={{\urlencode(url('page/news/'.$newssingle->slug))}}" target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Share on
-                            Twitter</a>
-                    </div>
-                    <!-- submit info -->
-                    <hr />
-                    <!-- Section Title -->
-                    <div class="section-heading">
-                        <h5>Liên hệ với chúng tôi</h5>
-                    </div>
-                    <div class="contact-form-area">
+                            <div class="comment-form-wrap pt-5">
+                                <h3 class="mb-5">Viết bình luận</h3>
+                                <form action="{{route('comments.store')}}" method="POST" class="p-3 p-md-5 bg-light" id="commentform">
+                                    @csrf    
+                                    <input type="hidden" class="form-control" name="newsId" id="newsId" value="{{$newssingle->id}}">
+                                    <div class="form-group">
+                                        <label for="name">Name *</label>
+                                        <input type="text" class="form-control" name="name" id="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" class="form-control" name="email" id="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="website">Website</label>
+                                        <input type="url" class="form-control" name="website" id="website">
+                                    </div>
 
-                        @include('view/contactForm')
-                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea name="content" id="message" cols="30" rows="10"
+                                            class="form-control" maxlength="191" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="submitcmt" type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- END-->
                 </div>
-
-                <!-- {{$categoryId = $newssingle->category_id}} -->
-                @include('view.relativepostbottom')
+                @include('view.rightcategorycolumn',['class'=> 'col-lg-4 sidebar ftco-animate bg-light pt-5 fadeInUp ftco-animated'])
             </div>
-
-            @include('view.rightcategorycolumn')
         </div>
-    </div>
-</section>
+    </section>
+</div><!-- END COLORLIB-MAIN -->
+@section('script')
+<script>
+
+        /*var frm = $('#commentform');
+        frm.submit(function (ev) {
+            ev.preventDefault();
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: frm.attr('method'),
+                url: frm.attr('action'),
+                data: frm.serialize(),
+                success: function (data) {
+                    toastr.error(data,'SUCCESS',{ progressBar: true });
+                    $("#commentform")[0].reset();
+                }
+            });
+           
+        });*/
+
+</script>
+@endsection
 @endsection

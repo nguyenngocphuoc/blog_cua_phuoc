@@ -47,6 +47,46 @@
                 <li id="notifyPlace" class="dropdown messages-menu">
 
                 </li>
+                <li id="notifyPlace" class="dropdown messages-menu">
+                    <!--{{ $comment = \App\Comment::select('*', 'comments.id as cmtId')->leftJoin('news', function($join) {$join->on('news.id', '=', 'comments.newsId'); })->where("cmt_status","0")->get() }}-->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="readedCmt()">
+                        <i class="fa  fa-comments-o"></i>
+                        <span class="label label-success">{{\count($comment)}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <script>
+                            function readedCmt(params) {
+                                @foreach($comment as $key => $value)
+                                    fetch("{{url('api/comment/read/'.$value->cmtId)}}"); //extract JSON from the http response
+                                @endforeach
+                            }
+                        </script>
+                        <li class="header">You have {{\count($comment)}} messages</li>
+                        <li>
+                            <!-- inner menu: contains the actual data -->
+                            <ul class="menu">
+                                @foreach($comment as $key => $value)
+                                <li>
+                                    <!-- start message -->
+                                    <a href="{{ url('page/news/'.$value->slug) }}">
+                                        <div class="pull-left">
+                                            <img src="{{ asset('backend/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                        </div>
+                                        <h4>
+                                            {{ $value->title }}
+                                            <small><i class="fa fa-clock-o"></i> {{ $value->created_at->diffForHumans() }}</small>
+                                        </h4>
+                                        <p>{{ $value->content }}</p>
+                                    </a>
+                                </li>
+                                <!-- end message -->
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="{{url('admin/info-submit')}}">See All Messages</a></li>
+                    </ul>
+                </li>
+
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

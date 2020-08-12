@@ -29,27 +29,26 @@
                     <table id="category-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th class="mobile-hide">ID</th>
                                 <th>Hình ảnh</th>
-                                <th>Nội dung hình ảnh</th>
-                                <th>Trạng Thái</th>
+                                <th class="mobile-hide">Nội dung hình ảnh</th>
+                                <th class="mobile-hide">Trạng Thái</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             @foreach($listHeroImages as $hrImage)
                             <tr>
-                                <td>{{ $hrImage->id }}</td>
+                                <td class="mobile-hide">{{ $hrImage->id }}</td>
                                 <td>
                                     <img src="{{ asset('images/'.$hrImage->image) }}" alt="{{ $hrImage->title }}"
-                                        width="auto" height="200px ">
+                                        width="120px">
                                 </td>
-                                <td>{{str_limit(strip_tags($hrImage->title),50) }}</td>
-                                <td>{{ $hrImage->status ? 'Visible' : 'Invisible' }}</td>
+                                <td class="mobile-hide">{{str_limit(strip_tags($hrImage->title),50) }}</td>
+                                <td class="mobile-hide">{{ $hrImage->status ? 'Visible' : 'Invisible' }}</td>
                                 <td>
                                     <div class="btn-group-vertical">
                                         <div class="form-inline">
-                                            <a href="" class="btn btn-primary btn-flat"><i class="fa fa-eye"></i></a>
                                             <a href="{{ route('admin.hero-images.edit',$hrImage->id) }}"
                                                 class="btn btn-warning btn-flat"><i class="fa fa-edit"></i></a>
                                             <a href="javascript:void(0)" class="btn btn-danger btn-flat" onclick="if (confirm('Bạn có muốn xóa ảnh này không?')) {

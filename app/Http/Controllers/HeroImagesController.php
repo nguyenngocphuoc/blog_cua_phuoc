@@ -40,7 +40,7 @@ class HeroImagesController extends Controller
 
             $data = base64_decode($image_array_2[1]);
 
-            $imageName = 'news-'. time().uniqid(). '.png';
+            $imageName = 'heroImg-'. time().uniqid(). '.png';
 
             file_put_contents(public_path('images/').$imageName, $data);
         }
@@ -76,7 +76,7 @@ class HeroImagesController extends Controller
 
             $data = base64_decode($image_array_2[1]);
 
-            $imageName = $hero->image;
+            $imageName = 'heroImg-'. time().uniqid(). '.png';
 
             file_put_contents(public_path('images/').$imageName, $data);
         }else{

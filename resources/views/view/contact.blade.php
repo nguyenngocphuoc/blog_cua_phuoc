@@ -1,99 +1,61 @@
 @extends('view.masterPage')
 @section('content')
-<section class="contact-area">
-    <style>
-        em {
-            color: red;
-        }
-    </style>
-    <div class="container">
-
-        <!-- ##### Breadcrumb Area Start ##### -->
-        <section class="breadcrumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/40.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <div class="breadcrumb-content">
-                            <h2>Liên hệ với chúng tôi</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ##### Breadcrumb Area End ##### -->
-
-        <!-- ##### Breadcrumb Area Start ##### -->
-        <div class="mag-breadcrumb py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="../"><i class="fa fa-home"
-                                            aria-hidden="true"></i>Trang Chủ</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-xl-8">
-                <div class="contact-content-area bg-white mb-30 p-30 box-shadow">
-
-
-
-                    <!-- Section Title -->
-                    <div class="section-heading">
-                        <h5>Liên hệ với chúng tôi</h5>
-                    </div>
-
-                    <!-- Contact Form Area -->
-                    <div class="contact-form-area">
-
-                        @include('view/contactForm')
-
-                        <br />
-                        <!-- Section Title -->
-                        <div class="section-heading">
-                            <h5>THÔNG TIN LIÊN LẠC</h5>
-                        </div>
-
-                        <div class="contact-information mb-30">
-                            <!-- {{$data = \App\Setting::getAddress()}} -->
-                            @if(strlen($data)>0)
-                             {!! $data !!}
-                            @else 
-                            <!-- Single Contact Info -->
-                            <div class="single-contact-info d-flex align-items-center">
-                                <div class="icon mr-15">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                </div>
-                                <div class="text">
-                                    <p>Địa chỉ:</p>
-                                    <h6>Số 06 - Ngõ 112 - Đ.Nguyễn Trãi - Tp.Vinh</h6>
-                                </div>
-                            </div>
-                            <!-- Single Contact Info -->
-                            <div class="single-contact-info d-flex align-items-center">
-                                <div class="icon mr-15">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                </div>
-                                <div class="text">
-                                    <p>Tel:</p>
-                                    <h6>0977 466 919 (Mr. Hồng) <br /><br /> 09078 619 697 (Mr. Quân) <br /><br /> 0962
-                                        276 316 (Mr. Tuấn)</h6>
-                                </div>
-                            </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            @include('view.rightcategorycolumn')
-        </div>
-    </div>
-</section>
+		<div id="colorlib-main">
+			<section class="ftco-section contact-section px-md-4">
+	      <div class="container">
+	        <div class="row d-flex mb-5 contact-info">
+	          <div class="col-md-12 mb-4">
+	            <h2 class="h3">Contact Information</h2>
+	          </div>
+	          <div class="w-100"></div>
+	          <div class="col-lg-6 col-xl-3 d-flex mb-4">
+	          	<div class="info bg-light p-4">
+		            <p><span>Address:</span> {!!\App\Setting::getAddress()!!}</p>
+		          </div>
+	          </div>
+	          <div class="col-lg-6 col-xl-3 d-flex mb-4">
+	          	<div class="info bg-light p-4">
+		            <p><span>Phone:</span> <a href="tel://{{\App\Setting::getPhoneNumber()}}">{{\App\Setting::getPhoneNumber()}}</a></p>
+		          </div>
+	          </div>
+	          <div class="col-lg-6 col-xl-3 d-flex mb-4">
+	          	<div class="info bg-light p-4">
+		            <p><span>Email:</span> <a href="mailto:{{\App\Setting::getEmail()}}">{{\App\Setting::getEmail()}}</a></p>
+		          </div>
+	          </div>
+	          <div class="col-lg-6 col-xl-3 d-flex mb-4">
+	          	<div class="info bg-light p-4">
+		            <p><span>Website</span> <a href="{{url('/')}}">{{url('/')}}</a></p>
+		          </div>
+	          </div>
+	        </div>
+	        <div class="row block-9">
+	          <div class="col-lg-12 d-flex">
+	            <form action="{{ route('contact') }}" method="post" class="bg-light p-5 contact-form">
+                    @csrf
+	              <div class="form-group">
+	                <input type="text" class="form-control" name="name" placeholder="Họ và tên" value="{{ old('name') }}">
+	              </div>
+	              <div class="form-group">
+	                <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                  </div>
+                  <div class="form-group">
+	                <input type="phone" name="phone" class="form-control" placeholder="Số điện thoại" value="{{ old('phone') }}">
+	              </div>
+	              <div class="form-group">
+	                <input type="text" id="orders" name="orders" class="form-control" value="{{ old('orders') }}" placeholder="Subject">
+	              </div>
+	              <div class="form-group">
+	                <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+	              </div>
+	              <div class="form-group">
+	                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+	              </div>
+	            </form>
+	          
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+		</div><!-- END COLORLIB-MAIN -->
 @endsection

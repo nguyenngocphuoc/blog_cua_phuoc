@@ -90,9 +90,9 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate([
-            'name'   => 'required|max:255',
-            'image'  => 'required|is_img',
-            'group_categories_id'  => 'required|max:2'
+            'name'   => 'max:255',
+            'image'  => 'is_img',
+            'group_categories_id'  => 'max:2'
         ]);
 
         if(isset($request->status)){
@@ -124,7 +124,7 @@ class CategoryController extends Controller
 
             $data = base64_decode($image_array_2[1]);
 
-            $imageName = $category->image;
+            $imageName = 'category-'. time().uniqid(). '.png';
 
             file_put_contents(public_path('images/').$imageName, $data);
         }else{

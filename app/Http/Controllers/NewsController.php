@@ -51,7 +51,7 @@ class NewsController extends Controller
 
             $data = base64_decode($image_array_2[1]);
 
-            $imageName = 'news-'. time().uniqid(). '.png';
+            $imageName = 'news-'. time().uniqid(). '.jp2';
 
             file_put_contents(public_path('images/').$imageName, $data);
         }
@@ -62,7 +62,8 @@ class NewsController extends Controller
             'category_id'   => 1, // $request->category_id,
             'image'         => $imageName,
             'status'        => $status,
-            'featured'      => $featured
+            'featured'      => $featured,
+            'tags'          => $request->tags
         ]);
 
         return redirect()->route('admin.news.index')->with(['message' => 'Tạo thành công!']);
@@ -115,7 +116,7 @@ class NewsController extends Controller
 
             $data = base64_decode($image_array_2[1]);
 
-            $imageName = $news->image;
+            $imageName = 'news-'. time().uniqid(). '.jp2';
 
             file_put_contents(public_path('images/').$imageName, $data);
         }else{
@@ -129,7 +130,8 @@ class NewsController extends Controller
             'category_id'   => $request->category_id,
             'image'         => $imageName,
             'status'        => $status,
-            'featured'      => $featured
+            'featured'      => $featured,
+            'tags'          => $request->tags
         ]);
 
         return redirect()->route('admin.news.index')->with(['message' => 'Chỉnh sửa thành công!']);

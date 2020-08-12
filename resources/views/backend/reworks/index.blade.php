@@ -28,31 +28,31 @@
                     <table id="category-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Hình ảnh bài viết</th>
+                                <th class="mobile-hide">ID</th>
+                                <th class="mobile-hide">Hình ảnh bài viết</th>
                                 <th>Tiêu đề</th>
-                                <th>Slug</th>
-                                <th>Nội dung chi tiết</th>
+                                <th class="mobile-hide">Slug</th>
+                                <th class="mobile-hide">Nội dung chi tiết</th>
                                 <th>Thể loại</th>
-                                <th>Status</th>
-                                <th>Lượt xem</th>
+                                <th class="mobile-hide">Status</th>
+                                <th class="mobile-hide">Lượt xem</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             @foreach($listReWorks as $reworks)
                             <tr>
-                                <td>{{ $reworks->id }}</td>
-                                <td>
+                                <td class="mobile-hide">{{ $reworks->id }}</td>
+                                <td class="mobile-hide">
                                     <img src="{{ asset('images/'.$reworks->image) }}" alt="{{ $reworks->title }}"
                                         width="120px">
                                 </td>
-                                <td>{{ $reworks->title }}</td>
-                                <td>{{ $reworks->slug }}</td>
-                                <td>{{ str_limit(strip_tags($reworks->details),300) }}</td>
+                                <td>{{ str_limit(strip_tags($reworks->title),50) }}</td>
+                                <td class="mobile-hide">{{ $reworks->slug }}</td>
+                                <td class="mobile-hide">{{ str_limit(strip_tags($reworks->details),300) }}</td>
                                 <td>{{ @$reworks->category->name }}</td>
-                                <td>{{ $reworks->status ? 'Published' : 'Unpublished' }}</td>
-                                <td>{{ $reworks->view_count }}</td>
+                                <td class="mobile-hide">{{ $reworks->status ? 'Published' : 'Unpublished' }}</td>
+                                <td class="mobile-hide">{{ $reworks->view_count }}</td>
                                 <td>
                                     <div class="btn-group-vertical">
                                         <div class="form-inline">

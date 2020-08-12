@@ -10,36 +10,29 @@ use App\Advertisement;
 use App\Setting;
 use Illuminate\Http\Request;
 use App\HeroImages;
-
+use App\Comment;
+use Illuminate\Support\Facades\DB;
 class FrontController extends Controller
 {
     public function index()
     {
-        $newestlist = News::latest()->whereHas('category')->where('status',1)->take(10)->get();
-        $topnewslist   = News::where('status',1)->orderBy("view_count")->take(10)->get();
-        $reworks   = ReWork::latest()->where('status',1)->take(10)->get();
-        $reworks2 = ReWork::latest()->where('status',1)->take(10)->get();
-        
-        $max = 5;
-        if(ReWork::where('status',1)->count() < $max) $max = ReWork::where('status',1)->count();
-        if(News::where('status',1)->count() < $max) $max = News::where('status',1)->count();
-        
-        $reworkRad = ReWork::all()->where('status',1)->random($max);
-        $newsRad = News::all()->where('status',1)->random($max);
-        
-        $heroImg = HeroImages::latest()->where('status',1)->get();
+        $newslist = News::latest()->whereHas('category')->where('status',1)->take(10)->get();
         return view('view.index',compact(
-                'topnewslist',
-                'newestlist',
-                'reworks',
-                'reworks2',
-                'reworkRad',
-                'newsRad',
-                'heroImg'
+                'newslist'
             )
         );
     }
 
+    public function loadMore($page)
+    {
+        $newslist = News::latest()->whereHas('category')->where('status', 1)->skip($page * 10)->take(10);
+        if($newslist->exists()){
+            $newslist = $newslist->get();
+            $html = view('view.postitem',compact('newslist'))->render();
+            return $html;
+        }
+        return abort(404);
+    }
 
     public function pageCategory($slug)
     {
@@ -51,15 +44,18 @@ class FrontController extends Controller
         return view('frontend.pages.category',compact('category','featurednewslist','newscategorylist','advertisements'));
     }
 
+
     public function pageNews($slug)
     {
+
         $newssingle = News::with('category')->where('slug',$slug)->first();
+        $comments = Comment::latest()->where('newsId',$newssingle->id)->get();
         $newssessionkey = 'news-'.$newssingle->id;
         if(!session()->has($newssessionkey)){
             $newssingle->increment('view_count');
             session()->put($newssessionkey,1);
         }
-        return view('view.singlepost',compact('newssingle'));
+        return view('view.singlepost',compact('newssingle','comments'));
     }
 
     public function pageReworks($slug)
@@ -83,18 +79,45 @@ class FrontController extends Controller
         return view('frontend.pages.search',compact('newssearch'));
     }
 
-    public function pageArchive()
+    public function pageArchive(Request $request)
     {
-        $newsarchives = Category::with('newslist')->whereHas('newslist')->get();
+        $newslist = [];
+        
+        $newslist = News::select('*')->where('title', 'like', '%' .$request->search. '%')
+            ->orWhere('slug', 'like', '%'.$request->search.'%')
+            ->orWhere('tags', 'like', '%'.$request->search.'%')
+            ->orderBy('created_at','desc')
+            ->paginate(5);
+        $tags = explode("#",$request->search);
+        if(count($tags) > 1) {
+            $tags = array_slice($tags,1);
+            foreach ($tags as $value) {
+                $newslist = DB::table("news")->select('*')
+                    ->Where('tags', 'like', '%'.$value.'%')
+                    ->orderBy('created_at','desc')
+                    ->paginate(5); 
+            }
+        }
+        if(substr( $request->search , 0, 5 ) === "time:" ) {
+            $search = explode("/",substr( $request->search , 5 ));
+            if(count($search) > 1){
+                $month = $search[0];
+                $year  = $search[1];
+                $newslist = News::select('*')
+                    ->whereRaw(DB::raw('MONTH(created_at) = ' . $month . ' AND ' . 'YEAR(created_at) = ' . $year))
+                    ->orderBy('created_at','desc')
+                    ->paginate(5);
+            }
 
-        return view('view.archive',compact('newsarchives'));
+        }
+        return view('view.archive', compact('newslist'));
     }
 
     public function pageArchiveCategory($slug)
     {
         $category = Category::latest()->where('slug', $slug)->first();
-        $listRework = ReWork::latest()->where('category_id', $category->id)->paginate(5);
-        return view('view.archive_category',compact('category', 'listRework'));
+        $newslist = News::latest()->where('category_id', $category->id)->paginate(5);
+        return view('view.archive_category',compact('category', 'newslist'));
     }
 
     public function pageArchiveCategoryGroup($slug)
@@ -115,9 +138,10 @@ class FrontController extends Controller
 
     public function getPageAbout()
     {
-        $setting = Setting::latest()->where('id',1)->first();
-
-        return view('view.about', compact('setting'));
+        $about_us = "";
+        if(Setting::latest()->where('id',1)->exists())
+            $about_us = Setting::latest()->where('id',1)->first()->about_us;
+        return view('view.about', compact('about_us'));
     }
 
 }

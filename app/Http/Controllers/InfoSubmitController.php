@@ -33,8 +33,7 @@ class InfoSubmitController extends Controller
         $request->validate([
             'name'           => 'required|string|max:255',
             'email'          => 'max:255',
-            'date_of_birth'  => 'max:10',
-            'orders'         => 'required|string|min:1',
+            'message'  => 'required',
             'phone'          => 'required|string|min:1|max:15',
             'address'        => 'max:255',
         ]);
@@ -42,15 +41,11 @@ class InfoSubmitController extends Controller
         $infoSubmit = InfoSubmit::create([
             'name'          => $request->name,
             'email'         => $request->email,
-            'date_of_birth' => $request->date_of_birth,
+            'message'       => $request->message,
             'phone'         => $request->phone,
-            'address'       => $request->address,
             'orders'        => $request->orders
         ]);
-        // return view('authentication.register',compact('arrCategory'));
-        // return Redirect::back()->withErrors(['msg', 'The Message']);
-        return redirect()->route('home')->with('messageSuccess', 'Bạn đã đăng ký tư vấn thành công. Chúng tôi sẽ gọi điện lại cho bạn trong thời gian sớm nhất');
-        // return redirect()->route('home');
+        return redirect()->back()->with(['message' => 'successfully!']);
     }
 
     public function destroy(InfoSubmit $infoSubmit)

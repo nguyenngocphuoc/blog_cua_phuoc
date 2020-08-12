@@ -28,31 +28,31 @@
                     <table id="category-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Hình ảnh bài viết</th>
+                                <th class="mobile-hide">ID</th>
+                                <th class="mobile-hide">Hình ảnh bài viết</th>
                                 <th>Tiêu đề</th>
-                                <th>Slug</th>
-                                <th>Nội dung chi tiết</th>
+                                <th class="mobile-hide">Slug</th>
+                                <th class="mobile-hide">Nội dung chi tiết</th>
                                 <th>Thể loại</th>
-                                <th>Status</th>
-                                <th>Lượt xem</th>
+                                <th class="mobile-hide">Status</th>
+                                <th class="mobile-hide">Lượt xem</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             @foreach($newslist as $news)
                             <tr>
-                                <td>{{ $news->id }}</td>
-                                <td>
+                                <td class="mobile-hide">{{ $news->id }}</td>
+                                <td class="mobile-hide">
                                     <img src="{{ asset('images/'.$news->image) }}" alt="{{ $news->title }}"
                                         width="120px">
                                 </td>
                                 <td>{{ $news->title }}</td>
-                                <td>{{ $news->slug }}</td>
-                                <td>{{ str_limit(strip_tags($news->details),300) }}</td>
+                                <td class="mobile-hide">{{ $news->slug }}</td>
+                                <td class="mobile-hide">{{ str_limit(strip_tags($news->details),300) }}</td>
                                 <td>{{ @$news->category->name }}</td>
-                                <td>{{ $news->status ? 'Published' : 'Unpublished' }}</td>
-                                <td>{{ $news->view_count }}</td>
+                                <td class="mobile-hide">{{ $news->status ? 'Published' : 'Unpublished' }}</td>
+                                <td class="mobile-hide">{{ $news->view_count }}</td>
                                 <td>
                                     <div class="btn-group-vertical">
                                         <div class="form-inline">

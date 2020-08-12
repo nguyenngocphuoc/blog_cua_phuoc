@@ -45,10 +45,9 @@
                                 <th>Tên</th>
                                 <th>SĐT</th>
                                 <th>Email</th>
-                                <th>Địa chỉ</th>
-                                <th>Ngày sinh</th>
-                                <th>Thể loại tư vấn</th>
-                                <th>Ngày tạo</th>
+                                <th class="mobile-hide">Nội Dung</th>
+                                <th class="mobile-hide">Thể loại tư vấn</th>
+                                <th class="mobile-hide">Ngày tạo</th>
                                 <th>Hành động</th>
                             </tr>
                         </thead>
@@ -57,12 +56,17 @@
                             @foreach($listInfoSubmit as $info)
                             <tr>
                                 <td>{{ $info->name }}</td>
-                                <td><a href="tel:555-555-5555">{{ $info->phone }}</a></td>
-                                <td><a href="mailto:{{ $info->email }}">{{ $info->email }}</a></td>
-                                <td>{{ $info->address }}</td>
-                                <td>{{ $info->date_of_birth }}</td>
-                                <td>{{ $info->orders }}</td>
-                                <td>{{ $info->created_at }}</td>
+                                <td>
+                                    <a class="mobile-hide" href="tel:{{ $info->phone }}">{{ $info->phone }}</a>
+                                    <a class="mobile-show" href="tel:{{ $info->phone }}"><i class="fa fa-phone"></i></a>
+                                </td>
+                                <td>
+                                    <a class="mobile-hide" href="mailto:{{ $info->email }}">{{ $info->email }}</a>
+                                    <a class="mobile-show" href="mailto:{{ $info->email }}"><i class="fa fa-envelope"></i></a>
+                                </td>
+                                <th class="mobile-hide">{{ $info->message }}</th>
+                                <td class="mobile-hide">{{ $info->orders }}</td>
+                                <td class="mobile-hide">{{ $info->created_at }}</td>
                                 <td>
                                     <div class="btn-group">
                                         {{-- <a href="{{ route('admin.category.edit',$info->id) }}"
@@ -91,10 +95,9 @@
                                 <th>Tên</th>
                                 <th>SĐT</th>
                                 <th>Email</th>
-                                <th>Địa chỉ</th>
-                                <th>Ngày sinh</th>
-                                <th>Thể loại tư vấn</th>
-                                <th>Ngày tạo</th>
+                                <th class="mobile-hide">Nội Dung</th>
+                                <th class="mobile-hide">Thể loại tư vấn</th>
+                                <th class="mobile-hide">Ngày tạo</th>
                                 <th>Hành động</th>
                             </tr>
                         </tfoot>

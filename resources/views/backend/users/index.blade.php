@@ -36,10 +36,10 @@
                     <table id="user-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th class="mobile-hide">ID</th>
                                 <th>Ảnh</th>
                                 <th>Tên</th>
-                                <th>Email</th>
+                                <th class="mobile-hide">Email</th>
                                 <th>Quyền</th>
                                 <th>Trạng thái</th>
                                 <th>Hành động</th>
@@ -49,14 +49,14 @@
                         <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td>{{ $user->id }}</td>
+                                <td class="mobile-hide">{{ $user->id }}</td>
                                 <td>
                                     <img src="{{ asset('images/'.$user->photo) }}" alt="{{ $user->name }}" width="40px">
                                 </td>
                                 <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->role->name }}</td>
-                                <td>{{ $user->status ? 'Hoạt động' : 'Khóa' }}</td>
+                                <td class="mobile-hide">{{ $user->email }}</td>
+                                <td >{{ $user->role->name }}</td>
+                                <td >{{ $user->status ? 'Hoạt động' : 'Khóa' }}</td>
                                 <td>
                                     <div class="btn-group">
                                         <a href="{{ route('admin.users.edit',$user->id) }}"

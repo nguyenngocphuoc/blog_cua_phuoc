@@ -18,7 +18,7 @@ class ChangeAddressSettingLimit extends Migration
         });
         
         Schema::table('settings', function (Blueprint $table) {
-            $table->longText('address')->nullable();
+            $table->longText('address');
         });
     }
 

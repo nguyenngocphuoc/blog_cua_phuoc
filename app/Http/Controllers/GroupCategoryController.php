@@ -87,7 +87,7 @@ class GroupCategoryController extends Controller
     {
         $request->validate([
             'name'   => 'required|max:255',
-            'image'  => 'required|is_img',
+            'image'  => 'is_img',
         ]);
 
         if(isset($request->status)){
@@ -119,7 +119,7 @@ class GroupCategoryController extends Controller
 
             $data = base64_decode($image_array_2[1]);
 
-            $imageName = $group_category->image;
+            $imageName = 'group-category-'. time().uniqid(). '.png';
 
             file_put_contents(public_path('images/').$imageName, $data);
         }else{
